@@ -1,0 +1,481 @@
+Target Month,Region,Sales Channel,Sales Target
+2024-01-01,Midwest,Direct Sales,9731.18
+2024-01-01,Midwest,Distributors,15757.81
+2024-01-01,Midwest,Online,10417.36
+2024-01-01,Midwest,Retail Stores,12762.94
+2024-01-01,North,Direct Sales,6095.63
+2024-01-01,North,Distributors,5273.03
+2024-01-01,North,Online,20698.98
+2024-01-01,North,Retail Stores,3819.92
+2024-01-01,Northeast,Direct Sales,9756.54
+2024-01-01,Northeast,Distributors,11512.59
+2024-01-01,Northeast,Online,27579.64
+2024-01-01,Northeast,Retail Stores,26130.64
+2024-01-01,South,Direct Sales,12635.66
+2024-01-01,South,Distributors,16408.81
+2024-01-01,South,Online,7617.45
+2024-01-01,South,Retail Stores,14513.22
+2024-01-01,Southeast,Direct Sales,10107.72
+2024-01-01,Southeast,Distributors,15757.54
+2024-01-01,Southeast,Online,15257.47
+2024-01-01,Southeast,Retail Stores,35271.61
+2024-02-01,Midwest,Direct Sales,3231.52
+2024-02-01,Midwest,Distributors,23439.62
+2024-02-01,Midwest,Online,11901.7
+2024-02-01,Midwest,Retail Stores,8017.77
+2024-02-01,North,Direct Sales,5022.22
+2024-02-01,North,Distributors,12915.96
+2024-02-01,North,Online,12027.15
+2024-02-01,North,Retail Stores,15805.26
+2024-02-01,Northeast,Direct Sales,8173.23
+2024-02-01,Northeast,Distributors,29895.51
+2024-02-01,Northeast,Online,11328.41
+2024-02-01,Northeast,Retail Stores,10874.72
+2024-02-01,South,Direct Sales,10095.96
+2024-02-01,South,Distributors,14089.46
+2024-02-01,South,Online,11260.7
+2024-02-01,South,Retail Stores,25195.02
+2024-02-01,Southeast,Direct Sales,9106.12
+2024-02-01,Southeast,Distributors,20337.28
+2024-02-01,Southeast,Online,2304.35
+2024-02-01,Southeast,Retail Stores,25366.36
+2024-03-01,Midwest,Direct Sales,6549.96
+2024-03-01,Midwest,Distributors,12548.51
+2024-03-01,Midwest,Online,3941.03
+2024-03-01,Midwest,Retail Stores,16453.32
+2024-03-01,North,Direct Sales,3084.57
+2024-03-01,North,Distributors,4325.94
+2024-03-01,North,Online,8607.82
+2024-03-01,North,Retail Stores,2323.84
+2024-03-01,Northeast,Direct Sales,16807.66
+2024-03-01,Northeast,Distributors,7646.33
+2024-03-01,Northeast,Online,13244.52
+2024-03-01,Northeast,Retail Stores,5163.26
+2024-03-01,South,Direct Sales,18487.7
+2024-03-01,South,Distributors,13970.02
+2024-03-01,South,Online,24663.27
+2024-03-01,South,Retail Stores,6227.91
+2024-03-01,Southeast,Direct Sales,20217.72
+2024-03-01,Southeast,Distributors,29125.26
+2024-03-01,Southeast,Online,35634.89
+2024-03-01,Southeast,Retail Stores,22437.5
+2024-04-01,Midwest,Direct Sales,13013.02
+2024-04-01,Midwest,Distributors,13493.59
+2024-04-01,Midwest,Online,19084.74
+2024-04-01,Midwest,Retail Stores,21492.5
+2024-04-01,North,Direct Sales,9375.88
+2024-04-01,North,Distributors,17317.43
+2024-04-01,North,Online,10987.79
+2024-04-01,North,Retail Stores,908.61
+2024-04-01,Northeast,Direct Sales,4371.43
+2024-04-01,Northeast,Distributors,12104.57
+2024-04-01,Northeast,Online,23133.37
+2024-04-01,Northeast,Retail Stores,26568.21
+2024-04-01,South,Direct Sales,15099.28
+2024-04-01,South,Distributors,6890.77
+2024-04-01,South,Online,21787.43
+2024-04-01,South,Retail Stores,15835.42
+2024-04-01,Southeast,Direct Sales,20991.62
+2024-04-01,Southeast,Distributors,24671.61
+2024-04-01,Southeast,Online,41595.33
+2024-04-01,Southeast,Retail Stores,4922.2
+2024-05-01,Midwest,Direct Sales,4878.77
+2024-05-01,Midwest,Distributors,3539.84
+2024-05-01,Midwest,Online,39447.21
+2024-05-01,Midwest,Retail Stores,12209.6
+2024-05-01,North,Direct Sales,9538.47
+2024-05-01,North,Distributors,10016.38
+2024-05-01,North,Online,9059.48
+2024-05-01,North,Retail Stores,9846.59
+2024-05-01,Northeast,Direct Sales,6907.36
+2024-05-01,Northeast,Distributors,4183.25
+2024-05-01,Northeast,Online,36194.35
+2024-05-01,Northeast,Retail Stores,16339.26
+2024-05-01,South,Direct Sales,25353.01
+2024-05-01,South,Distributors,32738.65
+2024-05-01,South,Online,11885.44
+2024-05-01,South,Retail Stores,26656.89
+2024-05-01,Southeast,Direct Sales,31267.76
+2024-05-01,Southeast,Distributors,23446.3
+2024-05-01,Southeast,Online,21898.72
+2024-05-01,Southeast,Retail Stores,17296.71
+2024-06-01,Midwest,Direct Sales,10266.13
+2024-06-01,Midwest,Distributors,6951.88
+2024-06-01,Midwest,Online,30764.13
+2024-06-01,Midwest,Retail Stores,17389.39
+2024-06-01,North,Direct Sales,8130.25
+2024-06-01,North,Distributors,7553.79
+2024-06-01,North,Online,15661.56
+2024-06-01,North,Retail Stores,15244.74
+2024-06-01,Northeast,Direct Sales,6715.03
+2024-06-01,Northeast,Distributors,5125.69
+2024-06-01,Northeast,Online,11035.9
+2024-06-01,Northeast,Retail Stores,16529.53
+2024-06-01,South,Direct Sales,26434.76
+2024-06-01,South,Distributors,33124.94
+2024-06-01,South,Online,17330.24
+2024-06-01,South,Retail Stores,9928.75
+2024-06-01,Southeast,Direct Sales,27500.87
+2024-06-01,Southeast,Distributors,17801.0
+2024-06-01,Southeast,Online,31156.25
+2024-06-01,Southeast,Retail Stores,25009.51
+2024-07-01,Midwest,Direct Sales,7076.66
+2024-07-01,Midwest,Distributors,12485.55
+2024-07-01,Midwest,Online,10685.96
+2024-07-01,Midwest,Retail Stores,18572.66
+2024-07-01,North,Direct Sales,928.75
+2024-07-01,North,Distributors,13024.01
+2024-07-01,North,Online,13161.06
+2024-07-01,North,Retail Stores,21550.08
+2024-07-01,Northeast,Direct Sales,2817.37
+2024-07-01,Northeast,Distributors,22658.73
+2024-07-01,Northeast,Online,16862.77
+2024-07-01,Northeast,Retail Stores,1602.91
+2024-07-01,South,Direct Sales,10405.76
+2024-07-01,South,Distributors,22650.67
+2024-07-01,South,Online,16561.44
+2024-07-01,South,Retail Stores,15045.88
+2024-07-01,Southeast,Direct Sales,68503.08
+2024-07-01,Southeast,Distributors,26025.95
+2024-07-01,Southeast,Online,34116.6
+2024-07-01,Southeast,Retail Stores,15620.19
+2024-08-01,Midwest,Direct Sales,8137.38
+2024-08-01,Midwest,Distributors,3445.89
+2024-08-01,Midwest,Online,13778.92
+2024-08-01,Midwest,Retail Stores,9468.34
+2024-08-01,North,Direct Sales,10886.79
+2024-08-01,North,Distributors,15779.38
+2024-08-01,North,Online,10839.87
+2024-08-01,North,Retail Stores,11747.75
+2024-08-01,Northeast,Direct Sales,4302.8
+2024-08-01,Northeast,Distributors,3129.87
+2024-08-01,Northeast,Online,21197.25
+2024-08-01,Northeast,Retail Stores,8105.42
+2024-08-01,South,Direct Sales,23847.76
+2024-08-01,South,Distributors,28810.54
+2024-08-01,South,Online,24267.44
+2024-08-01,South,Retail Stores,13489.05
+2024-08-01,Southeast,Direct Sales,15052.78
+2024-08-01,Southeast,Distributors,17254.58
+2024-08-01,Southeast,Online,21437.94
+2024-08-01,Southeast,Retail Stores,13801.74
+2024-09-01,Midwest,Direct Sales,8368.82
+2024-09-01,Midwest,Distributors,4265.99
+2024-09-01,Midwest,Online,14290.77
+2024-09-01,Midwest,Retail Stores,14818.08
+2024-09-01,North,Direct Sales,15463.82
+2024-09-01,North,Distributors,23477.84
+2024-09-01,North,Online,10010.42
+2024-09-01,North,Retail Stores,14148.99
+2024-09-01,Northeast,Direct Sales,1244.69
+2024-09-01,Northeast,Distributors,4666.99
+2024-09-01,Northeast,Online,20425.42
+2024-09-01,Northeast,Retail Stores,39968.63
+2024-09-01,South,Direct Sales,25430.82
+2024-09-01,South,Distributors,12141.64
+2024-09-01,South,Online,20124.33
+2024-09-01,South,Retail Stores,5802.5
+2024-09-01,Southeast,Direct Sales,28093.96
+2024-09-01,Southeast,Distributors,27776.72
+2024-09-01,Southeast,Online,27672.19
+2024-09-01,Southeast,Retail Stores,8603.27
+2024-10-01,Midwest,Direct Sales,8032.16
+2024-10-01,Midwest,Distributors,3317.57
+2024-10-01,Midwest,Online,28268.51
+2024-10-01,Midwest,Retail Stores,13976.45
+2024-10-01,North,Direct Sales,8857.22
+2024-10-01,North,Distributors,10588.5
+2024-10-01,North,Online,4792.05
+2024-10-01,North,Retail Stores,7878.29
+2024-10-01,Northeast,Direct Sales,6961.23
+2024-10-01,Northeast,Distributors,18976.59
+2024-10-01,Northeast,Online,29779.19
+2024-10-01,Northeast,Retail Stores,6939.66
+2024-10-01,South,Direct Sales,13259.26
+2024-10-01,South,Distributors,29457.29
+2024-10-01,South,Online,19530.82
+2024-10-01,South,Retail Stores,16297.75
+2024-10-01,Southeast,Direct Sales,12437.06
+2024-10-01,Southeast,Distributors,13956.82
+2024-10-01,Southeast,Online,24754.92
+2024-10-01,Southeast,Retail Stores,16353.07
+2024-11-01,Midwest,Direct Sales,13777.34
+2024-11-01,Midwest,Distributors,14553.49
+2024-11-01,Midwest,Online,17724.11
+2024-11-01,Midwest,Retail Stores,25940.18
+2024-11-01,North,Direct Sales,7970.35
+2024-11-01,North,Distributors,7950.25
+2024-11-01,North,Online,16437.29
+2024-11-01,North,Retail Stores,14047.01
+2024-11-01,Northeast,Direct Sales,11520.38
+2024-11-01,Northeast,Distributors,4021.33
+2024-11-01,Northeast,Online,19835.77
+2024-11-01,Northeast,Retail Stores,3451.02
+2024-11-01,South,Direct Sales,14990.84
+2024-11-01,South,Distributors,21567.42
+2024-11-01,South,Online,17267.11
+2024-11-01,South,Retail Stores,24756.21
+2024-11-01,Southeast,Direct Sales,9500.68
+2024-11-01,Southeast,Distributors,35928.42
+2024-11-01,Southeast,Online,34717.96
+2024-11-01,Southeast,Retail Stores,25477.06
+2024-12-01,Midwest,Direct Sales,5069.39
+2024-12-01,Midwest,Distributors,12959.86
+2024-12-01,Midwest,Online,18803.1
+2024-12-01,Midwest,Retail Stores,7373.76
+2024-12-01,North,Direct Sales,9038.17
+2024-12-01,North,Distributors,5782.99
+2024-12-01,North,Online,15643.83
+2024-12-01,North,Retail Stores,19637.64
+2024-12-01,Northeast,Direct Sales,12710.74
+2024-12-01,Northeast,Distributors,14311.26
+2024-12-01,Northeast,Online,18378.72
+2024-12-01,Northeast,Retail Stores,15446.96
+2024-12-01,South,Direct Sales,32228.26
+2024-12-01,South,Distributors,35827.39
+2024-12-01,South,Online,22282.53
+2024-12-01,South,Retail Stores,18120.9
+2024-12-01,Southeast,Direct Sales,10336.57
+2024-12-01,Southeast,Distributors,47149.31
+2024-12-01,Southeast,Online,27381.33
+2024-12-01,Southeast,Retail Stores,14348.91
+2025-01-01,Midwest,Direct Sales,5036.65
+2025-01-01,Midwest,Distributors,11947.74
+2025-01-01,Midwest,Online,13155.9
+2025-01-01,Midwest,Retail Stores,22891.88
+2025-01-01,North,Direct Sales,8043.05
+2025-01-01,North,Distributors,11707.87
+2025-01-01,North,Online,17524.05
+2025-01-01,North,Retail Stores,12713.27
+2025-01-01,Northeast,Direct Sales,22226.58
+2025-01-01,Northeast,Distributors,21724.5
+2025-01-01,Northeast,Online,9401.05
+2025-01-01,Northeast,Retail Stores,19264.41
+2025-01-01,South,Direct Sales,14049.82
+2025-01-01,South,Distributors,38426.7
+2025-01-01,South,Online,52274.83
+2025-01-01,South,Retail Stores,13682.3
+2025-01-01,Southeast,Direct Sales,20193.86
+2025-01-01,Southeast,Distributors,29682.07
+2025-01-01,Southeast,Online,26990.32
+2025-01-01,Southeast,Retail Stores,36987.54
+2025-02-01,Midwest,Direct Sales,6005.32
+2025-02-01,Midwest,Distributors,18039.01
+2025-02-01,Midwest,Online,5705.44
+2025-02-01,Midwest,Retail Stores,8677.46
+2025-02-01,North,Direct Sales,2037.08
+2025-02-01,North,Distributors,21020.07
+2025-02-01,North,Online,10465.08
+2025-02-01,North,Retail Stores,14601.56
+2025-02-01,Northeast,Direct Sales,8027.39
+2025-02-01,Northeast,Distributors,16574.47
+2025-02-01,Northeast,Online,11425.59
+2025-02-01,Northeast,Retail Stores,13599.06
+2025-02-01,South,Direct Sales,13476.87
+2025-02-01,South,Distributors,34340.37
+2025-02-01,South,Online,40159.33
+2025-02-01,South,Retail Stores,23617.8
+2025-02-01,Southeast,Direct Sales,13947.96
+2025-02-01,Southeast,Distributors,37354.0
+2025-02-01,Southeast,Online,26230.0
+2025-02-01,Southeast,Retail Stores,40563.45
+2025-03-01,Midwest,Direct Sales,2064.58
+2025-03-01,Midwest,Distributors,3996.57
+2025-03-01,Midwest,Online,11498.19
+2025-03-01,Midwest,Retail Stores,13130.99
+2025-03-01,North,Direct Sales,8424.78
+2025-03-01,North,Distributors,19642.42
+2025-03-01,North,Online,12482.98
+2025-03-01,North,Retail Stores,11303.06
+2025-03-01,Northeast,Direct Sales,7386.06
+2025-03-01,Northeast,Distributors,16746.73
+2025-03-01,Northeast,Online,14948.65
+2025-03-01,Northeast,Retail Stores,13428.05
+2025-03-01,South,Direct Sales,14558.02
+2025-03-01,South,Distributors,26661.02
+2025-03-01,South,Online,14898.33
+2025-03-01,South,Retail Stores,31806.81
+2025-03-01,Southeast,Direct Sales,16144.49
+2025-03-01,Southeast,Distributors,24308.14
+2025-03-01,Southeast,Online,20405.06
+2025-03-01,Southeast,Retail Stores,33134.74
+2025-04-01,Midwest,Direct Sales,3403.67
+2025-04-01,Midwest,Distributors,24325.43
+2025-04-01,Midwest,Online,30845.54
+2025-04-01,Midwest,Retail Stores,20726.36
+2025-04-01,North,Direct Sales,33405.1
+2025-04-01,North,Distributors,7582.92
+2025-04-01,North,Online,10771.22
+2025-04-01,North,Retail Stores,10772.22
+2025-04-01,Northeast,Direct Sales,21765.12
+2025-04-01,Northeast,Distributors,25735.38
+2025-04-01,Northeast,Online,13792.89
+2025-04-01,Northeast,Retail Stores,9650.59
+2025-04-01,South,Direct Sales,3180.21
+2025-04-01,South,Distributors,26076.81
+2025-04-01,South,Online,14134.48
+2025-04-01,South,Retail Stores,12373.6
+2025-04-01,Southeast,Direct Sales,9187.72
+2025-04-01,Southeast,Distributors,23289.39
+2025-04-01,Southeast,Online,27879.59
+2025-04-01,Southeast,Retail Stores,50239.15
+2025-05-01,Midwest,Direct Sales,8759.71
+2025-05-01,Midwest,Distributors,17421.11
+2025-05-01,Midwest,Online,9176.46
+2025-05-01,Midwest,Retail Stores,15240.47
+2025-05-01,North,Direct Sales,837.5
+2025-05-01,North,Distributors,16993.3
+2025-05-01,North,Online,21245.53
+2025-05-01,North,Retail Stores,10405.93
+2025-05-01,Northeast,Direct Sales,6484.28
+2025-05-01,Northeast,Distributors,24548.37
+2025-05-01,Northeast,Online,10353.86
+2025-05-01,Northeast,Retail Stores,26894.32
+2025-05-01,South,Direct Sales,16012.61
+2025-05-01,South,Distributors,14116.13
+2025-05-01,South,Online,11747.53
+2025-05-01,South,Retail Stores,7929.41
+2025-05-01,Southeast,Direct Sales,14820.04
+2025-05-01,Southeast,Distributors,47014.31
+2025-05-01,Southeast,Online,39111.76
+2025-05-01,Southeast,Retail Stores,29173.06
+2025-06-01,Midwest,Direct Sales,1710.14
+2025-06-01,Midwest,Distributors,2380.29
+2025-06-01,Midwest,Online,8664.28
+2025-06-01,Midwest,Retail Stores,13689.84
+2025-06-01,North,Direct Sales,4332.22
+2025-06-01,North,Distributors,13512.66
+2025-06-01,North,Online,20410.39
+2025-06-01,North,Retail Stores,10506.65
+2025-06-01,Northeast,Direct Sales,23289.49
+2025-06-01,Northeast,Distributors,20968.98
+2025-06-01,Northeast,Online,25365.1
+2025-06-01,Northeast,Retail Stores,16389.92
+2025-06-01,South,Direct Sales,11777.15
+2025-06-01,South,Distributors,15072.45
+2025-06-01,South,Online,31802.62
+2025-06-01,South,Retail Stores,12902.88
+2025-06-01,Southeast,Direct Sales,22758.55
+2025-06-01,Southeast,Distributors,25874.04
+2025-06-01,Southeast,Online,37158.67
+2025-06-01,Southeast,Retail Stores,9542.42
+2025-07-01,Midwest,Direct Sales,8057.42
+2025-07-01,Midwest,Distributors,5960.84
+2025-07-01,Midwest,Online,19258.47
+2025-07-01,Midwest,Retail Stores,19125.8
+2025-07-01,North,Direct Sales,3308.89
+2025-07-01,North,Distributors,3630.77
+2025-07-01,North,Online,17360.39
+2025-07-01,North,Retail Stores,7511.07
+2025-07-01,Northeast,Direct Sales,38245.08
+2025-07-01,Northeast,Distributors,14001.18
+2025-07-01,Northeast,Online,10877.58
+2025-07-01,Northeast,Retail Stores,8120.7
+2025-07-01,South,Direct Sales,10934.73
+2025-07-01,South,Distributors,9006.1
+2025-07-01,South,Online,19987.48
+2025-07-01,South,Retail Stores,19239.02
+2025-07-01,Southeast,Direct Sales,14038.99
+2025-07-01,Southeast,Distributors,21675.62
+2025-07-01,Southeast,Online,21851.67
+2025-07-01,Southeast,Retail Stores,17918.16
+2025-08-01,Midwest,Direct Sales,8264.09
+2025-08-01,Midwest,Distributors,34000.81
+2025-08-01,Midwest,Online,25185.12
+2025-08-01,Midwest,Retail Stores,1616.12
+2025-08-01,North,Direct Sales,8981.79
+2025-08-01,North,Distributors,11988.41
+2025-08-01,North,Online,10364.58
+2025-08-01,North,Retail Stores,11725.04
+2025-08-01,Northeast,Direct Sales,9018.98
+2025-08-01,Northeast,Distributors,22586.6
+2025-08-01,Northeast,Online,27329.37
+2025-08-01,Northeast,Retail Stores,11300.31
+2025-08-01,South,Direct Sales,15211.6
+2025-08-01,South,Distributors,19452.09
+2025-08-01,South,Online,13900.13
+2025-08-01,South,Retail Stores,13720.75
+2025-08-01,Southeast,Direct Sales,10832.48
+2025-08-01,Southeast,Distributors,20857.31
+2025-08-01,Southeast,Online,21968.82
+2025-08-01,Southeast,Retail Stores,32758.03
+2025-09-01,Midwest,Direct Sales,6032.26
+2025-09-01,Midwest,Distributors,2554.42
+2025-09-01,Midwest,Online,12633.36
+2025-09-01,Midwest,Retail Stores,9863.68
+2025-09-01,North,Direct Sales,2650.51
+2025-09-01,North,Distributors,10675.63
+2025-09-01,North,Online,5584.32
+2025-09-01,North,Retail Stores,11049.81
+2025-09-01,Northeast,Direct Sales,23234.32
+2025-09-01,Northeast,Distributors,27889.91
+2025-09-01,Northeast,Online,12622.13
+2025-09-01,Northeast,Retail Stores,25597.42
+2025-09-01,South,Direct Sales,13448.6
+2025-09-01,South,Distributors,40539.71
+2025-09-01,South,Online,23620.69
+2025-09-01,South,Retail Stores,22742.99
+2025-09-01,Southeast,Direct Sales,9925.99
+2025-09-01,Southeast,Distributors,25789.03
+2025-09-01,Southeast,Online,29354.84
+2025-09-01,Southeast,Retail Stores,25928.33
+2025-10-01,Midwest,Direct Sales,12361.02
+2025-10-01,Midwest,Distributors,3699.78
+2025-10-01,Midwest,Online,18568.77
+2025-10-01,Midwest,Retail Stores,24056.6
+2025-10-01,North,Direct Sales,3293.38
+2025-10-01,North,Distributors,8937.64
+2025-10-01,North,Online,10629.42
+2025-10-01,North,Retail Stores,13979.06
+2025-10-01,Northeast,Direct Sales,10938.57
+2025-10-01,Northeast,Distributors,37256.22
+2025-10-01,Northeast,Online,14151.26
+2025-10-01,Northeast,Retail Stores,8404.14
+2025-10-01,South,Direct Sales,13496.89
+2025-10-01,South,Distributors,36305.73
+2025-10-01,South,Online,21293.92
+2025-10-01,South,Retail Stores,25349.08
+2025-10-01,Southeast,Direct Sales,10893.3
+2025-10-01,Southeast,Distributors,17028.52
+2025-10-01,Southeast,Online,23865.7
+2025-10-01,Southeast,Retail Stores,19518.63
+2025-11-01,Midwest,Direct Sales,16802.57
+2025-11-01,Midwest,Distributors,17926.99
+2025-11-01,Midwest,Online,14283.37
+2025-11-01,Midwest,Retail Stores,6688.07
+2025-11-01,North,Direct Sales,9534.1
+2025-11-01,North,Distributors,21928.34
+2025-11-01,North,Online,31582.76
+2025-11-01,North,Retail Stores,11071.01
+2025-11-01,Northeast,Direct Sales,32734.51
+2025-11-01,Northeast,Distributors,29424.09
+2025-11-01,Northeast,Online,20855.56
+2025-11-01,Northeast,Retail Stores,8764.91
+2025-11-01,South,Direct Sales,20156.66
+2025-11-01,South,Distributors,17695.79
+2025-11-01,South,Online,31171.61
+2025-11-01,South,Retail Stores,35275.66
+2025-11-01,Southeast,Direct Sales,8071.48
+2025-11-01,Southeast,Distributors,26457.18
+2025-11-01,Southeast,Online,20603.84
+2025-11-01,Southeast,Retail Stores,49046.13
+2025-12-01,Midwest,Direct Sales,9882.74
+2025-12-01,Midwest,Distributors,13866.54
+2025-12-01,Midwest,Online,30358.74
+2025-12-01,Midwest,Retail Stores,16295.6
+2025-12-01,North,Direct Sales,6249.1
+2025-12-01,North,Distributors,13450.68
+2025-12-01,North,Online,37414.55
+2025-12-01,North,Retail Stores,12156.35
+2025-12-01,Northeast,Direct Sales,2588.09
+2025-12-01,Northeast,Distributors,1068.28
+2025-12-01,Northeast,Online,20905.98
+2025-12-01,Northeast,Retail Stores,14757.66
+2025-12-01,South,Direct Sales,24937.06
+2025-12-01,South,Distributors,36979.28
+2025-12-01,South,Online,21506.16
+2025-12-01,South,Retail Stores,12694.76
+2025-12-01,Southeast,Direct Sales,22860.86
+2025-12-01,Southeast,Distributors,36836.35
+2025-12-01,Southeast,Online,53723.24
+2025-12-01,Southeast,Retail Stores,37334.77

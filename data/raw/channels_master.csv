@@ -1,0 +1,5 @@
+Sales Channel,Volume Weight,Discount Bias,Cost Bias,Return Bias,Lead Days
+Online,0.34,0.016,1.0,0.014,2.2
+Retail Stores,0.28,0.01,0.998,0.01,3.4
+Distributors,0.2,0.024,1.005,0.006,5.0
+Direct Sales,0.18,0.007,0.993,0.004,2.8

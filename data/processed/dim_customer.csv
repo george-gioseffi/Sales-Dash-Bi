@@ -1,0 +1,258 @@
+CustomerKey,CustomerID,CustomerName,Segment,GeographyKey
+1,C0001,Core Distribution Ltd.,Small Business,11
+2,C0002,Patricia Carvalho,Consumer,6
+3,C0003,BlueWave Office Ltd.,Small Business,13
+4,C0004,Harbor Commerce S.A.,Enterprise,9
+5,C0005,Capital Logistics Ltd.,Small Business,15
+6,C0006,Vertex Commerce S.A.,Enterprise,7
+7,C0007,Thiago Martins,Consumer,5
+8,C0008,Julia Silva,Consumer,12
+9,C0009,Patricia Pereira,Consumer,8
+10,C0010,Beatriz Almeida,Consumer,12
+11,C0011,Julia Lima,Consumer,13
+12,C0012,Vertex Commerce Ltd.,Small Business,10
+13,C0013,Core Solutions Ltd.,Small Business,13
+14,C0014,Eduardo Martins,Consumer,13
+15,C0015,Alice Carvalho,Consumer,13
+16,C0016,Nova Commerce Ltd.,Small Business,8
+17,C0017,Vertex Trading Ltd.,Small Business,10
+18,C0018,Core Office Ltd.,Small Business,10
+19,C0019,Capital Distribution Ltd.,Small Business,9
+20,C0020,Giovana Costa,Consumer,14
+21,C0021,Thiago Silva,Consumer,12
+22,C0022,Vanessa Lima,Consumer,15
+23,C0023,TrueNorth Group Ltd.,Small Business,11
+24,C0024,Giovana Oliveira,Consumer,2
+25,C0025,Patricia Martins,Consumer,13
+26,C0026,Vanessa Oliveira,Consumer,11
+27,C0027,Harbor Trading Ltd.,Small Business,10
+28,C0028,Sterling Distribution Ltd.,Small Business,10
+29,C0029,Vanessa Almeida,Consumer,5
+30,C0030,Fernanda Carvalho,Consumer,6
+31,C0031,Nova Retail Ltd.,Small Business,12
+32,C0032,Lighthouse Trading S.A.,Enterprise,10
+33,C0033,Daniel Costa,Consumer,9
+34,C0034,Golden Solutions Ltd.,Small Business,8
+35,C0035,Golden Markets Ltd.,Small Business,7
+36,C0036,Daniel Almeida,Consumer,15
+37,C0037,Caio Oliveira,Consumer,13
+38,C0038,Yasmin Gomes,Consumer,5
+39,C0039,Alice Oliveira,Consumer,7
+40,C0040,Prime Retail Ltd.,Small Business,3
+41,C0041,Sterling Distribution Ltd.,Small Business,11
+42,C0042,Sterling Services Ltd.,Small Business,14
+43,C0043,Aurora Supply Ltd.,Small Business,10
+44,C0044,Nova Office S.A.,Enterprise,13
+45,C0045,Fernanda Souza,Consumer,7
+46,C0046,Summit Distribution Ltd.,Small Business,2
+47,C0047,Aurora Distribution S.A.,Enterprise,15
+48,C0048,Julia Araujo,Consumer,2
+49,C0049,Fernanda Ribeiro,Consumer,5
+50,C0050,Daniel Oliveira,Consumer,5
+51,C0051,Yasmin Oliveira,Consumer,12
+52,C0052,Atlas Logistics Ltd.,Small Business,3
+53,C0053,TrueNorth Supply Ltd.,Small Business,15
+54,C0054,Patricia Carvalho,Consumer,14
+55,C0055,Eduardo Silva,Consumer,6
+56,C0056,Lighthouse Trading S.A.,Enterprise,15
+57,C0057,Atlas Services Ltd.,Small Business,1
+58,C0058,BlueWave Office Ltd.,Small Business,4
+59,C0059,Eduardo Lima,Consumer,15
+60,C0060,Nova Office Ltd.,Small Business,15
+61,C0061,Atlas Logistics Ltd.,Small Business,9
+62,C0062,Core Distribution Ltd.,Small Business,8
+63,C0063,Helena Rocha,Consumer,4
+64,C0064,Summit Group Ltd.,Small Business,7
+65,C0065,Alice Gomes,Consumer,5
+66,C0066,Lighthouse Distribution Ltd.,Small Business,14
+67,C0067,Lucas Oliveira,Consumer,4
+68,C0068,Golden Commerce S.A.,Enterprise,12
+69,C0069,Sofia Souza,Consumer,15
+70,C0070,Rafael Ribeiro,Consumer,12
+71,C0071,Harbor Distribution S.A.,Enterprise,7
+72,C0072,Yasmin Fernandes,Consumer,9
+73,C0073,Atlas Group Ltd.,Small Business,15
+74,C0074,Pioneer Retail S.A.,Enterprise,13
+75,C0075,Core Services Ltd.,Small Business,15
+76,C0076,Caio Gomes,Consumer,14
+77,C0077,Sofia Silva,Consumer,15
+78,C0078,Harbor Commerce Ltd.,Small Business,8
+79,C0079,TrueNorth Logistics Ltd.,Small Business,1
+80,C0080,Eduardo Souza,Consumer,13
+81,C0081,Nova Retail Ltd.,Small Business,10
+82,C0082,Caio Santos,Consumer,12
+83,C0083,Nicolas Santos,Consumer,6
+84,C0084,Sterling Services S.A.,Enterprise,4
+85,C0085,Union Commerce Ltd.,Small Business,8
+86,C0086,Karen Rocha,Consumer,10
+87,C0087,Golden Markets Ltd.,Small Business,12
+88,C0088,Julia Oliveira,Consumer,14
+89,C0089,Karen Pereira,Consumer,11
+90,C0090,Nicolas Souza,Consumer,10
+91,C0091,Core Solutions S.A.,Enterprise,4
+92,C0092,Sofia Almeida,Consumer,12
+93,C0093,TrueNorth Markets S.A.,Enterprise,11
+94,C0094,Eduardo Gomes,Consumer,7
+95,C0095,Sterling Markets S.A.,Enterprise,13
+96,C0096,Beatriz Almeida,Consumer,9
+97,C0097,Daniel Araujo,Consumer,6
+98,C0098,TrueNorth Group Ltd.,Small Business,3
+99,C0099,Beatriz Santos,Consumer,8
+100,C0100,Union Retail Ltd.,Small Business,15
+101,C0101,Lighthouse Commerce Ltd.,Small Business,11
+102,C0102,Union Distribution S.A.,Enterprise,10
+103,C0103,Patricia Santos,Consumer,13
+104,C0104,TrueNorth Trading Ltd.,Small Business,12
+105,C0105,Sofia Carvalho,Consumer,3
+106,C0106,Giovana Lima,Consumer,11
+107,C0107,Lucas Costa,Consumer,4
+108,C0108,Lucas Rocha,Consumer,7
+109,C0109,Vertex Supply Ltd.,Small Business,12
+110,C0110,Sterling Solutions S.A.,Enterprise,8
+111,C0111,Prime Distribution S.A.,Enterprise,7
+112,C0112,Aurora Distribution Ltd.,Small Business,9
+113,C0113,Sterling Solutions S.A.,Enterprise,14
+114,C0114,Pioneer Business Ltd.,Small Business,14
+115,C0115,Alice Fernandes,Consumer,6
+116,C0116,Caio Ribeiro,Consumer,1
+117,C0117,Union Distribution Ltd.,Small Business,8
+118,C0118,Atlas Solutions S.A.,Enterprise,15
+119,C0119,Aurora Logistics Ltd.,Small Business,15
+120,C0120,Aurora Distribution Ltd.,Small Business,15
+121,C0121,Sterling Trading Ltd.,Small Business,1
+122,C0122,TrueNorth Group S.A.,Enterprise,13
+123,C0123,Core Logistics Ltd.,Small Business,8
+124,C0124,Caio Martins,Consumer,15
+125,C0125,Prime Logistics Ltd.,Small Business,9
+126,C0126,Daniel Silva,Consumer,7
+127,C0127,Lighthouse Markets Ltd.,Small Business,4
+128,C0128,Alice Souza,Consumer,7
+129,C0129,Summit Distribution Ltd.,Small Business,13
+130,C0130,Julia Gomes,Consumer,5
+131,C0131,BlueWave Distribution Ltd.,Small Business,8
+132,C0132,Union Office S.A.,Enterprise,14
+133,C0133,Vertex Distribution Ltd.,Small Business,6
+134,C0134,BlueWave Distribution Ltd.,Small Business,12
+135,C0135,Beatriz Lima,Consumer,15
+136,C0136,Marina Rocha,Consumer,9
+137,C0137,Vanessa Gomes,Consumer,14
+138,C0138,Igor Almeida,Consumer,15
+139,C0139,Helena Gomes,Consumer,9
+140,C0140,Golden Markets Ltd.,Small Business,9
+141,C0141,Atlas Solutions Ltd.,Small Business,10
+142,C0142,Capital Commerce Ltd.,Small Business,12
+143,C0143,Core Office S.A.,Enterprise,6
+144,C0144,Summit Office Ltd.,Small Business,1
+145,C0145,Aurora Retail Ltd.,Small Business,13
+146,C0146,Nova Office S.A.,Enterprise,15
+147,C0147,Beatriz Carvalho,Consumer,14
+148,C0148,Thiago Costa,Consumer,3
+149,C0149,Nicolas Santos,Consumer,9
+150,C0150,Yasmin Costa,Consumer,4
+151,C0151,Caio Martins,Consumer,8
+152,C0152,Alice Martins,Consumer,9
+153,C0153,Lighthouse Distribution Ltd.,Small Business,15
+154,C0154,Capital Trading S.A.,Enterprise,6
+155,C0155,Capital Solutions S.A.,Enterprise,13
+156,C0156,Rafael Silva,Consumer,13
+157,C0157,Nova Trading Ltd.,Small Business,14
+158,C0158,Atlas Trading S.A.,Enterprise,14
+159,C0159,Lighthouse Solutions Ltd.,Small Business,7
+160,C0160,Sofia Araujo,Consumer,13
+161,C0161,TrueNorth Commerce Ltd.,Small Business,9
+162,C0162,Karen Fernandes,Consumer,12
+163,C0163,Capital Commerce S.A.,Enterprise,11
+164,C0164,Pioneer Services S.A.,Enterprise,11
+165,C0165,Union Solutions S.A.,Enterprise,14
+166,C0166,Harbor Group Ltd.,Small Business,15
+167,C0167,Aurora Supply Ltd.,Small Business,13
+168,C0168,Vanessa Martins,Consumer,14
+169,C0169,Lucas Silva,Consumer,9
+170,C0170,Marina Martins,Consumer,9
+171,C0171,Sterling Commerce Ltd.,Small Business,12
+172,C0172,Sterling Markets S.A.,Enterprise,7
+173,C0173,Capital Business S.A.,Enterprise,13
+174,C0174,Golden Solutions Ltd.,Small Business,12
+175,C0175,Core Business S.A.,Enterprise,13
+176,C0176,Prime Services Ltd.,Small Business,15
+177,C0177,Pioneer Group Ltd.,Small Business,10
+178,C0178,Harbor Retail Ltd.,Small Business,4
+179,C0179,Karen Araujo,Consumer,12
+180,C0180,Aurora Retail S.A.,Enterprise,1
+181,C0181,Core Business Ltd.,Small Business,1
+182,C0182,Pioneer Trading S.A.,Enterprise,13
+183,C0183,Aurora Group Ltd.,Small Business,2
+184,C0184,TrueNorth Supply Ltd.,Small Business,14
+185,C0185,Atlas Supply S.A.,Enterprise,7
+186,C0186,Vanessa Lima,Consumer,3
+187,C0187,Nova Office Ltd.,Small Business,10
+188,C0188,Nicolas Pereira,Consumer,13
+189,C0189,Sterling Markets Ltd.,Small Business,2
+190,C0190,Caio Gomes,Consumer,15
+191,C0191,Union Retail S.A.,Enterprise,8
+192,C0192,Summit Distribution S.A.,Enterprise,11
+193,C0193,Eduardo Gomes,Consumer,14
+194,C0194,Pioneer Supply Ltd.,Small Business,7
+195,C0195,Rafael Almeida,Consumer,6
+196,C0196,Helena Souza,Consumer,2
+197,C0197,Karen Rocha,Consumer,4
+198,C0198,Aurora Services Ltd.,Small Business,8
+199,C0199,Daniel Pereira,Consumer,15
+200,C0200,Fernanda Carvalho,Consumer,12
+201,C0201,BlueWave Group Ltd.,Small Business,12
+202,C0202,Golden Logistics Ltd.,Small Business,3
+203,C0203,Capital Services Ltd.,Small Business,15
+204,C0204,TrueNorth Office Ltd.,Small Business,4
+205,C0205,Sterling Business Ltd.,Small Business,13
+206,C0206,Lucas Silva,Consumer,15
+207,C0207,Summit Retail Ltd.,Small Business,12
+208,C0208,Rafael Silva,Consumer,10
+209,C0209,Nova Solutions Ltd.,Small Business,13
+210,C0210,Fernanda Santos,Consumer,14
+211,C0211,Capital Services S.A.,Enterprise,15
+212,C0212,Lucas Carvalho,Consumer,11
+213,C0213,Summit Markets S.A.,Enterprise,15
+214,C0214,Summit Trading Ltd.,Small Business,7
+215,C0215,Alice Almeida,Consumer,5
+216,C0216,Union Retail Ltd.,Small Business,14
+217,C0217,Alice Fernandes,Consumer,4
+218,C0218,Patricia Ribeiro,Consumer,15
+219,C0219,Lucas Martins,Consumer,10
+220,C0220,Karen Ribeiro,Consumer,3
+221,C0221,Thiago Lima,Consumer,3
+222,C0222,Sterling Markets S.A.,Enterprise,10
+223,C0223,Core Distribution S.A.,Enterprise,12
+224,C0224,Nova Trading S.A.,Enterprise,7
+225,C0225,Beatriz Araujo,Consumer,13
+226,C0226,Patricia Oliveira,Consumer,15
+227,C0227,Lighthouse Commerce Ltd.,Small Business,7
+228,C0228,Atlas Distribution S.A.,Enterprise,7
+229,C0229,Daniel Carvalho,Consumer,7
+230,C0230,Pioneer Retail S.A.,Enterprise,14
+231,C0231,Vertex Office S.A.,Enterprise,9
+232,C0232,Vertex Markets S.A.,Enterprise,12
+233,C0233,Lucas Santos,Consumer,14
+234,C0234,Atlas Retail Ltd.,Small Business,1
+235,C0235,Core Logistics Ltd.,Small Business,13
+236,C0236,Capital Supply Ltd.,Small Business,10
+237,C0237,Union Services Ltd.,Small Business,8
+238,C0238,Pioneer Office S.A.,Enterprise,12
+239,C0239,Karen Costa,Consumer,2
+240,C0240,Nicolas Pereira,Consumer,2
+241,C0241,Yasmin Fernandes,Consumer,1
+242,C0242,Patricia Ribeiro,Consumer,12
+243,C0243,Beatriz Carvalho,Consumer,12
+244,C0244,Union Solutions Ltd.,Small Business,3
+245,C0245,Core Commerce S.A.,Enterprise,1
+246,C0246,Patricia Costa,Consumer,14
+247,C0247,TrueNorth Business S.A.,Enterprise,10
+248,C0248,Summit Supply S.A.,Enterprise,11
+249,C0249,Aurora Markets Ltd.,Small Business,11
+250,C0250,Atlas Supply S.A.,Enterprise,10
+251,C0251,Giovana Oliveira,Consumer,14
+252,C0252,Sterling Business Ltd.,Small Business,15
+253,C0253,Lucas Fernandes,Consumer,7
+254,C0254,Daniel Almeida,Consumer,13
+255,C0255,Vertex Retail Ltd.,Small Business,14
+256,C0256,Golden Business Ltd.,Small Business,4
+257,C0257,Caio Lima,Consumer,14

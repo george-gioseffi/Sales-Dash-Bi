@@ -1,0 +1,258 @@
+Customer ID,Customer Name,Segment,Country,Region,State,City
+C0001,Core Distribution Ltd.,Small Business,Brazil,South,RS,Porto Alegre
+C0002,Patricia Carvalho,Consumer,Brazil,North,TO,Palmas
+C0003,BlueWave Office Ltd.,Small Business,Brazil,Southeast,MG,Belo Horizonte
+C0004,Harbor Commerce S.A.,Enterprise,Brazil,Northeast,PE,Recife
+C0005,Capital Logistics Ltd.,Small Business,Brazil,Southeast,SP,Sao Paulo
+C0006,Vertex Commerce S.A.,Enterprise,Brazil,Northeast,BA,Salvador
+C0007,Thiago Martins,Consumer,Brazil,North,PA,Belem
+C0008,Julia Silva,Consumer,Brazil,South,SC,Florianopolis
+C0009,Patricia Pereira,Consumer,Brazil,Northeast,CE,Fortaleza
+C0010,Beatriz Almeida,Consumer,Brazil,South,SC,Florianopolis
+C0011,Julia Lima,Consumer,Brazil,Southeast,MG,Belo Horizonte
+C0012,Vertex Commerce Ltd.,Small Business,Brazil,South,PR,Curitiba
+C0013,Core Solutions Ltd.,Small Business,Brazil,Southeast,MG,Belo Horizonte
+C0014,Eduardo Martins,Consumer,Brazil,Southeast,MG,Belo Horizonte
+C0015,Alice Carvalho,Consumer,Brazil,Southeast,MG,Belo Horizonte
+C0016,Nova Commerce Ltd.,Small Business,Brazil,Northeast,CE,Fortaleza
+C0017,Vertex Trading Ltd.,Small Business,Brazil,South,PR,Curitiba
+C0018,Core Office Ltd.,Small Business,Brazil,South,PR,Curitiba
+C0019,Capital Distribution Ltd.,Small Business,Brazil,Northeast,PE,Recife
+C0020,Giovana Costa,Consumer,Brazil,Southeast,RJ,Rio de Janeiro
+C0021,Thiago Silva,Consumer,Brazil,South,SC,Florianopolis
+C0022,Vanessa Lima,Consumer,Brazil,Southeast,SP,Sao Paulo
+C0023,TrueNorth Group Ltd.,Small Business,Brazil,South,RS,Porto Alegre
+C0024,Giovana Oliveira,Consumer,Brazil,Midwest,GO,Goiania
+C0025,Patricia Martins,Consumer,Brazil,Southeast,MG,Belo Horizonte
+C0026,Vanessa Oliveira,Consumer,Brazil,South,RS,Porto Alegre
+C0027,Harbor Trading Ltd.,Small Business,Brazil,South,PR,Curitiba
+C0028,Sterling Distribution Ltd.,Small Business,Brazil,South,PR,Curitiba
+C0029,Vanessa Almeida,Consumer,Brazil,North,PA,Belem
+C0030,Fernanda Carvalho,Consumer,Brazil,North,TO,Palmas
+C0031,Nova Retail Ltd.,Small Business,Brazil,South,SC,Florianopolis
+C0032,Lighthouse Trading S.A.,Enterprise,Brazil,South,PR,Curitiba
+C0033,Daniel Costa,Consumer,Brazil,Northeast,PE,Recife
+C0034,Golden Solutions Ltd.,Small Business,Brazil,Northeast,CE,Fortaleza
+C0035,Golden Markets Ltd.,Small Business,Brazil,Northeast,BA,Salvador
+C0036,Daniel Almeida,Consumer,Brazil,Southeast,SP,Sao Paulo
+C0037,Caio Oliveira,Consumer,Brazil,Southeast,MG,Belo Horizonte
+C0038,Yasmin Gomes,Consumer,Brazil,North,PA,Belem
+C0039,Alice Oliveira,Consumer,Brazil,Northeast,BA,Salvador
+C0040,Prime Retail Ltd.,Small Business,Brazil,Midwest,MT,Cuiaba
+C0041,Sterling Distribution Ltd.,Small Business,Brazil,South,RS,Porto Alegre
+C0042,Sterling Services Ltd.,Small Business,Brazil,Southeast,RJ,Rio de Janeiro
+C0043,Aurora Supply Ltd.,Small Business,Brazil,South,PR,Curitiba
+C0044,Nova Office S.A.,Enterprise,Brazil,Southeast,MG,Belo Horizonte
+C0045,Fernanda Souza,Consumer,Brazil,Northeast,BA,Salvador
+C0046,Summit Distribution Ltd.,Small Business,Brazil,Midwest,GO,Goiania
+C0047,Aurora Distribution S.A.,Enterprise,Brazil,Southeast,SP,Sao Paulo
+C0048,Julia Araujo,Consumer,Brazil,Midwest,GO,Goiania
+C0049,Fernanda Ribeiro,Consumer,Brazil,North,PA,Belem
+C0050,Daniel Oliveira,Consumer,Brazil,North,PA,Belem
+C0051,Yasmin Oliveira,Consumer,Brazil,South,SC,Florianopolis
+C0052,Atlas Logistics Ltd.,Small Business,Brazil,Midwest,MT,Cuiaba
+C0053,TrueNorth Supply Ltd.,Small Business,Brazil,Southeast,SP,Sao Paulo
+C0054,Patricia Carvalho,Consumer,Brazil,Southeast,RJ,Rio de Janeiro
+C0055,Eduardo Silva,Consumer,Brazil,North,TO,Palmas
+C0056,Lighthouse Trading S.A.,Enterprise,Brazil,Southeast,SP,Sao Paulo
+C0057,Atlas Services Ltd.,Small Business,Brazil,Midwest,DF,Brasilia
+C0058,BlueWave Office Ltd.,Small Business,Brazil,North,AM,Manaus
+C0059,Eduardo Lima,Consumer,Brazil,Southeast,SP,Sao Paulo
+C0060,Nova Office Ltd.,Small Business,Brazil,Southeast,SP,Sao Paulo
+C0061,Atlas Logistics Ltd.,Small Business,Brazil,Northeast,PE,Recife
+C0062,Core Distribution Ltd.,Small Business,Brazil,Northeast,CE,Fortaleza
+C0063,Helena Rocha,Consumer,Brazil,North,AM,Manaus
+C0064,Summit Group Ltd.,Small Business,Brazil,Northeast,BA,Salvador
+C0065,Alice Gomes,Consumer,Brazil,North,PA,Belem
+C0066,Lighthouse Distribution Ltd.,Small Business,Brazil,Southeast,RJ,Rio de Janeiro
+C0067,Lucas Oliveira,Consumer,Brazil,North,AM,Manaus
+C0068,Golden Commerce S.A.,Enterprise,Brazil,South,SC,Florianopolis
+C0069,Sofia Souza,Consumer,Brazil,Southeast,SP,Sao Paulo
+C0070,Rafael Ribeiro,Consumer,Brazil,South,SC,Florianopolis
+C0071,Harbor Distribution S.A.,Enterprise,Brazil,Northeast,BA,Salvador
+C0072,Yasmin Fernandes,Consumer,Brazil,Northeast,PE,Recife
+C0073,Atlas Group Ltd.,Small Business,Brazil,Southeast,SP,Sao Paulo
+C0074,Pioneer Retail S.A.,Enterprise,Brazil,Southeast,MG,Belo Horizonte
+C0075,Core Services Ltd.,Small Business,Brazil,Southeast,SP,Sao Paulo
+C0076,Caio Gomes,Consumer,Brazil,Southeast,RJ,Rio de Janeiro
+C0077,Sofia Silva,Consumer,Brazil,Southeast,SP,Sao Paulo
+C0078,Harbor Commerce Ltd.,Small Business,Brazil,Northeast,CE,Fortaleza
+C0079,TrueNorth Logistics Ltd.,Small Business,Brazil,Midwest,DF,Brasilia
+C0080,Eduardo Souza,Consumer,Brazil,Southeast,MG,Belo Horizonte
+C0081,Nova Retail Ltd.,Small Business,Brazil,South,PR,Curitiba
+C0082,Caio Santos,Consumer,Brazil,South,SC,Florianopolis
+C0083,Nicolas Santos,Consumer,Brazil,North,TO,Palmas
+C0084,Sterling Services S.A.,Enterprise,Brazil,North,AM,Manaus
+C0085,Union Commerce Ltd.,Small Business,Brazil,Northeast,CE,Fortaleza
+C0086,Karen Rocha,Consumer,Brazil,South,PR,Curitiba
+C0087,Golden Markets Ltd.,Small Business,Brazil,South,SC,Florianopolis
+C0088,Julia Oliveira,Consumer,Brazil,Southeast,RJ,Rio de Janeiro
+C0089,Karen Pereira,Consumer,Brazil,South,RS,Porto Alegre
+C0090,Nicolas Souza,Consumer,Brazil,South,PR,Curitiba
+C0091,Core Solutions S.A.,Enterprise,Brazil,North,AM,Manaus
+C0092,Sofia Almeida,Consumer,Brazil,South,SC,Florianopolis
+C0093,TrueNorth Markets S.A.,Enterprise,Brazil,South,RS,Porto Alegre
+C0094,Eduardo Gomes,Consumer,Brazil,Northeast,BA,Salvador
+C0095,Sterling Markets S.A.,Enterprise,Brazil,Southeast,MG,Belo Horizonte
+C0096,Beatriz Almeida,Consumer,Brazil,Northeast,PE,Recife
+C0097,Daniel Araujo,Consumer,Brazil,North,TO,Palmas
+C0098,TrueNorth Group Ltd.,Small Business,Brazil,Midwest,MT,Cuiaba
+C0099,Beatriz Santos,Consumer,Brazil,Northeast,CE,Fortaleza
+C0100,Union Retail Ltd.,Small Business,Brazil,Southeast,SP,Sao Paulo
+C0101,Lighthouse Commerce Ltd.,Small Business,Brazil,South,RS,Porto Alegre
+C0102,Union Distribution S.A.,Enterprise,Brazil,South,PR,Curitiba
+C0103,Patricia Santos,Consumer,Brazil,Southeast,MG,Belo Horizonte
+C0104,TrueNorth Trading Ltd.,Small Business,Brazil,South,SC,Florianopolis
+C0105,Sofia Carvalho,Consumer,Brazil,Midwest,MT,Cuiaba
+C0106,Giovana Lima,Consumer,Brazil,South,RS,Porto Alegre
+C0107,Lucas Costa,Consumer,Brazil,North,AM,Manaus
+C0108,Lucas Rocha,Consumer,Brazil,Northeast,BA,Salvador
+C0109,Vertex Supply Ltd.,Small Business,Brazil,South,SC,Florianopolis
+C0110,Sterling Solutions S.A.,Enterprise,Brazil,Northeast,CE,Fortaleza
+C0111,Prime Distribution S.A.,Enterprise,Brazil,Northeast,BA,Salvador
+C0112,Aurora Distribution Ltd.,Small Business,Brazil,Northeast,PE,Recife
+C0113,Sterling Solutions S.A.,Enterprise,Brazil,Southeast,RJ,Rio de Janeiro
+C0114,Pioneer Business Ltd.,Small Business,Brazil,Southeast,RJ,Rio de Janeiro
+C0115,Alice Fernandes,Consumer,Brazil,North,TO,Palmas
+C0116,Caio Ribeiro,Consumer,Brazil,Midwest,DF,Brasilia
+C0117,Union Distribution Ltd.,Small Business,Brazil,Northeast,CE,Fortaleza
+C0118,Atlas Solutions S.A.,Enterprise,Brazil,Southeast,SP,Sao Paulo
+C0119,Aurora Logistics Ltd.,Small Business,Brazil,Southeast,SP,Sao Paulo
+C0120,Aurora Distribution Ltd.,Small Business,Brazil,Southeast,SP,Sao Paulo
+C0121,Sterling Trading Ltd.,Small Business,Brazil,Midwest,DF,Brasilia
+C0122,TrueNorth Group S.A.,Enterprise,Brazil,Southeast,MG,Belo Horizonte
+C0123,Core Logistics Ltd.,Small Business,Brazil,Northeast,CE,Fortaleza
+C0124,Caio Martins,Consumer,Brazil,Southeast,SP,Sao Paulo
+C0125,Prime Logistics Ltd.,Small Business,Brazil,Northeast,PE,Recife
+C0126,Daniel Silva,Consumer,Brazil,Northeast,BA,Salvador
+C0127,Lighthouse Markets Ltd.,Small Business,Brazil,North,AM,Manaus
+C0128,Alice Souza,Consumer,Brazil,Northeast,BA,Salvador
+C0129,Summit Distribution Ltd.,Small Business,Brazil,Southeast,MG,Belo Horizonte
+C0130,Julia Gomes,Consumer,Brazil,North,PA,Belem
+C0131,BlueWave Distribution Ltd.,Small Business,Brazil,Northeast,CE,Fortaleza
+C0132,Union Office S.A.,Enterprise,Brazil,Southeast,RJ,Rio de Janeiro
+C0133,Vertex Distribution Ltd.,Small Business,Brazil,North,TO,Palmas
+C0134,BlueWave Distribution Ltd.,Small Business,Brazil,South,SC,Florianopolis
+C0135,Beatriz Lima,Consumer,Brazil,Southeast,SP,Sao Paulo
+C0136,Marina Rocha,Consumer,Brazil,Northeast,PE,Recife
+C0137,Vanessa Gomes,Consumer,Brazil,Southeast,RJ,Rio de Janeiro
+C0138,Igor Almeida,Consumer,Brazil,Southeast,SP,Sao Paulo
+C0139,Helena Gomes,Consumer,Brazil,Northeast,PE,Recife
+C0140,Golden Markets Ltd.,Small Business,Brazil,Northeast,PE,Recife
+C0141,Atlas Solutions Ltd.,Small Business,Brazil,South,PR,Curitiba
+C0142,Capital Commerce Ltd.,Small Business,Brazil,South,SC,Florianopolis
+C0143,Core Office S.A.,Enterprise,Brazil,North,TO,Palmas
+C0144,Summit Office Ltd.,Small Business,Brazil,Midwest,DF,Brasilia
+C0145,Aurora Retail Ltd.,Small Business,Brazil,Southeast,MG,Belo Horizonte
+C0146,Nova Office S.A.,Enterprise,Brazil,Southeast,SP,Sao Paulo
+C0147,Beatriz Carvalho,Consumer,Brazil,Southeast,RJ,Rio de Janeiro
+C0148,Thiago Costa,Consumer,Brazil,Midwest,MT,Cuiaba
+C0149,Nicolas Santos,Consumer,Brazil,Northeast,PE,Recife
+C0150,Yasmin Costa,Consumer,Brazil,North,AM,Manaus
+C0151,Caio Martins,Consumer,Brazil,Northeast,CE,Fortaleza
+C0152,Alice Martins,Consumer,Brazil,Northeast,PE,Recife
+C0153,Lighthouse Distribution Ltd.,Small Business,Brazil,Southeast,SP,Sao Paulo
+C0154,Capital Trading S.A.,Enterprise,Brazil,North,TO,Palmas
+C0155,Capital Solutions S.A.,Enterprise,Brazil,Southeast,MG,Belo Horizonte
+C0156,Rafael Silva,Consumer,Brazil,Southeast,MG,Belo Horizonte
+C0157,Nova Trading Ltd.,Small Business,Brazil,Southeast,RJ,Rio de Janeiro
+C0158,Atlas Trading S.A.,Enterprise,Brazil,Southeast,RJ,Rio de Janeiro
+C0159,Lighthouse Solutions Ltd.,Small Business,Brazil,Northeast,BA,Salvador
+C0160,Sofia Araujo,Consumer,Brazil,Southeast,MG,Belo Horizonte
+C0161,TrueNorth Commerce Ltd.,Small Business,Brazil,Northeast,PE,Recife
+C0162,Karen Fernandes,Consumer,Brazil,South,SC,Florianopolis
+C0163,Capital Commerce S.A.,Enterprise,Brazil,South,RS,Porto Alegre
+C0164,Pioneer Services S.A.,Enterprise,Brazil,South,RS,Porto Alegre
+C0165,Union Solutions S.A.,Enterprise,Brazil,Southeast,RJ,Rio de Janeiro
+C0166,Harbor Group Ltd.,Small Business,Brazil,Southeast,SP,Sao Paulo
+C0167,Aurora Supply Ltd.,Small Business,Brazil,Southeast,MG,Belo Horizonte
+C0168,Vanessa Martins,Consumer,Brazil,Southeast,RJ,Rio de Janeiro
+C0169,Lucas Silva,Consumer,Brazil,Northeast,PE,Recife
+C0170,Marina Martins,Consumer,Brazil,Northeast,PE,Recife
+C0171,Sterling Commerce Ltd.,Small Business,Brazil,South,SC,Florianopolis
+C0172,Sterling Markets S.A.,Enterprise,Brazil,Northeast,BA,Salvador
+C0173,Capital Business S.A.,Enterprise,Brazil,Southeast,MG,Belo Horizonte
+C0174,Golden Solutions Ltd.,Small Business,Brazil,South,SC,Florianopolis
+C0175,Core Business S.A.,Enterprise,Brazil,Southeast,MG,Belo Horizonte
+C0176,Prime Services Ltd.,Small Business,Brazil,Southeast,SP,Sao Paulo
+C0177,Pioneer Group Ltd.,Small Business,Brazil,South,PR,Curitiba
+C0178,Harbor Retail Ltd.,Small Business,Brazil,North,AM,Manaus
+C0179,Karen Araujo,Consumer,Brazil,South,SC,Florianopolis
+C0180,Aurora Retail S.A.,Enterprise,Brazil,Midwest,DF,Brasilia
+C0181,Core Business Ltd.,Small Business,Brazil,Midwest,DF,Brasilia
+C0182,Pioneer Trading S.A.,Enterprise,Brazil,Southeast,MG,Belo Horizonte
+C0183,Aurora Group Ltd.,Small Business,Brazil,Midwest,GO,Goiania
+C0184,TrueNorth Supply Ltd.,Small Business,Brazil,Southeast,RJ,Rio de Janeiro
+C0185,Atlas Supply S.A.,Enterprise,Brazil,Northeast,BA,Salvador
+C0186,Vanessa Lima,Consumer,Brazil,Midwest,MT,Cuiaba
+C0187,Nova Office Ltd.,Small Business,Brazil,South,PR,Curitiba
+C0188,Nicolas Pereira,Consumer,Brazil,Southeast,MG,Belo Horizonte
+C0189,Sterling Markets Ltd.,Small Business,Brazil,Midwest,GO,Goiania
+C0190,Caio Gomes,Consumer,Brazil,Southeast,SP,Sao Paulo
+C0191,Union Retail S.A.,Enterprise,Brazil,Northeast,CE,Fortaleza
+C0192,Summit Distribution S.A.,Enterprise,Brazil,South,RS,Porto Alegre
+C0193,Eduardo Gomes,Consumer,Brazil,Southeast,RJ,Rio de Janeiro
+C0194,Pioneer Supply Ltd.,Small Business,Brazil,Northeast,BA,Salvador
+C0195,Rafael Almeida,Consumer,Brazil,North,TO,Palmas
+C0196,Helena Souza,Consumer,Brazil,Midwest,GO,Goiania
+C0197,Karen Rocha,Consumer,Brazil,North,AM,Manaus
+C0198,Aurora Services Ltd.,Small Business,Brazil,Northeast,CE,Fortaleza
+C0199,Daniel Pereira,Consumer,Brazil,Southeast,SP,Sao Paulo
+C0200,Fernanda Carvalho,Consumer,Brazil,South,SC,Florianopolis
+C0201,BlueWave Group Ltd.,Small Business,Brazil,South,SC,Florianopolis
+C0202,Golden Logistics Ltd.,Small Business,Brazil,Midwest,MT,Cuiaba
+C0203,Capital Services Ltd.,Small Business,Brazil,Southeast,SP,Sao Paulo
+C0204,TrueNorth Office Ltd.,Small Business,Brazil,North,AM,Manaus
+C0205,Sterling Business Ltd.,Small Business,Brazil,Southeast,MG,Belo Horizonte
+C0206,Lucas Silva,Consumer,Brazil,Southeast,SP,Sao Paulo
+C0207,Summit Retail Ltd.,Small Business,Brazil,South,SC,Florianopolis
+C0208,Rafael Silva,Consumer,Brazil,South,PR,Curitiba
+C0209,Nova Solutions Ltd.,Small Business,Brazil,Southeast,MG,Belo Horizonte
+C0210,Fernanda Santos,Consumer,Brazil,Southeast,RJ,Rio de Janeiro
+C0211,Capital Services S.A.,Enterprise,Brazil,Southeast,SP,Sao Paulo
+C0212,Lucas Carvalho,Consumer,Brazil,South,RS,Porto Alegre
+C0213,Summit Markets S.A.,Enterprise,Brazil,Southeast,SP,Sao Paulo
+C0214,Summit Trading Ltd.,Small Business,Brazil,Northeast,BA,Salvador
+C0215,Alice Almeida,Consumer,Brazil,North,PA,Belem
+C0216,Union Retail Ltd.,Small Business,Brazil,Southeast,RJ,Rio de Janeiro
+C0217,Alice Fernandes,Consumer,Brazil,North,AM,Manaus
+C0218,Patricia Ribeiro,Consumer,Brazil,Southeast,SP,Sao Paulo
+C0219,Lucas Martins,Consumer,Brazil,South,PR,Curitiba
+C0220,Karen Ribeiro,Consumer,Brazil,Midwest,MT,Cuiaba
+C0221,Thiago Lima,Consumer,Brazil,Midwest,MT,Cuiaba
+C0222,Sterling Markets S.A.,Enterprise,Brazil,South,PR,Curitiba
+C0223,Core Distribution S.A.,Enterprise,Brazil,South,SC,Florianopolis
+C0224,Nova Trading S.A.,Enterprise,Brazil,Northeast,BA,Salvador
+C0225,Beatriz Araujo,Consumer,Brazil,Southeast,MG,Belo Horizonte
+C0226,Patricia Oliveira,Consumer,Brazil,Southeast,SP,Sao Paulo
+C0227,Lighthouse Commerce Ltd.,Small Business,Brazil,Northeast,BA,Salvador
+C0228,Atlas Distribution S.A.,Enterprise,Brazil,Northeast,BA,Salvador
+C0229,Daniel Carvalho,Consumer,Brazil,Northeast,BA,Salvador
+C0230,Pioneer Retail S.A.,Enterprise,Brazil,Southeast,RJ,Rio de Janeiro
+C0231,Vertex Office S.A.,Enterprise,Brazil,Northeast,PE,Recife
+C0232,Vertex Markets S.A.,Enterprise,Brazil,South,SC,Florianopolis
+C0233,Lucas Santos,Consumer,Brazil,Southeast,RJ,Rio de Janeiro
+C0234,Atlas Retail Ltd.,Small Business,Brazil,Midwest,DF,Brasilia
+C0235,Core Logistics Ltd.,Small Business,Brazil,Southeast,MG,Belo Horizonte
+C0236,Capital Supply Ltd.,Small Business,Brazil,South,PR,Curitiba
+C0237,Union Services Ltd.,Small Business,Brazil,Northeast,CE,Fortaleza
+C0238,Pioneer Office S.A.,Enterprise,Brazil,South,SC,Florianopolis
+C0239,Karen Costa,Consumer,Brazil,Midwest,GO,Goiania
+C0240,Nicolas Pereira,Consumer,Brazil,Midwest,GO,Goiania
+C0241,Yasmin Fernandes,Consumer,Brazil,Midwest,DF,Brasilia
+C0242,Patricia Ribeiro,Consumer,Brazil,South,SC,Florianopolis
+C0243,Beatriz Carvalho,Consumer,Brazil,South,SC,Florianopolis
+C0244,Union Solutions Ltd.,Small Business,Brazil,Midwest,MT,Cuiaba
+C0245,Core Commerce S.A.,Enterprise,Brazil,Midwest,DF,Brasilia
+C0246,Patricia Costa,Consumer,Brazil,Southeast,RJ,Rio de Janeiro
+C0247,TrueNorth Business S.A.,Enterprise,Brazil,South,PR,Curitiba
+C0248,Summit Supply S.A.,Enterprise,Brazil,South,RS,Porto Alegre
+C0249,Aurora Markets Ltd.,Small Business,Brazil,South,RS,Porto Alegre
+C0250,Atlas Supply S.A.,Enterprise,Brazil,South,PR,Curitiba
+C0251,Giovana Oliveira,Consumer,Brazil,Southeast,RJ,Rio de Janeiro
+C0252,Sterling Business Ltd.,Small Business,Brazil,Southeast,SP,Sao Paulo
+C0253,Lucas Fernandes,Consumer,Brazil,Northeast,BA,Salvador
+C0254,Daniel Almeida,Consumer,Brazil,Southeast,MG,Belo Horizonte
+C0255,Vertex Retail Ltd.,Small Business,Brazil,Southeast,RJ,Rio de Janeiro
+C0256,Golden Business Ltd.,Small Business,Brazil,North,AM,Manaus
+C0257,Caio Lima,Consumer,Brazil,Southeast,RJ,Rio de Janeiro

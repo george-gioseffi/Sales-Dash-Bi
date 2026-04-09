@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
+# Power BI
+*.pbix
+*.tmp
+*.bak
+
+# Data artifacts that can be rebuilt
+data/raw/*.tmp
+data/processed/*.tmp
+

@@ -1,0 +1,29 @@
+ProductKey,ProductID,ProductName,Category,SubCategory
+1,P011,ErgoSeat Mesh,Furniture,Chairs
+2,P012,TaskSeat Essential,Furniture,Chairs
+3,P013,LiftDesk 120,Furniture,Desks
+4,P014,WorkBench 160,Furniture,Desks
+5,P015,SteelStore Cabinet,Furniture,Storage
+6,P016,ModShelf Plus,Furniture,Storage
+7,P017,Forum Meeting Table,Furniture,Tables
+8,P018,Compact Side Table,Furniture,Tables
+9,P021,Exec Binder Set,Office Supplies,Binders
+10,P022,Economy Binder Set,Office Supplies,Binders
+11,P027,Archive Box,Office Supplies,Filing
+12,P028,Folder Kit,Office Supplies,Filing
+13,P025,Shipping Labels,Office Supplies,Labels
+14,P026,Shelf Labels,Office Supplies,Labels
+15,P019,Premium Paper Pack,Office Supplies,Paper
+16,P020,Eco Paper Pack,Office Supplies,Paper
+17,P023,Gel Pen Box,Office Supplies,Writing
+18,P024,Marker Kit,Office Supplies,Writing
+19,P007,DockPro Station,Technology,Accessories
+20,P008,FlexMouse Wireless,Technology,Accessories
+21,P009,TypeEdge Keyboard,Technology,Accessories
+22,P010,FocusCam Pro,Technology,Accessories
+23,P001,ApexBook 13,Technology,Laptops
+24,P002,ApexBook 15 Pro,Technology,Laptops
+25,P003,VisionView 24,Technology,Monitors
+26,P004,VisionView 27 QHD,Technology,Monitors
+27,P005,LaserJet Office X1,Technology,Printers
+28,P006,InkFlow Compact,Technology,Printers
