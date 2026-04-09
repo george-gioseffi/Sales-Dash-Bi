@@ -10,6 +10,7 @@
 - DAX measure library
 - Dashboard blueprint and design guidelines
 - Power BI theme JSON
+- Portfolio preview renders for all six report pages
 - README optimized for portfolio use
 - Interview, presentation, CV, and LinkedIn support materials
 
@@ -19,4 +20,3 @@
 - PBIP artifact creation
 - Screenshot export
 - Optional bookmarks, drillthrough, and tooltip refinement
-

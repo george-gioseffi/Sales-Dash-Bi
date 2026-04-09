@@ -1,6 +1,10 @@
 # Screenshot Guide
 
-This repository does not include final dashboard screenshots yet because Power BI Desktop must be used to assemble and render the report. After building the report, export the following PNG files into this folder:
+This folder now includes six static dashboard preview renders generated from the project dataset by `scripts/generate_dashboard_previews.py`.
+
+They are designed to improve the GitHub presentation layer immediately, but should still be replaced later by native Power BI Desktop screenshot exports under the same filenames.
+
+Final screenshot filenames:
 
 1. `01-executive-overview.png`
 2. `02-sales-analysis.png`
@@ -15,4 +19,4 @@ Recommended export notes:
 - Hide editing panes before capture
 - Export at high enough resolution for GitHub readability
 - Keep one screenshot per core report page
-
+- Replace the existing preview file with the native Power BI export using the same filename

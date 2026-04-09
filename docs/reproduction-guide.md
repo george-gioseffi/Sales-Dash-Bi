@@ -30,12 +30,20 @@ Expected outputs:
 9. Build the pages from `docs/dashboard-blueprint.md`.
 10. Export screenshots into `screenshots/`.
 
-## 4. Recommended Slicer Design
+## 4. Generate Portfolio Preview Images
+
+If you want immediate GitHub-ready visuals before exporting native Power BI screenshots:
+
+```bash
+python scripts/generate_dashboard_previews.py
+```
+
+## 5. Recommended Slicer Design
 
 - Global slicers: Date, Region, Sales Channel, Category
 - Diagnostic slicers where relevant: Segment, SubCategory
 
-## 5. Final Manual Steps
+## 6. Final Manual Steps
 
 These steps still require Power BI Desktop:
 
@@ -43,4 +51,3 @@ These steps still require Power BI Desktop:
 - Bookmark and tooltip configuration
 - Screenshot export
 - Optional PBIP save and commit
-

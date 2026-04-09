@@ -156,19 +156,19 @@ Full takeaways live in [docs/final-insights.md](docs/final-insights.md).
 
 ```text
 powerbi-sales-performance-analytics/
-├─ assets/
-│  └─ theme/
-├─ data/
-│  ├─ raw/
-│  └─ processed/
-├─ docs/
-├─ powerbi/
-├─ screenshots/
-├─ scripts/
-├─ .gitignore
-├─ LICENSE
-├─ README.md
-└─ requirements.txt
+|- assets/
+|  |- theme/
+|- data/
+|  |- raw/
+|  |- processed/
+|- docs/
+|- powerbi/
+|- screenshots/
+|- scripts/
+|- .gitignore
+|- LICENSE
+|- README.md
+|- requirements.txt
 ```
 
 ## How To Open / Reproduce
@@ -191,18 +191,31 @@ python scripts/run_full_build.py
 
 The full step-by-step guide is in [docs/reproduction-guide.md](docs/reproduction-guide.md).
 
+### Generate Portfolio Preview Images
+
+```bash
+python scripts/generate_dashboard_previews.py
+```
+
+For the final Power BI Desktop handoff, use [powerbi/final-dashboard-handoff.md](powerbi/final-dashboard-handoff.md).
+
 ## Dashboard Preview
 
-Final dashboard screenshots still need to be exported from Power BI Desktop. Once the report is assembled, save them under:
+The repository now includes six portfolio-ready preview renders generated from the actual dataset and aligned to the final page blueprint. These can be replaced one-for-one with native Power BI Desktop exports later.
 
-- `screenshots/01-executive-overview.png`
-- `screenshots/02-sales-analysis.png`
-- `screenshots/03-profitability-analysis.png`
-- `screenshots/04-customer-product-insights.png`
-- `screenshots/05-geography-channel-performance.png`
-- `screenshots/06-targets-trends.png`
+| Executive Overview | Sales Analysis |
+| --- | --- |
+| ![Executive Overview](screenshots/01-executive-overview.png) | ![Sales Analysis](screenshots/02-sales-analysis.png) |
 
-See [screenshots/README.md](screenshots/README.md) for the capture checklist.
+| Profitability Analysis | Customer & Product Insights |
+| --- | --- |
+| ![Profitability Analysis](screenshots/03-profitability-analysis.png) | ![Customer & Product Insights](screenshots/04-customer-product-insights.png) |
+
+| Geography & Channel Performance | Targets & Trends |
+| --- | --- |
+| ![Geography & Channel Performance](screenshots/05-geography-channel-performance.png) | ![Targets & Trends](screenshots/06-targets-trends.png) |
+
+See [screenshots/README.md](screenshots/README.md) for the export and replacement workflow.
 
 ## Skills Demonstrated
 
@@ -218,8 +231,8 @@ See [screenshots/README.md](screenshots/README.md) for the capture checklist.
 ## Future Improvements
 
 - Add a fully assembled PBIP artifact
+- Replace preview renders with native Power BI Desktop exports
 - Include forecast and budget scenarios
 - Add drillthrough pages and tooltip design
 - Track customer retention and repeat purchase behavior
 - Introduce rep-level quota analysis and incentive views
-

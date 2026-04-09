@@ -23,9 +23,9 @@
 - Defined a six-page dashboard blueprint plus a methodology page
 - Added a Power BI theme and page-by-page KPI map
 - Documented design decisions and screenshot requirements
+- Generated static preview renders for the six core report pages
 
 ## Workstream 5. Portfolio Packaging
 
 - Wrote the README and all supporting docs for GitHub presentation
 - Added executive insights, interview defense notes, a presentation script, and career-ready copy
-
