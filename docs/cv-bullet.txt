@@ -1,0 +1,2 @@
+Developed an end-to-end Power BI sales analytics portfolio project with reproducible data generation, dimensional modeling, DAX KPI design, and executive dashboard planning focused on profitability, discount efficiency, regional performance, and target attainment.
+
