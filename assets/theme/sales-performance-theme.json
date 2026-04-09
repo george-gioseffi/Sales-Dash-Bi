@@ -1,0 +1,43 @@
+{
+  "name": "Sales Performance Analytics",
+  "dataColors": [
+    "#123B5D",
+    "#2C6E49",
+    "#D1495B",
+    "#7C8EA3",
+    "#E8A24C",
+    "#355070",
+    "#81B29A",
+    "#B56576"
+  ],
+  "background": "#F7F6F3",
+  "foreground": "#1F2933",
+  "tableAccent": "#123B5D",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "show": true,
+            "fontColor": { "solid": { "color": "#1F2933" } },
+            "textSize": 12,
+            "fontFamily": "Segoe UI Semibold"
+          }
+        ],
+        "background": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#FFFFFF" } },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ]
+      }
+    }
+  }
+}
+
