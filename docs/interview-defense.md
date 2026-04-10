@@ -1,30 +1,29 @@
-# Interview Defense
+# Defesa para Entrevista
 
-## Why did you use a star schema?
+## Por que você usou star schema?
 
-Because the report combines transactional sales and monthly targets, a star schema keeps the model easier to reason about, improves DAX behavior, and makes the semantic layer much more scalable than a single denormalized table.
+Porque o relatório combina vendas transacionais com metas mensais. Um star schema deixa o modelo mais fácil de entender, melhora o comportamento das medidas DAX e escala melhor do que uma única tabela larga e desnormalizada.
 
-## Why separate sales and targets?
+## Por que separar vendas e metas?
 
-They are different business processes with different grains. Sales are transactional at order-line level, while targets are monthly planning data by region and channel. Separating them preserves analytical accuracy.
+Porque são processos de negócio com grãos diferentes. Vendas são transacionais no nível de linha de pedido, enquanto metas são dados mensais de planejamento por região e canal. Separar as duas preserva a precisão analítica.
 
-## Why focus on profit margin instead of only revenue?
+## Por que focar em profit margin e não só em receita?
 
-Revenue alone can hide inefficient growth. In this project, some high-volume sub-categories such as printers and tables contribute meaningful sales but underperform on margin, which is exactly the kind of issue leadership needs to see.
+Porque receita sozinha pode esconder crescimento ineficiente. Neste projeto, algumas subcategorias de alto volume, como printers e tables, geram vendas relevantes, mas performam mal em margem. É exatamente esse tipo de problema que a liderança precisa enxergar.
 
-## Why did you choose these visuals?
+## Por que você escolheu esses visuais?
 
-I prioritized visuals that answer business questions quickly: KPI cards for executive summary, line charts for trend, bars for ranking, and a scatter plot for the sales-versus-profit relationship. Every chart has a decision purpose.
+Priorizei visuais que respondem perguntas de negócio com rapidez: cards para resumo executivo, linhas para tendência, barras para ranking e scatter para a relação entre sales e profit. Cada gráfico tem uma função de decisão.
 
-## What business decisions can this dashboard support?
+## Que decisões esse dashboard ajuda a tomar?
 
-It supports pricing review, regional focus allocation, channel prioritization, portfolio optimization, and target management. The model is designed to help leadership decide where to push, where to protect margin, and where to intervene.
+Ele apoia revisão de preços, alocação de foco regional, priorização de canais, otimização de portfólio e gestão de metas. O modelo foi pensado para ajudar a liderança a decidir onde acelerar, onde proteger margem e onde intervir.
 
-## How would you evolve this project?
+## Como você evoluiria este projeto?
 
-I would add budget and forecast scenarios, customer retention logic, rep-level quotas, inventory coverage, and a profitability waterfall. I would also package the final report as PBIP with deployment-ready metadata.
+Eu adicionaria cenários de budget e forecast, lógica de retenção de clientes, cotas por representante, cobertura de estoque e uma waterfall de lucratividade. Também empacotaria o relatório final em PBIP com metadados prontos para deploy.
 
-## Why did you add a separate region dimension?
+## Por que adicionar uma dimensão separada de região?
 
-Targets are defined at regional grain, while geography drilldown goes to city and state. A separate region dimension prevents target duplication and keeps actual-versus-target analysis clean.
-
+Porque as metas existem no grão regional, enquanto a geografia de vendas vai até cidade e estado. Uma dimensão dedicada de região evita duplicação de meta e mantém a análise de realizado versus meta correta.

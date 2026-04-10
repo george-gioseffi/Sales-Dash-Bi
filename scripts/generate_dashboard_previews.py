@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 from matplotlib.patches import FancyBboxPatch
+from matplotlib.ticker import FuncFormatter
 
 from project_config import PROJECT_ROOT
 
@@ -27,22 +28,80 @@ SLATE = "#7C8EA3"
 GOLD = "#E8A24C"
 TEAL = "#81B29A"
 
+MONTH_ABBR_PT = {
+    1: "jan",
+    2: "fev",
+    3: "mar",
+    4: "abr",
+    5: "mai",
+    6: "jun",
+    7: "jul",
+    8: "ago",
+    9: "set",
+    10: "out",
+    11: "nov",
+    12: "dez",
+}
+
+REGION_PT = {
+    "Southeast": "Sudeste",
+    "South": "Sul",
+    "Northeast": "Nordeste",
+    "Midwest": "Centro-Oeste",
+    "North": "Norte",
+}
+
+CHANNEL_PT = {
+    "Direct Sales": "Vendas Diretas",
+    "Distributors": "Distribuidores",
+    "Online": "Online",
+    "Retail Stores": "Lojas Físicas",
+}
+
+SEGMENT_PT = {
+    "Consumer": "Consumidor",
+    "Small Business": "Pequenas Empresas",
+    "Enterprise": "Empresas",
+}
+
+CATEGORY_PT = {
+    "Furniture": "Móveis",
+    "Office Supplies": "Suprimentos de Escritório",
+    "Technology": "Tecnologia",
+}
+
+SUBCATEGORY_PT = {
+    "Accessories": "Acessórios",
+    "Binders": "Fichários",
+    "Chairs": "Cadeiras",
+    "Desks": "Escrivaninhas",
+    "Filing": "Arquivo",
+    "Labels": "Etiquetas",
+    "Laptops": "Laptops",
+    "Monitors": "Monitores",
+    "Paper": "Papel",
+    "Printers": "Impressoras",
+    "Storage": "Armazenamento",
+    "Tables": "Mesas",
+    "Writing": "Escrita",
+}
+
 
 def fmt_currency(value: float) -> str:
     abs_value = abs(value)
     if abs_value >= 1_000_000:
-        return f"{value / 1_000_000:.2f}M"
+        return f"R$ {value / 1_000_000:.2f}M".replace(".", ",")
     if abs_value >= 1_000:
-        return f"{value / 1_000:.1f}K"
-    return f"{value:,.0f}"
+        return f"R$ {value / 1_000:.1f} mil".replace(".", ",")
+    return f"R$ {value:,.0f}".replace(",", ".")
 
 
 def fmt_pct(value: float) -> str:
-    return f"{value * 100:.1f}%"
+    return f"{value * 100:.1f}%".replace(".", ",")
 
 
 def fmt_int(value: float) -> str:
-    return f"{int(round(value)):,}"
+    return f"{int(round(value)):,}".replace(",", ".")
 
 
 def load_data() -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -54,6 +113,15 @@ def load_data() -> tuple[pd.DataFrame, pd.DataFrame]:
         RAW_DIR / "monthly_targets.csv",
         parse_dates=["Target Month"],
     )
+
+    sales["Region"] = sales["Region"].replace(REGION_PT)
+    sales["Sales Channel"] = sales["Sales Channel"].replace(CHANNEL_PT)
+    sales["Segment"] = sales["Segment"].replace(SEGMENT_PT)
+    sales["Category"] = sales["Category"].replace(CATEGORY_PT)
+    sales["Sub-Category"] = sales["Sub-Category"].replace(SUBCATEGORY_PT)
+
+    targets["Region"] = targets["Region"].replace(REGION_PT)
+    targets["Sales Channel"] = targets["Sales Channel"].replace(CHANNEL_PT)
 
     sales["MonthStart"] = sales["Order Date"].dt.to_period("M").dt.to_timestamp()
     sales["Year"] = sales["Order Date"].dt.year
@@ -255,7 +323,7 @@ def build_metrics(sales: pd.DataFrame, targets: pd.DataFrame) -> dict[str, pd.Da
         "sales_per_customer": sales["Sales Amount"].sum() / sales["Customer ID"].nunique(),
         "top_10_share": product.head(10)["Sales"].sum() / product["Sales"].sum(),
         "enterprise_growth": float(
-            segment_growth.loc[segment_growth["Segment"] == "Enterprise", "YoYGrowth"].iloc[0]
+            segment_growth.loc[segment_growth["Segment"] == SEGMENT_PT["Enterprise"], "YoYGrowth"].iloc[0]
         ),
         "sales_target": monthly["SalesTarget"].sum(),
         "target_variance": monthly["Sales"].sum() - monthly["SalesTarget"].sum(),
@@ -358,7 +426,9 @@ def label_barh(ax: plt.Axes, values: pd.Series, formatter=fmt_currency) -> None:
 
 def format_month_axis(ax: plt.Axes) -> None:
     ax.xaxis.set_major_locator(mdates.MonthLocator(interval=2))
-    ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %y"))
+    ax.xaxis.set_major_formatter(
+        FuncFormatter(lambda value, pos: f"{MONTH_ABBR_PT[mdates.num2date(value).month]} {str(mdates.num2date(value).year)[2:]}")
+    )
     for label in ax.get_xticklabels():
         label.set_rotation(45)
         label.set_ha("right")
@@ -374,61 +444,61 @@ def create_executive_overview(metrics: dict[str, object]) -> None:
     fig.patch.set_facecolor(BG)
     add_page_header(
         fig,
-        "Executive Overview",
-        "Clean executive snapshot of revenue scale, margin quality, target delivery, and primary growth drivers.",
-        ["Date", "Region", "Sales Channel", "Category"],
+        "Visão Executiva",
+        "Leitura executiva do tamanho da receita, qualidade da margem, entrega contra meta e principais drivers de crescimento.",
+        ["Data", "Região", "Canal de Vendas", "Categoria"],
     )
     grid = fig.add_gridspec(12, 14, left=0.03, right=0.97, top=0.90, bottom=0.05, hspace=1.0, wspace=0.8)
 
     cards = [
-        ("Total Sales", fmt_currency(kpis["total_sales"]), NAVY, "Net revenue"),
-        ("Total Profit", fmt_currency(kpis["total_profit"]), GREEN, "Contribution after cost"),
-        ("Profit Margin %", fmt_pct(kpis["profit_margin"]), GREEN, "Revenue quality"),
-        ("Total Orders", fmt_int(kpis["total_orders"]), SLATE, "Distinct orders"),
-        ("Average Order Value", fmt_currency(kpis["aov"]), NAVY, "Average ticket size"),
-        ("Return Rate %", fmt_pct(kpis["return_rate"]), RED, "Returned line share"),
-        ("Target Attainment %", fmt_pct(kpis["target_attainment"]), GOLD, "Actual vs plan"),
+        ("Vendas Totais", fmt_currency(kpis["total_sales"]), NAVY, "Receita líquida"),
+        ("Lucro Total", fmt_currency(kpis["total_profit"]), GREEN, "Contribuição após custo"),
+        ("Margem de Lucro %", fmt_pct(kpis["profit_margin"]), GREEN, "Qualidade da receita"),
+        ("Pedidos Totais", fmt_int(kpis["total_orders"]), SLATE, "Pedidos distintos"),
+        ("Ticket Médio", fmt_currency(kpis["aov"]), NAVY, "Valor médio por pedido"),
+        ("Taxa de Devolução %", fmt_pct(kpis["return_rate"]), RED, "Linhas devolvidas"),
+        ("Atingimento de Meta %", fmt_pct(kpis["target_attainment"]), GOLD, "Realizado vs plano"),
     ]
     for idx, card in enumerate(cards):
         add_card(fig.add_subplot(grid[0:2, idx * 2 : idx * 2 + 2]), *card)
 
     ax1 = fig.add_subplot(grid[2:7, 0:8])
-    setup_panel(ax1, "Monthly Sales And Profit Trend", "Sales and profit direction across the 24-month window")
-    ax1.plot(monthly["MonthStart"], monthly["Sales"], color=NAVY, linewidth=2.7, label="Sales")
+    setup_panel(ax1, "Tendência Mensal de Vendas e Lucro", "Direção de vendas e lucro ao longo dos 24 meses")
+    ax1.plot(monthly["MonthStart"], monthly["Sales"], color=NAVY, linewidth=2.7, label="Vendas")
     ax1.fill_between(monthly["MonthStart"], monthly["Sales"], color=NAVY, alpha=0.10)
-    ax1.set_ylabel("Sales")
+    ax1.set_ylabel("Vendas")
     format_month_axis(ax1)
     ax1b = ax1.twinx()
-    ax1b.plot(monthly["MonthStart"], monthly["Profit"], color=GREEN, linewidth=2.1, label="Profit")
-    ax1b.set_ylabel("Profit")
+    ax1b.plot(monthly["MonthStart"], monthly["Profit"], color=GREEN, linewidth=2.1, label="Lucro")
+    ax1b.set_ylabel("Lucro")
     ax1.legend(loc="upper left", frameon=False)
     ax1b.legend(loc="upper right", frameon=False)
 
     ax2 = fig.add_subplot(grid[2:7, 8:14])
-    setup_panel(ax2, "Actual Sales Vs Target", "Monthly actuals compared with the target plan")
-    ax2.plot(monthly["MonthStart"], monthly["SalesTarget"], color=SLATE, linewidth=2.0, linestyle="--", label="Target")
-    ax2.plot(monthly["MonthStart"], monthly["Sales"], color=GOLD, linewidth=2.5, label="Actual")
+    setup_panel(ax2, "Vendas Realizadas vs Meta", "Realizado mensal comparado ao plano")
+    ax2.plot(monthly["MonthStart"], monthly["SalesTarget"], color=SLATE, linewidth=2.0, linestyle="--", label="Meta")
+    ax2.plot(monthly["MonthStart"], monthly["Sales"], color=GOLD, linewidth=2.5, label="Realizado")
     ax2.fill_between(monthly["MonthStart"], monthly["SalesTarget"], monthly["Sales"], color=GOLD, alpha=0.12)
     format_month_axis(ax2)
     ax2.legend(loc="upper left", frameon=False)
 
     ax3 = fig.add_subplot(grid[7:12, 0:7])
-    setup_panel(ax3, "Top Regions By Sales", "Revenue leaders with margin context")
+    setup_panel(ax3, "Top Regiões por Vendas", "Líderes de receita com contexto de margem")
     region_plot = region.sort_values("Sales", ascending=True)
     ax3.barh(region_plot["Region"], region_plot["Sales"], color=NAVY, alpha=0.92)
     label_barh(ax3, region_plot["Sales"])
-    ax3.set_xlabel("Sales")
+    ax3.set_xlabel("Vendas")
     for i, row in enumerate(region_plot.itertuples(index=False)):
-        ax3.text(row.Sales * 0.02, i, f"Margin {row.Margin * 100:.1f}%", va="center", color="white", fontsize=8.5)
+        ax3.text(row.Sales * 0.02, i, f"Margem {str(round(row.Margin * 100, 1)).replace('.', ',')}%", va="center", color="white", fontsize=8.5)
 
     ax4 = fig.add_subplot(grid[7:12, 7:14])
-    setup_panel(ax4, "Category Contribution", "Sales contribution and profitability by category")
+    setup_panel(ax4, "Contribuição por Categoria", "Participação de vendas e lucratividade por categoria")
     category_plot = category.sort_values("Sales", ascending=True)
     colors = [NAVY, SLATE, TEAL]
     ax4.barh(category_plot["Category"], category_plot["Sales"], color=colors)
     label_barh(ax4, category_plot["Sales"])
     for i, row in enumerate(category_plot.itertuples(index=False)):
-        ax4.text(row.Sales * 0.64, i, f"{row.Margin * 100:.1f}% margin", va="center", color="white", fontsize=9)
+        ax4.text(row.Sales * 0.64, i, f"{str(round(row.Margin * 100, 1)).replace('.', ',')}% de margem", va="center", color="white", fontsize=9)
 
     fig.savefig(SCREENSHOTS_DIR / "01-executive-overview.png", facecolor=BG)
     plt.close(fig)
@@ -448,29 +518,29 @@ def create_sales_analysis(metrics: dict[str, object]) -> None:
     fig.patch.set_facecolor(BG)
     add_page_header(
         fig,
-        "Sales Analysis",
-        "Revenue driver view across time, category mix, region scale, and channel contribution.",
-        ["Date", "Region", "Sales Channel", "Segment"],
+        "Análise de Vendas",
+        "Leitura dos drivers de receita ao longo do tempo, do mix de categorias, da escala regional e da contribuição por canal.",
+        ["Data", "Região", "Canal de Vendas", "Segmento"],
     )
     grid = fig.add_gridspec(12, 12, left=0.03, right=0.97, top=0.90, bottom=0.05, hspace=1.0, wspace=0.8)
 
     cards = [
-        ("Total Sales", fmt_currency(kpis["total_sales"]), NAVY, "Net revenue"),
-        ("Total Orders", fmt_int(kpis["total_orders"]), SLATE, "Distinct orders"),
-        ("Average Order Value", fmt_currency(kpis["aov"]), GOLD, "Ticket size"),
-        ("Total Quantity", fmt_int(monthly["Quantity"].sum()), TEAL, "Units sold"),
+        ("Vendas Totais", fmt_currency(kpis["total_sales"]), NAVY, "Receita líquida"),
+        ("Pedidos Totais", fmt_int(kpis["total_orders"]), SLATE, "Pedidos distintos"),
+        ("Ticket Médio", fmt_currency(kpis["aov"]), GOLD, "Tamanho do ticket"),
+        ("Quantidade Total", fmt_int(monthly["Quantity"].sum()), TEAL, "Unidades vendidas"),
     ]
     for idx, card in enumerate(cards):
         add_card(fig.add_subplot(grid[0:2, idx * 3 : idx * 3 + 3]), *card)
 
     ax1 = fig.add_subplot(grid[2:6, 0:6])
-    setup_panel(ax1, "Sales Over Time", "Monthly sales trend")
+    setup_panel(ax1, "Vendas ao Longo do Tempo", "Tendência mensal de vendas")
     ax1.plot(monthly["MonthStart"], monthly["Sales"], color=NAVY, linewidth=2.6)
     ax1.fill_between(monthly["MonthStart"], monthly["Sales"], color=NAVY, alpha=0.12)
     format_month_axis(ax1)
 
     ax2 = fig.add_subplot(grid[2:6, 6:12])
-    setup_panel(ax2, "Sales Mix By Channel Over Time", "Monthly channel contribution")
+    setup_panel(ax2, "Mix de Vendas por Canal ao Longo do Tempo", "Contribuição mensal dos canais")
     pivot = month_channel.pivot(index="MonthStart", columns="Sales Channel", values="Sales").fillna(0)
     ax2.stackplot(
         pivot.index,
@@ -483,31 +553,31 @@ def create_sales_analysis(metrics: dict[str, object]) -> None:
     ax2.legend(loc="upper left", frameon=False, ncol=2)
 
     ax3 = fig.add_subplot(grid[6:9, 0:4])
-    setup_panel(ax3, "Sales By Category", "Top-level revenue mix")
+    setup_panel(ax3, "Vendas por Categoria", "Mix de receita em nível principal")
     cat = category.sort_values("Sales", ascending=True)
     ax3.barh(cat["Category"], cat["Sales"], color=[TEAL, SLATE, NAVY])
     label_barh(ax3, cat["Sales"])
 
     ax4 = fig.add_subplot(grid[6:9, 4:8])
-    setup_panel(ax4, "Top Sub-Categories By Sales", "Largest revenue pockets")
+    setup_panel(ax4, "Top Subcategorias por Vendas", "Maiores bolsões de receita")
     sub = subcategory.head(8).sort_values("Sales", ascending=True)
     ax4.barh(sub["Sub-Category"], sub["Sales"], color=NAVY)
     label_barh(ax4, sub["Sales"])
 
     ax5 = fig.add_subplot(grid[6:9, 8:12])
-    setup_panel(ax5, "Sales By Region", "Regional revenue scale")
+    setup_panel(ax5, "Vendas por Região", "Escala regional de receita")
     reg = region.sort_values("Sales", ascending=True)
     ax5.barh(reg["Region"], reg["Sales"], color=SLATE)
     label_barh(ax5, reg["Sales"])
 
     ax6 = fig.add_subplot(grid[9:12, 0:4])
-    setup_panel(ax6, "Sales By Channel", "Channel mix")
+    setup_panel(ax6, "Vendas por Canal", "Mix por canal")
     ch = channel.sort_values("Sales", ascending=True)
     ax6.barh(ch["Sales Channel"], ch["Sales"], color=GOLD)
     label_barh(ax6, ch["Sales"])
 
     ax7 = fig.add_subplot(grid[9:12, 4:12])
-    setup_panel(ax7, "Region x Channel Sales Matrix", "Heatmap of revenue concentration")
+    setup_panel(ax7, "Matrix Região x Canal de Vendas", "Heatmap de concentração de receita")
     sns.heatmap(
         region_channel_sales / 1_000_000,
         cmap=sns.light_palette(NAVY, as_cmap=True),
@@ -536,30 +606,30 @@ def create_profitability_analysis(metrics: dict[str, object]) -> None:
     fig.patch.set_facecolor(BG)
     add_page_header(
         fig,
-        "Profitability Analysis",
-        "Revenue quality view highlighting margin conversion, discount pressure, and weak economic pockets.",
-        ["Date", "Region", "Category", "Sales Channel"],
+        "Análise de Lucratividade",
+        "Leitura da qualidade da receita com foco em conversão de margem, pressão de desconto e bolsões econômicos fracos.",
+        ["Data", "Região", "Categoria", "Canal de Vendas"],
     )
     grid = fig.add_gridspec(12, 12, left=0.03, right=0.97, top=0.90, bottom=0.05, hspace=1.0, wspace=0.9)
 
     cards = [
-        ("Total Profit", fmt_currency(kpis["total_profit"]), GREEN, "Contribution after cost"),
-        ("Profit Margin %", fmt_pct(kpis["profit_margin"]), GREEN, "Average revenue quality"),
-        ("Discount %", fmt_pct(kpis["discount_pct"]), RED, "Gross-to-net pressure"),
-        ("Profit per Order", fmt_currency(kpis["profit_per_order"]), NAVY, "Efficiency by order"),
+        ("Lucro Total", fmt_currency(kpis["total_profit"]), GREEN, "Contribuição após custo"),
+        ("Margem de Lucro %", fmt_pct(kpis["profit_margin"]), GREEN, "Qualidade média da receita"),
+        ("Desconto %", fmt_pct(kpis["discount_pct"]), RED, "Pressão de bruto para líquido"),
+        ("Lucro por Pedido", fmt_currency(kpis["profit_per_order"]), NAVY, "Eficiência por pedido"),
     ]
     for idx, card in enumerate(cards):
         add_card(fig.add_subplot(grid[0:2, idx * 3 : idx * 3 + 3]), *card)
 
     ax1 = fig.add_subplot(grid[2:6, 0:4])
-    setup_panel(ax1, "Margin By Category", "High sales do not always translate into strong margin")
+    setup_panel(ax1, "Margem por Categoria", "Vender muito nem sempre significa margem forte")
     cat = category.sort_values("Margin", ascending=True)
     ax1.barh(cat["Category"], cat["Margin"], color=[SLATE, GOLD, GREEN])
-    label_barh(ax1, cat["Margin"], formatter=lambda value: f"{value * 100:.1f}%")
+    label_barh(ax1, cat["Margin"], formatter=lambda value: f"{value * 100:.1f}%".replace(".", ","))
     ax1.set_xlim(0, max(cat["Margin"]) * 1.18)
 
     ax2 = fig.add_subplot(grid[2:6, 4:8])
-    setup_panel(ax2, "Sales Vs Profit By Sub-Category", "Bubble position reveals high volume with weak conversion")
+    setup_panel(ax2, "Sales vs Profit por Subcategoria", "A posição das bolhas revela alto volume com conversão fraca")
     ax2.scatter(
         subcategory["Sales"],
         subcategory["Profit"],
@@ -572,11 +642,11 @@ def create_profitability_analysis(metrics: dict[str, object]) -> None:
     )
     for _, row in subcategory.iterrows():
         ax2.annotate(row["Sub-Category"], (row["Sales"], row["Profit"]), fontsize=8, alpha=0.9)
-    ax2.set_xlabel("Sales")
-    ax2.set_ylabel("Profit")
+    ax2.set_xlabel("Vendas")
+    ax2.set_ylabel("Lucro")
 
     ax3 = fig.add_subplot(grid[2:6, 8:12])
-    setup_panel(ax3, "Discount Vs Margin", "Sub-categories with heavier discounting tend to lose margin")
+    setup_panel(ax3, "Desconto vs Margem", "Subcategorias com desconto mais alto tendem a perder margem")
     sns.scatterplot(
         data=subcategory,
         x="DiscountPct",
@@ -589,32 +659,32 @@ def create_profitability_analysis(metrics: dict[str, object]) -> None:
         ax=ax3,
     )
     ax3.legend(loc="lower left", fontsize=7.5, frameon=False)
-    ax3.set_xlabel("Average Discount %")
-    ax3.set_ylabel("Profit Margin %")
-    ax3.xaxis.set_major_formatter(lambda x, pos: f"{x * 100:.1f}%")
-    ax3.yaxis.set_major_formatter(lambda y, pos: f"{y * 100:.1f}%")
+    ax3.set_xlabel("Desconto Médio %")
+    ax3.set_ylabel("Margem de Lucro %")
+    ax3.xaxis.set_major_formatter(lambda x, pos: f"{x * 100:.1f}%".replace(".", ","))
+    ax3.yaxis.set_major_formatter(lambda y, pos: f"{y * 100:.1f}%".replace(".", ","))
 
     ax4 = fig.add_subplot(grid[6:12, 0:4])
-    setup_panel(ax4, "Low-Margin High-Volume Products", "Products that deserve pricing or assortment review")
+    setup_panel(ax4, "Produtos de Alta Venda e Baixa Margem", "Produtos que merecem revisão de preço ou sortimento")
     low_margin = product.sort_values(["Margin", "Sales"], ascending=[True, False]).head(8)
     low_margin = low_margin.sort_values("Margin", ascending=True)
     ax4.barh(low_margin["Product Name"], low_margin["Margin"], color=RED)
-    label_barh(ax4, low_margin["Margin"], formatter=lambda value: f"{value * 100:.1f}%")
+    label_barh(ax4, low_margin["Margin"], formatter=lambda value: f"{value * 100:.1f}%".replace(".", ","))
     ax4.set_xlim(0, max(low_margin["Margin"]) * 1.35)
 
     ax5 = fig.add_subplot(grid[6:12, 4:8])
-    setup_panel(ax5, "Profit By Channel", "Channel profit bars annotated with margin")
+    setup_panel(ax5, "Lucro por Canal", "Barras de lucro por canal com anotação de margem")
     ch = channel.sort_values("Profit", ascending=True)
     ax5.barh(ch["Sales Channel"], ch["Profit"], color=GREEN)
     label_barh(ax5, ch["Profit"])
     for i, row in enumerate(ch.itertuples(index=False)):
-        ax5.text(row.Profit * 0.02, i, f"{row.Margin * 100:.1f}% margin", va="center", color="white", fontsize=8.5)
+        ax5.text(row.Profit * 0.02, i, f"{str(round(row.Margin * 100, 1)).replace('.', ',')}% de margem", va="center", color="white", fontsize=8.5)
 
     ax6 = fig.add_subplot(grid[6:12, 8:12])
-    setup_panel(ax6, "Margin By Region", "Regional margin stability")
+    setup_panel(ax6, "Margem por Região", "Estabilidade regional de margem")
     reg = region.sort_values("Margin", ascending=True)
     ax6.barh(reg["Region"], reg["Margin"], color=SLATE)
-    label_barh(ax6, reg["Margin"], formatter=lambda value: f"{value * 100:.1f}%")
+    label_barh(ax6, reg["Margin"], formatter=lambda value: f"{value * 100:.1f}%".replace(".", ","))
     ax6.set_xlim(0, max(reg["Margin"]) * 1.2)
 
     fig.savefig(SCREENSHOTS_DIR / "03-profitability-analysis.png", facecolor=BG)
@@ -631,57 +701,57 @@ def create_customer_product_insights(metrics: dict[str, object]) -> None:
     fig.patch.set_facecolor(BG)
     add_page_header(
         fig,
-        "Customer & Product Insights",
-        "Mix view of customer segments, product concentration, and the items that truly pull performance.",
-        ["Date", "Segment", "Category", "Region"],
+        "Insights de Clientes e Produtos",
+        "Leitura do mix de segmentos, da concentração do portfólio e dos itens que realmente puxam performance.",
+        ["Data", "Segmento", "Categoria", "Região"],
     )
     grid = fig.add_gridspec(12, 12, left=0.03, right=0.97, top=0.90, bottom=0.05, hspace=1.0, wspace=0.8)
 
     cards = [
-        ("Total Customers", fmt_int(kpis["total_customers"]), NAVY, "Active customers"),
-        ("Sales per Customer", fmt_currency(kpis["sales_per_customer"]), TEAL, "Average account value"),
-        ("Top 10 Product Share", fmt_pct(kpis["top_10_share"]), GOLD, "Sales concentration"),
-        ("Enterprise Growth", fmt_pct(kpis["enterprise_growth"]), GREEN, "2025 vs 2024"),
+        ("Clientes Totais", fmt_int(kpis["total_customers"]), NAVY, "Clientes ativos"),
+        ("Vendas por Cliente", fmt_currency(kpis["sales_per_customer"]), TEAL, "Valor médio por conta"),
+        ("Participação do Top 10", fmt_pct(kpis["top_10_share"]), GOLD, "Concentração de vendas"),
+        ("Crescimento Empresas", fmt_pct(kpis["enterprise_growth"]), GREEN, "2025 vs 2024"),
     ]
     for idx, card in enumerate(cards):
         add_card(fig.add_subplot(grid[0:2, idx * 3 : idx * 3 + 3]), *card)
 
     ax1 = fig.add_subplot(grid[2:6, 0:4])
-    setup_panel(ax1, "Segment Sales And Profit", "Side-by-side contribution by segment")
+    setup_panel(ax1, "Vendas e Lucro por Segmento", "Contribuição lado a lado por segmento")
     seg = segment.set_index("Segment")[["Sales", "Profit"]]
     seg.plot(kind="bar", ax=ax1, color=[NAVY, GREEN], width=0.72)
     ax1.legend(frameon=False)
     ax1.tick_params(axis="x", rotation=0)
 
     ax2 = fig.add_subplot(grid[2:6, 4:8])
-    setup_panel(ax2, "Segment Growth", "Year-over-year sales growth by segment")
+    setup_panel(ax2, "Crescimento por Segmento", "Crescimento de vendas ano contra ano por segmento")
     growth = segment_growth.sort_values("YoYGrowth", ascending=True)
     ax2.barh(growth["Segment"], growth["YoYGrowth"], color=GOLD)
-    label_barh(ax2, growth["YoYGrowth"], formatter=lambda value: f"{value * 100:.1f}%")
+    label_barh(ax2, growth["YoYGrowth"], formatter=lambda value: f"{value * 100:.1f}%".replace(".", ","))
     ax2.set_xlim(0, max(growth["YoYGrowth"]) * 1.25)
 
     ax3 = fig.add_subplot(grid[2:6, 8:12])
-    setup_panel(ax3, "Top Products By Sales", "Revenue leaders")
+    setup_panel(ax3, "Top Produtos por Vendas", "Líderes de receita")
     top_sales = product.head(10).sort_values("Sales", ascending=True)
     ax3.barh(top_sales["Product Name"], top_sales["Sales"], color=NAVY)
     label_barh(ax3, top_sales["Sales"])
 
     ax4 = fig.add_subplot(grid[6:12, 0:6])
-    setup_panel(ax4, "Top Products By Profit", "Profit leaders in the product portfolio")
+    setup_panel(ax4, "Top Produtos por Lucro", "Líderes de lucro no portfólio")
     top_profit = product.sort_values("Profit", ascending=False).head(10).sort_values("Profit", ascending=True)
     ax4.barh(top_profit["Product Name"], top_profit["Profit"], color=GREEN)
     label_barh(ax4, top_profit["Profit"])
 
     ax5 = fig.add_subplot(grid[6:12, 6:12])
-    setup_panel(ax5, "Revenue Concentration Curve", "Cumulative sales share of ranked products")
+    setup_panel(ax5, "Curva de Concentração de Receita", "Participação acumulada das vendas por ranking de produto")
     pareto = product.head(15)
     ax5.plot(pareto["Rank"], pareto["CumulativeSalesShare"], color=NAVY, linewidth=2.5)
     ax5.scatter(pareto["Rank"], pareto["CumulativeSalesShare"], color=GOLD, s=40, zorder=3)
     ax5.axhline(0.80, color=RED, linestyle="--", linewidth=1.2)
     ax5.set_ylim(0, 1.0)
-    ax5.set_xlabel("Product Rank")
-    ax5.set_ylabel("Cumulative Sales Share")
-    ax5.yaxis.set_major_formatter(lambda value, pos: f"{value * 100:.0f}%")
+    ax5.set_xlabel("Ranking do Produto")
+    ax5.set_ylabel("Participação Acumulada das Vendas")
+    ax5.yaxis.set_major_formatter(lambda value, pos: f"{value * 100:.0f}%".replace(".", ","))
 
     fig.savefig(SCREENSHOTS_DIR / "04-customer-product-insights.png", facecolor=BG)
     plt.close(fig)
@@ -698,43 +768,43 @@ def create_geography_channel_performance(metrics: dict[str, object]) -> None:
     fig.patch.set_facecolor(BG)
     add_page_header(
         fig,
-        "Geography & Channel Performance",
-        "Comparison of regional scale, margin efficiency, and channel execution quality.",
-        ["Date", "Region", "Sales Channel", "Segment"],
+        "Performance Geográfica e de Canais",
+        "Comparação entre escala regional, eficiência de margem e qualidade de execução por canal.",
+        ["Data", "Região", "Canal de Vendas", "Segmento"],
     )
     grid = fig.add_gridspec(12, 12, left=0.03, right=0.97, top=0.90, bottom=0.05, hspace=1.0, wspace=0.8)
 
     cards = [
-        ("Total Sales", fmt_currency(kpis["total_sales"]), NAVY, "Portfolio scale"),
-        ("Total Profit", fmt_currency(kpis["total_profit"]), GREEN, "Profit contribution"),
-        ("Profit Margin %", fmt_pct(kpis["profit_margin"]), GREEN, "Revenue quality"),
-        ("Profit per Order", fmt_currency(kpis["profit_per_order"]), GOLD, "Efficiency"),
+        ("Vendas Totais", fmt_currency(kpis["total_sales"]), NAVY, "Escala do portfólio"),
+        ("Lucro Total", fmt_currency(kpis["total_profit"]), GREEN, "Contribuição de lucro"),
+        ("Margem de Lucro %", fmt_pct(kpis["profit_margin"]), GREEN, "Qualidade da receita"),
+        ("Lucro por Pedido", fmt_currency(kpis["profit_per_order"]), GOLD, "Eficiência"),
     ]
     for idx, card in enumerate(cards):
         add_card(fig.add_subplot(grid[0:2, idx * 3 : idx * 3 + 3]), *card)
 
     ax1 = fig.add_subplot(grid[2:6, 0:4])
-    setup_panel(ax1, "Sales By Region", "Revenue leaders")
+    setup_panel(ax1, "Vendas por Região", "Regiões líderes em receita")
     reg_sales = region.sort_values("Sales", ascending=True)
     ax1.barh(reg_sales["Region"], reg_sales["Sales"], color=NAVY)
     label_barh(ax1, reg_sales["Sales"])
 
     ax2 = fig.add_subplot(grid[2:6, 4:8])
-    setup_panel(ax2, "Profit Margin By Region", "Regional efficiency")
+    setup_panel(ax2, "Margem por Região", "Eficiência regional")
     reg_margin = region.sort_values("Margin", ascending=True)
     ax2.barh(reg_margin["Region"], reg_margin["Margin"], color=GREEN)
-    label_barh(ax2, reg_margin["Margin"], formatter=lambda value: f"{value * 100:.1f}%")
+    label_barh(ax2, reg_margin["Margin"], formatter=lambda value: f"{value * 100:.1f}%".replace(".", ","))
     ax2.set_xlim(0, max(reg_margin["Margin"]) * 1.2)
 
     ax3 = fig.add_subplot(grid[2:6, 8:12])
-    setup_panel(ax3, "Channel Contribution", "Sales share by channel")
+    setup_panel(ax3, "Contribuição por Canal", "Participação das vendas por canal")
     ch_share = channel.sort_values("SalesShare", ascending=True)
     ax3.barh(ch_share["Sales Channel"], ch_share["SalesShare"], color=GOLD)
-    label_barh(ax3, ch_share["SalesShare"], formatter=lambda value: f"{value * 100:.1f}%")
+    label_barh(ax3, ch_share["SalesShare"], formatter=lambda value: f"{value * 100:.1f}%".replace(".", ","))
     ax3.set_xlim(0, max(ch_share["SalesShare"]) * 1.2)
 
     ax4 = fig.add_subplot(grid[6:9, 0:6])
-    setup_panel(ax4, "Region x Channel Sales", "Revenue concentration by operating mix")
+    setup_panel(ax4, "Vendas por Região x Canal", "Concentração de receita por mix operacional")
     sns.heatmap(
         region_channel_sales / 1_000_000,
         cmap=sns.light_palette(NAVY, as_cmap=True),
@@ -748,7 +818,7 @@ def create_geography_channel_performance(metrics: dict[str, object]) -> None:
     ax4.set_ylabel("")
 
     ax5 = fig.add_subplot(grid[6:9, 6:12])
-    setup_panel(ax5, "Region x Channel Margin", "Margin stability by territory and route-to-market")
+    setup_panel(ax5, "Margem por Região x Canal", "Estabilidade de margem por território e rota ao mercado")
     sns.heatmap(
         region_channel_margin,
         cmap=sns.light_palette(GREEN, as_cmap=True),
@@ -762,7 +832,7 @@ def create_geography_channel_performance(metrics: dict[str, object]) -> None:
     ax5.set_ylabel("")
 
     ax6 = fig.add_subplot(grid[9:12, 0:12])
-    setup_panel(ax6, "Profit Per Order By Channel", "Channel efficiency without relying only on total volume")
+    setup_panel(ax6, "Lucro por Pedido por Canal", "Eficiência do canal sem depender só de volume total")
     ch_eff = channel.sort_values("ProfitPerOrder", ascending=True)
     ax6.barh(ch_eff["Sales Channel"], ch_eff["ProfitPerOrder"], color=[SLATE, GOLD, NAVY, GREEN])
     label_barh(ax6, ch_eff["ProfitPerOrder"])
@@ -782,64 +852,64 @@ def create_targets_trends(metrics: dict[str, object]) -> None:
     fig.patch.set_facecolor(BG)
     add_page_header(
         fig,
-        "Targets & Trends",
-        "Managerial performance view focused on plan attainment, variance control, and momentum.",
-        ["Date", "Region", "Sales Channel"],
+        "Metas e Tendências",
+        "Leitura gerencial focada em atingimento do plano, controle de variância e momento do negócio.",
+        ["Data", "Região", "Canal de Vendas"],
     )
     grid = fig.add_gridspec(12, 15, left=0.03, right=0.97, top=0.90, bottom=0.05, hspace=1.0, wspace=0.9)
 
     cards = [
-        ("Sales Target", fmt_currency(kpis["sales_target"]), SLATE, "Planned revenue"),
-        ("Target Attainment %", fmt_pct(kpis["target_attainment"]), GOLD, "Actual vs plan"),
-        ("Variance", fmt_currency(kpis["target_variance"]), RED if kpis["target_variance"] < 0 else GREEN, "Sales - target"),
-        ("Sales YoY %", fmt_pct(kpis["sales_yoy"]), NAVY, "2025 vs 2024"),
-        ("Profit YoY %", fmt_pct(kpis["profit_yoy"]), GREEN, "2025 vs 2024"),
+        ("Meta de Vendas", fmt_currency(kpis["sales_target"]), SLATE, "Receita planejada"),
+        ("Atingimento de Meta %", fmt_pct(kpis["target_attainment"]), GOLD, "Realizado vs plano"),
+        ("Variância", fmt_currency(kpis["target_variance"]), RED if kpis["target_variance"] < 0 else GREEN, "Vendas - meta"),
+        ("Vendas YoY %", fmt_pct(kpis["sales_yoy"]), NAVY, "2025 vs 2024"),
+        ("Lucro YoY %", fmt_pct(kpis["profit_yoy"]), GREEN, "2025 vs 2024"),
     ]
     for idx, card in enumerate(cards):
         add_card(fig.add_subplot(grid[0:2, idx * 3 : idx * 3 + 3]), *card)
 
     ax1 = fig.add_subplot(grid[2:6, 0:8])
-    setup_panel(ax1, "Actual Vs Target By Month", "Monthly actual sales against the target curve")
-    ax1.plot(monthly["MonthStart"], monthly["SalesTarget"], color=SLATE, linewidth=2.0, linestyle="--", label="Target")
-    ax1.plot(monthly["MonthStart"], monthly["Sales"], color=NAVY, linewidth=2.6, label="Actual")
+    setup_panel(ax1, "Realizado vs Meta por Mês", "Vendas realizadas por mês contra a curva de meta")
+    ax1.plot(monthly["MonthStart"], monthly["SalesTarget"], color=SLATE, linewidth=2.0, linestyle="--", label="Meta")
+    ax1.plot(monthly["MonthStart"], monthly["Sales"], color=NAVY, linewidth=2.6, label="Realizado")
     ax1.fill_between(monthly["MonthStart"], monthly["SalesTarget"], monthly["Sales"], color=NAVY, alpha=0.10)
     format_month_axis(ax1)
     ax1.legend(loc="upper left", frameon=False)
 
     ax2 = fig.add_subplot(grid[2:6, 8:15])
-    setup_panel(ax2, "Monthly Variance", "Positive and negative plan gaps")
+    setup_panel(ax2, "Variância Mensal", "Desvios positivos e negativos contra o plano")
     variance_colors = [GREEN if value >= 0 else RED for value in monthly["Variance"]]
     ax2.bar(monthly["MonthStart"], monthly["Variance"], color=variance_colors, width=20)
     ax2.axhline(0, color=BORDER, linewidth=1)
     format_month_axis(ax2)
 
     ax3 = fig.add_subplot(grid[6:9, 0:5])
-    setup_panel(ax3, "Target Attainment By Region", "Regions above and below plan")
+    setup_panel(ax3, "Atingimento de Meta por Região", "Regiões acima e abaixo do plano")
     reg = region_attainment.sort_values("Attainment", ascending=True)
     colors = [GREEN if value >= 1 else RED for value in reg["Attainment"]]
     ax3.barh(reg["Region"], reg["Attainment"], color=colors)
-    label_barh(ax3, reg["Attainment"], formatter=lambda value: f"{value * 100:.1f}%")
+    label_barh(ax3, reg["Attainment"], formatter=lambda value: f"{value * 100:.1f}%".replace(".", ","))
     ax3.set_xlim(0, max(reg["Attainment"]) * 1.2)
 
     ax4 = fig.add_subplot(grid[6:9, 5:10])
-    setup_panel(ax4, "Target Attainment By Channel", "Commercial execution by route-to-market")
+    setup_panel(ax4, "Atingimento de Meta por Canal", "Execução comercial por rota ao mercado")
     ch = channel_attainment.sort_values("Attainment", ascending=True)
     colors = [GREEN if value >= 1 else RED for value in ch["Attainment"]]
     ax4.barh(ch["Sales Channel"], ch["Attainment"], color=colors)
-    label_barh(ax4, ch["Attainment"], formatter=lambda value: f"{value * 100:.1f}%")
+    label_barh(ax4, ch["Attainment"], formatter=lambda value: f"{value * 100:.1f}%".replace(".", ","))
     ax4.set_xlim(0, max(ch["Attainment"]) * 1.2)
 
     ax5 = fig.add_subplot(grid[6:9, 10:15])
-    setup_panel(ax5, "MoM And YoY Momentum", "Acceleration and slowdown in the monthly cycle")
-    ax5.plot(monthly["MonthStart"], monthly["SalesYoY"], color=NAVY, linewidth=2.1, label="Sales YoY %")
-    ax5.plot(monthly["MonthStart"], monthly["ProfitYoY"], color=GREEN, linewidth=2.1, label="Profit YoY %")
+    setup_panel(ax5, "Momento MoM e YoY", "Aceleração e desaceleração no ciclo mensal")
+    ax5.plot(monthly["MonthStart"], monthly["SalesYoY"], color=NAVY, linewidth=2.1, label="Vendas YoY %")
+    ax5.plot(monthly["MonthStart"], monthly["ProfitYoY"], color=GREEN, linewidth=2.1, label="Lucro YoY %")
     ax5.axhline(0, color=BORDER, linewidth=1)
-    ax5.yaxis.set_major_formatter(lambda value, pos: f"{value * 100:.0f}%")
+    ax5.yaxis.set_major_formatter(lambda value, pos: f"{value * 100:.0f}%".replace(".", ","))
     format_month_axis(ax5)
     ax5.legend(loc="upper left", frameon=False)
 
     ax6 = fig.add_subplot(grid[9:12, 0:15])
-    setup_panel(ax6, "2025 Monthly Sales Heatmap By Region", "Consistency view across the latest year")
+    setup_panel(ax6, "Heatmap de Vendas Mensais de 2025 por Região", "Visão de consistência ao longo do último ano")
     sns.heatmap(
         monthly_region_2025 / 1_000,
         cmap=sns.light_palette(NAVY, as_cmap=True),
@@ -851,7 +921,10 @@ def create_targets_trends(metrics: dict[str, object]) -> None:
     )
     ax6.set_xlabel("")
     ax6.set_ylabel("")
-    ax6.set_xticklabels([pd.to_datetime(label.get_text()).strftime("%b") for label in ax6.get_xticklabels()], rotation=0)
+    ax6.set_xticklabels(
+        [MONTH_ABBR_PT[pd.to_datetime(label.get_text()).month] for label in ax6.get_xticklabels()],
+        rotation=0,
+    )
 
     fig.savefig(SCREENSHOTS_DIR / "06-targets-trends.png", facecolor=BG)
     plt.close(fig)
@@ -869,7 +942,7 @@ def main() -> None:
     create_customer_product_insights(metrics)
     create_geography_channel_performance(metrics)
     create_targets_trends(metrics)
-    print("Generated six dashboard preview images in the screenshots folder.")
+    print("Seis imagens de preview do dashboard foram geradas na pasta screenshots.")
 
 
 if __name__ == "__main__":

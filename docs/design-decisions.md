@@ -1,37 +1,36 @@
-# Design Decisions
+# Decisões de Design
 
-## Color System
+## Sistema de Cores
 
-- Primary: deep navy `#123B5D`
-- Support neutral: slate gray `#7C8EA3`
-- Positive: restrained green `#2C6E49`
-- Negative: moderated red `#D1495B`
+- Primária: azul navy profundo `#123B5D`
+- Neutra de apoio: cinza ardósia `#7C8EA3`
+- Positiva: verde contido `#2C6E49`
+- Negativa: vermelho moderado `#D1495B`
 - Canvas: off-white `#F7F6F3`
 
-This palette keeps the report professional, avoids color noise, and helps negative versus positive performance read instantly.
+Essa paleta mantém o relatório profissional, evita ruído visual e ajuda a leitura imediata do que é positivo versus negativo.
 
-## Layout Strategy
+## Estratégia de Layout
 
-- Use wide KPI rows on the top of the most important pages.
-- Keep charts aligned to a consistent grid with generous spacing.
-- Avoid mixing too many chart types on one page.
-- Reserve tables and matrices for lower-page detail or diagnostic sections.
+- Usar faixas largas de KPIs no topo das páginas mais importantes.
+- Manter os gráficos alinhados em uma grade consistente, com bastante respiro.
+- Evitar misturar tipos demais de gráfico na mesma página.
+- Reservar tabelas e matrizes para o rodapé ou para áreas mais diagnósticas.
 
-## Visual Hierarchy
+## Hierarquia Visual
 
-- KPI cards should be the highest-contrast elements.
-- Trend charts should sit immediately below the KPI layer.
-- Comparison charts should flow from high-level to detailed views.
-- Filters should stay compact and predictable across pages.
+- Os cards de KPI devem ser os elementos de maior contraste.
+- Os gráficos de tendência devem ficar logo abaixo da camada de KPIs.
+- Os visuais comparativos devem ir do mais geral para o mais detalhado.
+- Os filtros devem permanecer compactos e previsíveis entre páginas.
 
-## Why These Visual Choices
+## Por Que Essas Escolhas Visuais
 
-- Bars and columns are preferred for ranking and category comparisons because they are precise and fast to interpret.
-- Lines are used for time trends because the report covers 24 months and needs directional reading.
-- Scatter plots are used only where relationship analysis matters, especially sales versus profit.
-- Maps are optional because a weak map adds little value compared with a strong region ranking chart.
+- Barras e colunas são preferidas para ranking e comparação de categorias porque são precisas e rápidas de interpretar.
+- Linhas são usadas para tendência temporal porque o relatório cobre 24 meses e precisa mostrar direção.
+- Scatter plots entram apenas onde a relação entre duas variáveis é central, especialmente sales versus profit.
+- Mapas são opcionais porque um mapa fraco agrega menos do que um bom ranking regional.
 
-## Portfolio Lens
+## Lente de Portfólio
 
-The report should look like a business asset rather than a classroom exercise. The goal is not to maximize the number of visuals, but to make each page feel intentional, credible, and easy to talk through in an interview.
-
+O relatório deve parecer um ativo real de negócio, não um exercício escolar. A meta não é maximizar o número de visuais, mas fazer cada página parecer intencional, crível e fácil de defender em entrevista.

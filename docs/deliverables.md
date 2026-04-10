@@ -1,22 +1,22 @@
-# Deliverables
+# Entregáveis
 
-## Completed Deliverables
+## Entregáveis Concluídos
 
-- Reproducible synthetic dataset with raw and processed layers
-- Star-schema-ready CSV exports for Power BI
-- Business context and business questions
-- Data dictionary and data generation documentation
-- Modeling rationale and relationship mapping
-- DAX measure library
-- Dashboard blueprint and design guidelines
-- Power BI theme JSON
-- Portfolio preview renders for all six report pages
-- README optimized for portfolio use
-- Interview, presentation, CV, and LinkedIn support materials
+- Dataset sintético reproduzível com camadas raw e processed
+- Exports em CSV prontos para star schema no Power BI
+- Contexto de negócio e perguntas de negócio
+- Dicionário de dados e documentação da lógica de geração
+- Racional de modelagem e mapeamento de relacionamentos
+- Biblioteca de medidas DAX
+- Blueprint do dashboard e diretrizes de design
+- Theme JSON para Power BI
+- Previews de portfólio para as seis páginas principais
+- README otimizado para apresentação no GitHub
+- Materiais de apoio para entrevista, apresentação, currículo e LinkedIn
 
-## Deliverables That Still Depend On Power BI Desktop
+## Entregáveis que Ainda Dependem do Power BI Desktop
 
-- Final report canvas assembly
-- PBIP artifact creation
-- Screenshot export
-- Optional bookmarks, drillthrough, and tooltip refinement
+- Montagem final do canvas do relatório
+- Criação do artefato PBIP
+- Exportação de screenshots nativas
+- Refinos opcionais de bookmarks, drillthrough e tooltips

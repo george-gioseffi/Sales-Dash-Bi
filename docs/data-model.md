@@ -1,55 +1,54 @@
-# Data Model
+# Modelo de Dados
 
-## Modeling Approach
+## Abordagem de Modelagem
 
-The model follows a star schema centered on transactional sales and monthly targets. The main objective is to keep analytical logic simple, performant, and easy to explain in both technical and business settings.
+O modelo segue um star schema centrado em vendas transacionais e metas mensais. O objetivo principal é manter a lógica analítica simples, performática e fácil de explicar tanto em contexto técnico quanto em contexto de negócio.
 
-## Fact Tables
+## Tabelas Fato
 
-| Table | Grain | Purpose |
+| Tabela | Grão | Propósito |
 | --- | --- | --- |
-| `fact_sales` | One order line per product per order date | Core revenue, volume, discount, cost, profit, and return analysis |
-| `fact_targets` | One row per month, region, and channel | Target tracking and variance analysis |
+| `fact_sales` | Uma linha de pedido por produto por data do pedido | Análise principal de receita, volume, desconto, custo, lucro e devolução |
+| `fact_targets` | Uma linha por mês, região e canal | Acompanhamento de metas e análise de variância |
 
-### Fact Grain Statements
+### Declaração de Grão
 
-- `fact_sales`: each row represents a sales line item at the `order x product x order date` grain.
-- `fact_targets`: each row represents a monthly target at the `month x region x sales channel` grain.
+- `fact_sales`: cada linha representa um item de venda no grão `pedido x produto x data do pedido`.
+- `fact_targets`: cada linha representa uma meta mensal no grão `mês x região x canal de vendas`.
 
-## Dimension Tables
+## Tabelas Dimensão
 
-| Table | Primary Key | Main Role |
+| Tabela | Chave Primária | Papel Principal |
 | --- | --- | --- |
-| `dim_date` | `DateKey` | Shared time intelligence backbone |
-| `dim_product` | `ProductKey` | Category, sub-category, and product analysis |
-| `dim_customer` | `CustomerKey` | Segment and customer mix analysis |
-| `dim_geography` | `GeographyKey` | City and state-level slicing |
-| `dim_region` | `RegionKey` | Region-level target alignment and executive comparison |
-| `dim_channel` | `ChannelKey` | Channel performance analysis |
-| `dim_sales_rep` | `SalesRepKey` | Sales rep comparison |
+| `dim_date` | `DateKey` | Base compartilhada de inteligência temporal |
+| `dim_product` | `ProductKey` | Análise de categoria, subcategoria e produto |
+| `dim_customer` | `CustomerKey` | Análise de segmento e mix de clientes |
+| `dim_geography` | `GeographyKey` | Corte por cidade e estado |
+| `dim_region` | `RegionKey` | Alinhamento regional das metas e comparação executiva |
+| `dim_channel` | `ChannelKey` | Análise de performance por canal |
+| `dim_sales_rep` | `SalesRepKey` | Comparação por representante comercial |
 
-## Relationships
+## Relacionamentos
 
-Recommended Power BI relationships:
+Relacionamentos recomendados no Power BI:
 
-| From | To | Cardinality | Status |
+| De | Para | Cardinalidade | Status |
 | --- | --- | --- | --- |
-| `dim_date[DateKey]` | `fact_sales[OrderDateKey]` | 1:* | Active |
-| `dim_date[DateKey]` | `fact_sales[ShipDateKey]` | 1:* | Inactive |
-| `dim_date[DateKey]` | `fact_targets[DateKey]` | 1:* | Active |
-| `dim_product[ProductKey]` | `fact_sales[ProductKey]` | 1:* | Active |
-| `dim_customer[CustomerKey]` | `fact_sales[CustomerKey]` | 1:* | Active |
-| `dim_geography[GeographyKey]` | `fact_sales[GeographyKey]` | 1:* | Active |
-| `dim_region[RegionKey]` | `fact_sales[RegionKey]` | 1:* | Active |
-| `dim_region[RegionKey]` | `fact_targets[RegionKey]` | 1:* | Active |
-| `dim_channel[ChannelKey]` | `fact_sales[ChannelKey]` | 1:* | Active |
-| `dim_channel[ChannelKey]` | `fact_targets[ChannelKey]` | 1:* | Active |
-| `dim_sales_rep[SalesRepKey]` | `fact_sales[SalesRepKey]` | 1:* | Active |
+| `dim_date[DateKey]` | `fact_sales[OrderDateKey]` | 1:* | Ativo |
+| `dim_date[DateKey]` | `fact_sales[ShipDateKey]` | 1:* | Inativo |
+| `dim_date[DateKey]` | `fact_targets[DateKey]` | 1:* | Ativo |
+| `dim_product[ProductKey]` | `fact_sales[ProductKey]` | 1:* | Ativo |
+| `dim_customer[CustomerKey]` | `fact_sales[CustomerKey]` | 1:* | Ativo |
+| `dim_geography[GeographyKey]` | `fact_sales[GeographyKey]` | 1:* | Ativo |
+| `dim_region[RegionKey]` | `fact_sales[RegionKey]` | 1:* | Ativo |
+| `dim_region[RegionKey]` | `fact_targets[RegionKey]` | 1:* | Ativo |
+| `dim_channel[ChannelKey]` | `fact_sales[ChannelKey]` | 1:* | Ativo |
+| `dim_channel[ChannelKey]` | `fact_targets[ChannelKey]` | 1:* | Ativo |
+| `dim_sales_rep[SalesRepKey]` | `fact_sales[SalesRepKey]` | 1:* | Ativo |
 
-## Analytical Assumptions
+## Premissas Analíticas
 
-- `dim_date` should be marked as the date table using `dim_date[Date]`.
-- Regional slicers used on target pages should come from `dim_region`, not from `dim_geography`, to preserve target grain integrity.
-- `ShipDateKey` is included for future logistics analysis, but the report should use `OrderDateKey` as the default active calendar relationship.
-- Returns are modeled as operational flags, not as fully reversed transactions.
-
+- `dim_date` deve ser marcada como a tabela oficial de datas usando `dim_date[Date]`.
+- Em páginas com metas, os slicers regionais devem usar `dim_region`, e não `dim_geography`, para preservar o grão correto da meta.
+- `ShipDateKey` existe para análises logísticas futuras, mas o relatório deve usar `OrderDateKey` como calendário ativo padrão.
+- Devoluções são modeladas como flags operacionais, e não como transações totalmente revertidas.

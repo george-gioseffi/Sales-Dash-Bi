@@ -1,50 +1,50 @@
-# Power BI Build Notes
+# Notas de Montagem no Power BI
 
 ## Status
 
-The repository is prepared for a PBIP-style workflow, but a fully generated `.pbip` artifact was not created inside this environment because the final report canvas still requires Power BI Desktop assembly.
+O repositório está preparado para um fluxo baseado em PBIP, mas um artefato `.pbip` completo ainda não foi gerado neste ambiente porque a montagem final do canvas depende do Power BI Desktop.
 
-What is ready:
+O que já está pronto:
 
-- Reproducible raw and processed datasets
-- Star schema exports
-- DAX measure library
-- Theme JSON
-- Dashboard blueprint
-- Dashboard preview renders in `screenshots/`
-- Final report assembly guidance in `powerbi/final-dashboard-handoff.md`
+- dados raw e processed reproduzíveis
+- exports do star schema
+- biblioteca DAX
+- arquivo de tema
+- blueprint do dashboard
+- previews visuais em `screenshots/`
+- guia final de montagem em `powerbi/final-dashboard-handoff.md`
 
-## Recommended Build Flow In Power BI Desktop
+## Fluxo Recomendado no Power BI Desktop
 
-1. Create a new Power BI Desktop file.
-2. Import all CSV files from `data/processed/`.
-3. Rename the imported tables to the documented model names.
-4. Build the relationships from `docs/data-model.md`.
-5. Mark `dim_date[Date]` as the date table.
-6. Sort `dim_date[Month Name]` by `dim_date[Month Number]`.
-7. Create the DAX measures from `docs/dax-measures.md`.
-8. Import `assets/theme/sales-performance-theme.json`.
-9. Build pages following `docs/dashboard-blueprint.md`.
-10. Save the report as PBIP if desired and export screenshots to `screenshots/`.
+1. Crie um novo arquivo no Power BI Desktop.
+2. Importe todos os CSVs de `data/processed/`.
+3. Renomeie as tabelas para os nomes documentados.
+4. Monte os relacionamentos definidos em `docs/data-model.md`.
+5. Marque `dim_date[Date]` como a tabela de datas.
+6. Ordene `dim_date[Month Name]` por `dim_date[Month Number]`.
+7. Crie as medidas DAX de `docs/dax-measures.md`.
+8. Importe `assets/theme/sales-performance-theme.json`.
+9. Monte as páginas seguindo `docs/dashboard-blueprint.md`.
+10. Salve o relatório como PBIP, se desejar, e exporte as screenshots para `screenshots/`.
 
-## Portfolio Preview Assets
+## Assets de Preview para Portfólio
 
-The repository now includes six static dashboard previews generated from the actual project data:
+O repositório já inclui seis previews estáticos do dashboard gerados a partir dos dados reais do projeto:
 
 ```bash
 python scripts/generate_dashboard_previews.py
 ```
 
-These images are intended to support the GitHub presentation layer until native Power BI Desktop screenshots replace them under the same filenames.
+Essas imagens servem para fortalecer a apresentação no GitHub até que screenshots nativas do Power BI Desktop substituam os mesmos arquivos.
 
-## Suggested PBIP Naming
+## Sugestão de Naming para PBIP
 
-- Report name: `Sales Performance Analytics`
-- Folder name: `powerbi/SalesPerformanceAnalytics/`
-- Optional PBIP file: `powerbi/Sales Performance Analytics.pbip`
+- Nome do relatório: `Sales Performance Analytics`
+- Pasta sugerida: `powerbi/SalesPerformanceAnalytics/`
+- Arquivo opcional: `powerbi/Sales Performance Analytics.pbip`
 
-## Practical Limitation
+## Limitação Prática
 
-Because the report file is not generated here, the final PBIP or PBIX artifact, interactive page wiring, and native Power BI screenshot exports still depend on opening Power BI Desktop once on the local machine.
+Como o arquivo nativo ainda não foi gerado aqui, o artefato final `.pbix` ou `.pbip`, as interações reais do relatório e as screenshots nativas ainda dependem de abrir o Power BI Desktop na máquina.
 
-This limitation is intentional and honest. Microsoft documents that PBIX-to-PBIP conversion and PBIR creation are performed through Power BI Desktop's Save As workflow, not through a supported terminal-only conversion path.
+Essa limitação é intencional e honesta. A Microsoft documenta que a conversão de PBIX para PBIP e a criação de PBIR acontecem pelo fluxo de Save As do Power BI Desktop, não por um caminho suportado de conversão apenas via terminal.

@@ -1,150 +1,149 @@
-# Dashboard Blueprint
+# Blueprint do Dashboard
 
-The report is designed as a six-page executive analytics experience plus an optional methodology page. The visual direction is intentionally corporate, restrained, and decision-oriented rather than decorative.
+O relatório foi desenhado como uma experiência executiva de analytics com seis páginas principais e uma página opcional de metodologia. A direção visual é propositalmente corporativa, contida e orientada à decisão, em vez de decorativa.
 
-## Global Design Principles
+## Princípios Globais de Design
 
-- Use a light off-white canvas to keep the report clean and presentation-friendly.
-- Reserve deep navy for the most important measures and structural emphasis.
-- Use muted green for favorable performance and controlled red for negative variance.
-- Avoid unnecessary gauges, pie overload, heavy borders, or decorative visuals without analytical value.
-- Keep slicers limited to business-relevant controls: date, region, channel, category, and segment.
+- Usar um canvas claro em off-white para manter o relatório limpo e bom para apresentação.
+- Reservar o azul navy profundo para as métricas mais importantes e para a estrutura visual.
+- Usar verde discreto para desempenho favorável e vermelho controlado para variações negativas.
+- Evitar gauges desnecessários, excesso de pizza, bordas pesadas ou visuais sem valor analítico.
+- Limitar slicers aos controles realmente úteis para o negócio: data, região, canal, categoria e segmento.
 
-## Page 1. Executive Overview
+## Página 1. Visão Executiva
 
-Purpose: Deliver the full business story in less than 20 seconds.  
-Target audience: Executives, hiring reviewers, and business sponsors.  
-Recommended visuals:
+Propósito: Entregar a história completa do negócio em menos de 20 segundos.  
+Público-alvo: Executivos, recrutadores e patrocinadores do negócio.  
+Visuais recomendados:
 
-- KPI cards for Total Sales, Total Profit, Profit Margin %, Total Orders, Average Order Value, Return Rate %, and Sales vs Target Variance
-- Monthly line chart for Sales and Profit
-- Region bar chart ranked by Total Sales
-- Category contribution bar or treemap
-- Compact target attainment card or bullet chart
+- Cards de KPI para Total Sales, Total Profit, Profit Margin %, Total Orders, Average Order Value, Return Rate %, e Sales vs Target Variance
+- Gráfico de linha mensal para Sales e Profit
+- Barra por região ranqueada por Total Sales
+- Barra ou treemap de contribuição por categoria
+- Card compacto ou bullet chart de atingimento de meta
 
-Essential filters:
+Filtros essenciais:
 
-- Date
-- Region
-- Sales Channel
-- Category
+- Data
+- Região
+- Canal de Vendas
+- Categoria
 
-Key takeaway: The viewer should immediately see the overall size of the business, whether performance is healthy, and where the main revenue engine sits.
+Leitura-chave: O usuário deve enxergar rapidamente o tamanho do negócio, se a performance está saudável e onde está o principal motor de receita.
 
-## Page 2. Sales Analysis
+## Página 2. Análise de Vendas
 
-Purpose: Explain what is driving revenue.  
-Target audience: Commercial managers and sales operations.  
-Recommended visuals:
+Propósito: Explicar o que está puxando a receita.  
+Público-alvo: Gestores comerciais e operações de vendas.  
+Visuais recomendados:
 
-- Monthly sales trend
-- Stacked column by channel over time
-- Category and sub-category ranking bars
-- Region by channel matrix
-- Order volume and average order value cards
+- Tendência mensal de vendas
+- Coluna empilhada por canal ao longo do tempo
+- Barras de ranking por categoria e subcategoria
+- Matrix região x canal
+- Cards de volume de pedidos e ticket médio
 
-Essential filters:
+Filtros essenciais:
 
-- Date
-- Region
-- Sales Channel
-- Segment
+- Data
+- Região
+- Canal de Vendas
+- Segmento
 
-Key takeaway: Revenue should be understood as a mix of product, geography, and channel drivers rather than a single total.
+Leitura-chave: Receita deve ser entendida como uma composição de drivers de produto, geografia e canal, e não apenas como um total agregado.
 
-## Page 3. Profitability Analysis
+## Página 3. Análise de Lucratividade
 
-Purpose: Show that high sales do not always mean high-quality revenue.  
-Target audience: Finance business partners and sales leadership.  
-Recommended visuals:
+Propósito: Mostrar que vender muito não significa necessariamente ter receita de qualidade.  
+Público-alvo: Finanças parceiras do negócio e liderança comercial.  
+Visuais recomendados:
 
-- Profit and margin KPI strip
-- Margin by category and sub-category bar chart
-- Scatter plot with Sales on X and Profit on Y by product or sub-category
-- Discount % versus Profit Margin % comparison
-- Table of low-margin, high-volume products
+- Faixa de KPIs de lucro e margem
+- Barras de margem por categoria e subcategoria
+- Scatter com Sales no eixo X e Profit no eixo Y por produto ou subcategoria
+- Comparação entre Discount % e Profit Margin %
+- Tabela de produtos com baixo lucro e alto volume
 
-Essential filters:
+Filtros essenciais:
 
-- Date
-- Region
-- Category
-- Sales Channel
+- Data
+- Região
+- Categoria
+- Canal de Vendas
 
-Key takeaway: The report should highlight where discounting, pricing, or mix is eroding profitability.
+Leitura-chave: O relatório deve evidenciar onde desconto, preço ou mix estão corroendo lucratividade.
 
-## Page 4. Customer And Product Insights
+## Página 4. Insights de Clientes e Produtos
 
-Purpose: Understand segment mix, concentration, and product contribution.  
-Target audience: Commercial strategy and category managers.  
-Recommended visuals:
+Propósito: Entender mix de segmentos, concentração e contribuição de produtos.  
+Público-alvo: Estratégia comercial e gestão de categorias.  
+Visuais recomendados:
 
-- Segment share by sales
-- Segment growth versus prior year
-- Top products by sales
-- Top products by profit
-- Pareto-style contribution view showing concentration
+- Participação de segmento por vendas
+- Crescimento de segmento versus ano anterior
+- Top produtos por vendas
+- Top produtos por lucro
+- Visão estilo Pareto mostrando concentração
 
-Essential filters:
+Filtros essenciais:
 
-- Date
-- Segment
-- Category
-- Region
+- Data
+- Segmento
+- Categoria
+- Região
 
-Key takeaway: Not all growth is balanced; a limited set of products and segments can dominate the business mix.
+Leitura-chave: Nem todo crescimento é equilibrado; um conjunto limitado de produtos e segmentos pode dominar o mix do negócio.
 
-## Page 5. Geography And Channel Performance
+## Página 5. Performance Geográfica e de Canais
 
-Purpose: Compare execution quality across regions and channels.  
-Target audience: Regional leadership and commercial planning teams.  
-Recommended visuals:
+Propósito: Comparar qualidade de execução entre regiões e canais.  
+Público-alvo: Liderança regional e times de planejamento comercial.  
+Visuais recomendados:
 
-- Region ranking by sales
-- Region ranking by margin
-- Channel contribution chart
-- Region x channel heatmap or matrix
-- Optional filled map only if the geography visual remains clear and adds value
+- Ranking de região por vendas
+- Ranking de região por margem
+- Gráfico de contribuição por canal
+- Heatmap ou matrix região x canal
+- Mapa apenas se permanecer claro e agregar valor real
 
-Essential filters:
+Filtros essenciais:
 
-- Date
-- Region
-- Sales Channel
-- Segment
+- Data
+- Região
+- Canal de Vendas
+- Segmento
 
-Key takeaway: Regional scale and channel efficiency should be visible side by side, not evaluated in isolation.
+Leitura-chave: Escala regional e eficiência de canal precisam aparecer lado a lado, não em análises separadas.
 
-## Page 6. Targets And Trends
+## Página 6. Metas e Tendências
 
-Purpose: Track plan attainment and momentum over time.  
-Target audience: Leadership and planning teams.  
-Recommended visuals:
+Propósito: Acompanhar aderência ao plano e momento do negócio ao longo do tempo.  
+Público-alvo: Liderança e times de planejamento.  
+Visuais recomendados:
 
-- Actual versus target line chart by month
-- Target attainment % KPI
-- Variance bar chart by region or channel
-- MoM and YoY cards
-- Small multiple trend by region
+- Linha mensal de realizado versus meta
+- KPI de Target Attainment %
+- Barras de variância por região ou canal
+- Cards de MoM e YoY
+- Pequenos múltiplos ou tendência por região
 
-Essential filters:
+Filtros essenciais:
 
-- Date
-- Region
-- Sales Channel
+- Data
+- Região
+- Canal de Vendas
 
-Key takeaway: Leadership should understand whether the business is missing targets because of one isolated area or a broader execution pattern.
+Leitura-chave: A liderança deve entender se a meta está sendo perdida por um ponto isolado ou por um padrão mais amplo de execução.
 
-## Page 7. Methodology
+## Página 7. Metodologia
 
-Purpose: Make the case interview-ready and self-explanatory for GitHub viewers.  
-Target audience: Recruiters, professors, technical reviewers.  
-Recommended visuals:
+Propósito: Deixar o case pronto para entrevista e autoexplicativo para quem navega pelo GitHub.  
+Público-alvo: Recrutadores, professores e revisores técnicos.  
+Visuais recomendados:
 
-- Short business context block
-- Simplified star schema diagram
-- KPI definition cards
-- Assumptions and limitations panel
+- Bloco curto de contexto de negócio
+- Diagrama simplificado do star schema
+- Cards com definição de KPIs
+- Painel de premissas e limitações
 
-Key takeaway: The report should prove not only visual skill, but also analytical discipline.
-
+Leitura-chave: O relatório deve provar não apenas habilidade visual, mas também disciplina analítica.

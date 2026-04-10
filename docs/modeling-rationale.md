@@ -1,18 +1,17 @@
-# Modeling Rationale
+# Racional de Modelagem
 
-## Why A Star Schema
+## Por Que Usar Star Schema
 
-The report is meant to support both executive storytelling and technical interview discussion. A star schema keeps the semantic model readable, improves measure behavior, and avoids the ambiguity that typically appears when multiple descriptive columns live inside a single wide fact table.
+O relatório foi pensado para sustentar storytelling executivo e discussão técnica em entrevista. O star schema mantém o modelo semântico legível, melhora o comportamento das medidas e evita a ambiguidade comum quando muitas colunas descritivas vivem dentro de uma única fato larga.
 
-## Why Separate Sales And Targets
+## Por Que Separar Vendas e Metas
 
-Sales and targets operate at different grains and should not be blended into one table. Sales are transactional; targets are monthly planning data. Keeping them separate preserves accuracy, simplifies variance measures, and mirrors how planning data is usually handled in real business models.
+Vendas e metas operam em grãos diferentes e não devem ficar misturadas na mesma tabela. Vendas são transacionais; metas são dados mensais de planejamento. Mantê-las separadas preserva precisão, simplifica medidas de variância e espelha a forma como dados de planejamento costumam ser tratados em modelos reais.
 
-## Why Add `dim_region`
+## Por Que Adicionar `dim_region`
 
-`dim_geography` is useful for state and city analysis, but target rows exist at region level. Adding `dim_region` prevents target duplication and gives the dashboard a clean executive layer for regional comparison.
+`dim_geography` é útil para análises por estado e cidade, mas as metas existem no nível de região. Adicionar `dim_region` evita duplicação de meta e cria uma camada executiva mais limpa para comparação regional.
 
-## Why Keep Both Order Date And Ship Date
+## Por Que Manter Order Date e Ship Date
 
-Order date is the primary analytical timeline, while ship date creates room for future fulfillment analysis. Modeling both from the start improves extensibility without complicating the initial dashboard build.
-
+Order date é a linha do tempo analítica principal, enquanto ship date abre espaço para análises futuras de logística e entrega. Modelar os dois desde o início melhora a extensibilidade sem complicar a primeira versão do dashboard.

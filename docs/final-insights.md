@@ -1,22 +1,21 @@
-# Final Insights
+# Insights Finais
 
-## Key Insights
+## Principais Insights
 
-1. Sales grew from `3.72M` in 2024 to `4.20M` in 2025, a `12.99%` increase, but profit grew more slowly at `10.20%`. Margin softened from `25.07%` to `24.45%`, which suggests growth came with pricing or mix pressure.
-2. `Southeast` is the largest revenue region at `2.25M`, but it also has the lowest average target attainment at `96.03%` and the highest average discount rate among regions. It is the biggest market, but not the cleanest one operationally.
-3. `Technology` is the revenue engine, led by laptops at `2.48M` in sales, but laptop margin sits at only `19.3%`. High volume is not automatically high quality.
-4. `Printers` and `Tables` are the clearest low-quality revenue pockets. They combine elevated discount rates with weak margin conversion, making them strong candidates for pricing review or assortment rationalization.
-5. `Direct Sales` contributes less total revenue than `Online`, but delivers stronger economics with a `26.0%` margin and higher profit per order. It is the most efficient channel in the portfolio.
-6. `Enterprise` is the fastest-growing customer segment, expanding `18.43%` year over year. That suggests strong upside in higher-value commercial accounts if margin discipline is maintained.
-7. The business is meaningfully concentrated: the top 10 products represent `72.48%` of total sales. That concentration creates both scaling opportunities and portfolio risk.
-8. `Online` has the highest return rate at `2.47%`, which is still manageable, but should be monitored alongside promotion and customer experience performance.
+1. As vendas cresceram de `3,72M` em 2024 para `4,20M` em 2025, alta de `12,99%`, mas o lucro cresceu mais devagar, `10,20%`. A margem caiu de `25,07%` para `24,45%`, sugerindo pressão de preço ou de mix.
+2. `Southeast` é a maior região em receita, com `2,25M`, mas também apresenta o menor atingimento médio de meta, `96,03%`, e a maior taxa média de desconto. É o maior mercado, mas não o mais limpo operacionalmente.
+3. `Technology` é o principal motor de vendas, liderado por laptops com `2,48M` em receita, mas a margem dessa linha fica em apenas `19,3%`. Alto volume não significa, automaticamente, alta qualidade.
+4. `Printers` e `Tables` são os bolsões mais claros de receita de baixa qualidade. Elas combinam desconto elevado com conversão fraca de margem e merecem revisão de preço ou racionalização de portfólio.
+5. `Direct Sales` gera menos receita total do que `Online`, mas entrega melhor economia, com `26,0%` de margem e lucro por pedido superior. É o canal mais eficiente do portfólio.
+6. `Enterprise` é o segmento de clientes com maior crescimento, `18,43%` ano contra ano. Isso sugere espaço relevante em contas de maior valor, desde que a disciplina de margem seja mantida.
+7. O negócio é concentrado: os 10 principais produtos respondem por `72,48%` da receita total. Isso cria oportunidade de escala, mas também risco de concentração.
+8. `Online` tem a maior taxa de devolução, `2,47%`. Ainda é administrável, mas merece acompanhamento em conjunto com promoções e experiência do cliente.
 
-## Executive Recommendations
+## Recomendações Executivas
 
-1. Review discount policy in printers, tables, and selected laptop lines where revenue scale is not translating into healthy profit.
-2. Protect the economics of `Direct Sales` and identify where that operating model can be replicated without sacrificing conversion.
-3. Recalibrate commercial execution in `Southeast`, where the business is largest but target delivery is less consistent.
-4. Double down on fast-growing Enterprise accounts, especially where growth is supported by higher order value and healthier mix.
-5. Use product concentration analysis to decide which top products deserve pricing protection and which low-quality sellers deserve corrective action.
-6. Track return behavior in Online more closely during high-promotion periods, especially in Q4.
-
+1. Revisar a política de descontos em printers, tables e algumas linhas de laptops onde o volume não está virando lucro saudável.
+2. Proteger a economia de `Direct Sales` e identificar onde esse modelo pode ser replicado sem sacrificar conversão.
+3. Recalibrar a execução comercial em `Southeast`, onde o negócio é maior, mas a entrega contra meta é menos consistente.
+4. Acelerar contas `Enterprise` de crescimento rápido, principalmente onde ticket médio e mix são mais saudáveis.
+5. Usar a análise de concentração para decidir quais produtos líderes merecem proteção de preço e quais itens de baixa qualidade precisam de ação corretiva.
+6. Monitorar com mais atenção o comportamento de devolução em `Online`, especialmente em períodos promocionais de Q4.

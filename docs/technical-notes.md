@@ -1,11 +1,11 @@
-# Technical Notes
+# Notas Técnicas
 
-## Expected Power Query Transformations
+## Transformações Esperadas no Power Query
 
-The CSV files are already structured for reporting, but the following Power Query steps are still recommended to keep the semantic model clean and explicit:
+Os CSVs já estão estruturados para reporting, mas estes passos no Power Query continuam recomendados para manter o modelo semântico limpo e explícito:
 
-1. Apply explicit data types to every imported column.
-2. Rename tables to the final model names:
+1. Aplicar tipos de dados explícitos em todas as colunas importadas.
+2. Renomear as tabelas para os nomes finais do modelo:
    - `fact_sales`
    - `fact_targets`
    - `dim_date`
@@ -15,33 +15,32 @@ The CSV files are already structured for reporting, but the following Power Quer
    - `dim_region`
    - `dim_channel`
    - `dim_sales_rep`
-3. Remove unused natural-key columns from report view after relationships are validated.
-4. Hide surrogate keys in the report layer.
-5. Confirm `ReturnedFlag` is whole number and not text.
-6. Confirm percentage fields such as `DiscountPct` are modeled as decimals and formatted as percentages.
-7. Sort `dim_date[Month Name]` by `dim_date[Month Number]`.
-8. Mark `dim_date` as the model date table using `dim_date[Date]`.
+3. Remover da visão de relatório colunas de chave natural que não forem mais necessárias depois da validação dos relacionamentos.
+4. Ocultar chaves substitutas na camada de relatório.
+5. Confirmar que `ReturnedFlag` está tipada como número inteiro, e não texto.
+6. Confirmar que campos percentuais como `DiscountPct` estão em decimal e formatados como percentual.
+7. Ordenar `dim_date[Month Name]` por `dim_date[Month Number]`.
+8. Marcar `dim_date` como tabela de datas usando `dim_date[Date]`.
 
-## Modeling Notes
+## Notas de Modelagem
 
-- Use `OrderDateKey` as the active relationship for time intelligence.
-- Keep `ShipDateKey` as an inactive relationship for future logistics or delivery timing analysis.
-- Use `dim_region` in pages that compare actuals versus targets.
-- Use `dim_geography` for state and city drilldown where targets are not the primary focus.
+- Usar `OrderDateKey` como relacionamento ativo para inteligência temporal.
+- Manter `ShipDateKey` como relacionamento inativo para análises futuras de logística ou prazo de entrega.
+- Usar `dim_region` nas páginas que comparam realizado versus meta.
+- Usar `dim_geography` para drilldown por estado e cidade quando a análise de metas não for o foco principal.
 
-## Suggested Formatting
+## Formatação Sugerida
 
-- Currency: BRL or a neutral currency format, depending on presentation preference
-- Percentages: one decimal place for executive pages, two decimals for detail pages
-- Quantities and orders: thousand separators, zero decimals
+- Moeda: BRL ou formatação monetária neutra, conforme a preferência de apresentação
+- Percentuais: uma casa decimal nas páginas executivas e duas casas nas páginas de detalhe
+- Quantidades e pedidos: separador de milhar e zero casas decimais
 
-## Power BI Build Sequence
+## Sequência Recomendada de Montagem no Power BI
 
-1. Load all processed CSVs from `data/processed/`.
-2. Create relationships exactly as defined in `docs/data-model.md`.
-3. Mark `dim_date[Date]` as the date table.
-4. Import the theme file from `assets/theme/sales-performance-theme.json`.
-5. Create DAX measures from `docs/dax-measures.md`.
-6. Hide keys and technical columns.
-7. Build pages according to `docs/dashboard-blueprint.md`.
-
+1. Carregar todos os CSVs processed de `data/processed/`.
+2. Criar os relacionamentos exatamente como definidos em `docs/data-model.md`.
+3. Marcar `dim_date[Date]` como a tabela de datas.
+4. Importar o theme de `assets/theme/sales-performance-theme.json`.
+5. Criar as medidas DAX de `docs/dax-measures.md`.
+6. Ocultar chaves e colunas técnicas.
+7. Montar as páginas de acordo com `docs/dashboard-blueprint.md`.

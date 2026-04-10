@@ -1,6 +1,6 @@
-# DAX Measures
+# Medidas DAX
 
-This measure library assumes the following model names in Power BI:
+Esta biblioteca assume os seguintes nomes de tabelas no Power BI:
 
 - `fact_sales`
 - `fact_targets`
@@ -12,9 +12,9 @@ This measure library assumes the following model names in Power BI:
 - `dim_channel`
 - `dim_sales_rep`
 
-`dim_date[Date]` should be marked as the official date column before using time-intelligence measures.
+Antes de usar medidas de inteligência temporal, marque `dim_date[Date]` como a coluna oficial de data do modelo.
 
-## Core Metrics
+## Métricas Centrais
 
 ### 1. Total Sales
 
@@ -23,8 +23,8 @@ Total Sales =
 SUM ( fact_sales[SalesAmount] )
 ```
 
-Description: Net sales after discount.  
-Usage: Main KPI cards, trend lines, category and region comparisons.
+Descrição: Soma das vendas líquidas após desconto.  
+Uso: Cards principais, linhas de tendência e comparações por categoria e região.
 
 ### 2. Gross Sales
 
@@ -33,8 +33,8 @@ Gross Sales =
 SUM ( fact_sales[GrossSalesAmount] )
 ```
 
-Description: Sales before discount.  
-Usage: Discount analysis and gross-to-net bridge logic.
+Descrição: Soma das vendas antes do desconto.  
+Uso: Análise de desconto e lógica de ponte entre bruto e líquido.
 
 ### 3. Total Profit
 
@@ -43,8 +43,8 @@ Total Profit =
 SUM ( fact_sales[ProfitAmount] )
 ```
 
-Description: Total profit contribution.  
-Usage: KPI cards, profitability pages, scatter plots, and ranking visuals.
+Descrição: Contribuição total de lucro.  
+Uso: Cards de KPI, páginas de lucratividade, scatter plots e visuais de ranking.
 
 ### 4. Total Cost
 
@@ -53,8 +53,8 @@ Total Cost =
 SUM ( fact_sales[CostAmount] )
 ```
 
-Description: Total cost absorbed by sold items.  
-Usage: Margin calculations and revenue-to-cost comparisons.
+Descrição: Custo total absorvido pelos itens vendidos.  
+Uso: Cálculo de margem e comparações entre receita e custo.
 
 ### 5. Discount Amount
 
@@ -63,8 +63,8 @@ Discount Amount =
 SUM ( fact_sales[DiscountAmount] )
 ```
 
-Description: Absolute value given away through discounting.  
-Usage: Discount monitoring cards and profitability diagnostics.
+Descrição: Valor absoluto concedido em desconto.  
+Uso: Cards de acompanhamento de desconto e diagnósticos de lucratividade.
 
 ### 6. Total Orders
 
@@ -73,8 +73,8 @@ Total Orders =
 DISTINCTCOUNT ( fact_sales[OrderID] )
 ```
 
-Description: Number of distinct orders.  
-Usage: KPI cards, average order value, and channel efficiency analysis.
+Descrição: Quantidade de pedidos distintos.  
+Uso: Cards de KPI, ticket médio e análise de eficiência por canal.
 
 ### 7. Total Quantity
 
@@ -83,8 +83,8 @@ Total Quantity =
 SUM ( fact_sales[Quantity] )
 ```
 
-Description: Total units sold.  
-Usage: Volume analysis, product mix, and low-margin volume checks.
+Descrição: Total de unidades vendidas.  
+Uso: Análise de volume, mix de produto e checagem de volume com margem fraca.
 
 ### 8. Total Customers
 
@@ -93,8 +93,8 @@ Total Customers =
 DISTINCTCOUNT ( dim_customer[CustomerKey] )
 ```
 
-Description: Distinct customers in current filter context.  
-Usage: Customer mix cards and sales-per-customer analysis.
+Descrição: Quantidade de clientes distintos no contexto atual de filtro.  
+Uso: Cards de mix de clientes e análise de sales por cliente.
 
 ### 9. Average Order Value
 
@@ -103,8 +103,8 @@ Average Order Value =
 DIVIDE ( [Total Sales], [Total Orders] )
 ```
 
-Description: Average sales value per order.  
-Usage: Executive overview and channel comparison.
+Descrição: Valor médio de venda por pedido.  
+Uso: Visão executiva e comparação entre canais.
 
 ### 10. Average Unit Price
 
@@ -113,10 +113,10 @@ Average Unit Price =
 DIVIDE ( [Total Sales], [Total Quantity] )
 ```
 
-Description: Average realized revenue per unit sold.  
-Usage: Product mix and pricing diagnostics.
+Descrição: Receita média realizada por unidade vendida.  
+Uso: Diagnóstico de mix de produto e de preço.
 
-## Profitability
+## Lucratividade
 
 ### 11. Profit Margin %
 
@@ -125,8 +125,8 @@ Profit Margin % =
 DIVIDE ( [Total Profit], [Total Sales] )
 ```
 
-Description: Profit generated for each currency unit of sales.  
-Usage: Margin cards, category comparison, and channel efficiency.
+Descrição: Lucro gerado para cada unidade monetária de venda.  
+Uso: Cards de margem, comparação por categoria e eficiência por canal.
 
 ### 12. Discount %
 
@@ -135,8 +135,8 @@ Discount % =
 DIVIDE ( [Discount Amount], [Gross Sales] )
 ```
 
-Description: Share of gross sales conceded as discount.  
-Usage: Executive KPI, discount-to-margin analysis, and price policy review.
+Descrição: Parcela da venda bruta concedida como desconto.  
+Uso: KPI executivo, análise desconto versus margem e revisão de política de preço.
 
 ### 13. Returned Lines
 
@@ -145,8 +145,8 @@ Returned Lines =
 SUM ( fact_sales[ReturnedFlag] )
 ```
 
-Description: Count of lines flagged as returned.  
-Usage: Return tracking and channel operational diagnostics.
+Descrição: Contagem de linhas marcadas como devolvidas.  
+Uso: Acompanhamento de devolução e diagnósticos operacionais por canal.
 
 ### 14. Return Rate %
 
@@ -155,8 +155,8 @@ Return Rate % =
 DIVIDE ( [Returned Lines], COUNTROWS ( fact_sales ) )
 ```
 
-Description: Returned line share in the current filter context.  
-Usage: KPI cards and channel/service quality checks.
+Descrição: Participação de linhas devolvidas no contexto atual.  
+Uso: Cards de KPI e checagens de qualidade operacional e serviço.
 
 ### 15. Profit per Order
 
@@ -165,8 +165,8 @@ Profit per Order =
 DIVIDE ( [Total Profit], [Total Orders] )
 ```
 
-Description: Average profit generated per order.  
-Usage: Channel efficiency and profitability benchmarking.
+Descrição: Lucro médio gerado por pedido.  
+Uso: Benchmark de eficiência por canal e lucratividade.
 
 ### 16. Sales per Customer
 
@@ -175,10 +175,10 @@ Sales per Customer =
 DIVIDE ( [Total Sales], [Total Customers] )
 ```
 
-Description: Average revenue generated per active customer.  
-Usage: Segment and customer concentration analysis.
+Descrição: Receita média gerada por cliente ativo.  
+Uso: Análise de segmento e concentração de clientes.
 
-## Time Intelligence
+## Inteligência Temporal
 
 ### 17. Sales PY
 
@@ -187,8 +187,8 @@ Sales PY =
 CALCULATE ( [Total Sales], DATEADD ( dim_date[Date], -1, YEAR ) )
 ```
 
-Description: Sales in the same period last year.  
-Usage: YoY cards, trend visuals, and annual performance comparison.
+Descrição: Vendas no mesmo período do ano anterior.  
+Uso: Cards de YoY, gráficos de tendência e comparação anual.
 
 ### 18. Sales YoY %
 
@@ -197,8 +197,8 @@ Sales YoY % =
 DIVIDE ( [Total Sales] - [Sales PY], [Sales PY] )
 ```
 
-Description: Year-over-year sales growth rate.  
-Usage: Executive overview and trend analysis.
+Descrição: Taxa de crescimento de vendas ano contra ano.  
+Uso: Visão executiva e análise de tendência.
 
 ### 19. Profit PY
 
@@ -207,8 +207,8 @@ Profit PY =
 CALCULATE ( [Total Profit], DATEADD ( dim_date[Date], -1, YEAR ) )
 ```
 
-Description: Profit in the same period last year.  
-Usage: YoY margin storyline and profitability trend analysis.
+Descrição: Lucro no mesmo período do ano anterior.  
+Uso: Narrativa de margem YoY e tendência de lucratividade.
 
 ### 20. Profit YoY %
 
@@ -217,8 +217,8 @@ Profit YoY % =
 DIVIDE ( [Total Profit] - [Profit PY], [Profit PY] )
 ```
 
-Description: Year-over-year profit growth rate.  
-Usage: Profitability page and executive summary.
+Descrição: Taxa de crescimento de lucro ano contra ano.  
+Uso: Página de lucratividade e resumo executivo.
 
 ### 21. Sales PM
 
@@ -227,8 +227,8 @@ Sales PM =
 CALCULATE ( [Total Sales], DATEADD ( dim_date[Date], -1, MONTH ) )
 ```
 
-Description: Sales in the previous month.  
-Usage: Month-over-month trend diagnostics.
+Descrição: Vendas do mês anterior.  
+Uso: Diagnóstico de tendência mês contra mês.
 
 ### 22. Sales MoM
 
@@ -237,8 +237,8 @@ Sales MoM =
 [Total Sales] - [Sales PM]
 ```
 
-Description: Absolute sales change versus previous month.  
-Usage: Trend cards and acceleration or slowdown views.
+Descrição: Variação absoluta de vendas versus o mês anterior.  
+Uso: Cards de tendência e leitura de aceleração ou desaceleração.
 
 ### 23. Profit PM
 
@@ -247,8 +247,8 @@ Profit PM =
 CALCULATE ( [Total Profit], DATEADD ( dim_date[Date], -1, MONTH ) )
 ```
 
-Description: Profit in the previous month.  
-Usage: Profit trend tracking.
+Descrição: Lucro do mês anterior.  
+Uso: Acompanhamento de tendência de lucro.
 
 ### 24. Profit MoM
 
@@ -257,8 +257,8 @@ Profit MoM =
 [Total Profit] - [Profit PM]
 ```
 
-Description: Absolute profit change versus previous month.  
-Usage: Trend cards and profitability movement analysis.
+Descrição: Variação absoluta de lucro versus o mês anterior.  
+Uso: Cards de tendência e análise do movimento de lucratividade.
 
 ### 25. Running Sales
 
@@ -273,8 +273,8 @@ CALCULATE (
 )
 ```
 
-Description: Cumulative sales over the visible date range.  
-Usage: Running trend lines and year progress views.
+Descrição: Vendas acumuladas no intervalo visível de datas.  
+Uso: Linhas acumuladas e leitura de progresso no ano.
 
 ### 26. Running Profit
 
@@ -289,10 +289,10 @@ CALCULATE (
 )
 ```
 
-Description: Cumulative profit over the visible date range.  
-Usage: Profit accumulation and contribution storytelling.
+Descrição: Lucro acumulado no intervalo visível de datas.  
+Uso: Storytelling de acumulação e contribuição de lucro.
 
-## Targets
+## Metas
 
 ### 27. Sales Target
 
@@ -301,8 +301,8 @@ Sales Target =
 SUM ( fact_targets[SalesTargetAmount] )
 ```
 
-Description: Planned sales amount from the target table.  
-Usage: KPI cards, bullet charts, and target tracking visuals.
+Descrição: Valor planejado de vendas vindo da tabela de metas.  
+Uso: Cards de KPI, bullet charts e visuais de acompanhamento de meta.
 
 ### 28. Sales vs Target Variance
 
@@ -311,8 +311,8 @@ Sales vs Target Variance =
 [Total Sales] - [Sales Target]
 ```
 
-Description: Absolute gap between actual sales and target.  
-Usage: Executive cards and variance bars.
+Descrição: Gap absoluto entre vendas realizadas e meta.  
+Uso: Cards executivos e barras de variância.
 
 ### 29. Target Attainment %
 
@@ -321,8 +321,8 @@ Target Attainment % =
 DIVIDE ( [Total Sales], [Sales Target] )
 ```
 
-Description: Actual performance as a percentage of target.  
-Usage: KPI cards, conditional formatting, and trend review.
+Descrição: Performance realizada como percentual da meta.  
+Uso: Cards de KPI, formatação condicional e revisão de tendência.
 
 ### 30. Sales vs Target Variance %
 
@@ -331,10 +331,10 @@ Sales vs Target Variance % =
 DIVIDE ( [Sales vs Target Variance], [Sales Target] )
 ```
 
-Description: Relative variance versus plan.  
-Usage: Executive target commentary and regional performance comparison.
+Descrição: Variância relativa em relação ao plano.  
+Uso: Comentário executivo sobre meta e comparação regional.
 
-## Ranking And Contribution
+## Ranking e Contribuição
 
 ### 31. % of Total Sales
 
@@ -354,8 +354,8 @@ DIVIDE (
 )
 ```
 
-Description: Share of sales contribution within the current date context.  
-Usage: Contribution bars, matrices, and Pareto-style analysis.
+Descrição: Participação da venda dentro do contexto atual de data.  
+Uso: Barras de contribuição, matrizes e análises estilo Pareto.
 
 ### 32. % of Total Profit
 
@@ -375,8 +375,8 @@ DIVIDE (
 )
 ```
 
-Description: Share of profit contribution within the current date context.  
-Usage: Profit concentration and mix analysis.
+Descrição: Participação do lucro dentro do contexto atual de data.  
+Uso: Análise de concentração de lucro e leitura de mix.
 
 ### 33. Rank Region by Sales
 
@@ -385,8 +385,8 @@ Rank Region by Sales =
 RANKX ( ALL ( dim_region[Region] ), [Total Sales], , DESC, DENSE )
 ```
 
-Description: Sales ranking across regions.  
-Usage: Regional comparison tables and conditional formatting.
+Descrição: Ranking de vendas entre regiões.  
+Uso: Tabelas comparativas por região e formatação condicional.
 
 ### 34. Rank Category by Profit
 
@@ -395,6 +395,5 @@ Rank Category by Profit =
 RANKX ( ALL ( dim_product[Category] ), [Total Profit], , DESC, DENSE )
 ```
 
-Description: Profit ranking across categories.  
-Usage: Category scorecards and profitability matrices.
-
+Descrição: Ranking de lucro entre categorias.  
+Uso: Scorecards de categoria e matrizes de lucratividade.

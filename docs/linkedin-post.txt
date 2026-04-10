@@ -1,14 +1,13 @@
-Built a new end-to-end Power BI portfolio project: Sales Performance Analytics.
+Concluí um novo projeto de portfólio em Power BI: Sales Performance Analytics.
 
-The goal was to go beyond a simple dashboard and create something that feels closer to a real business case. I structured the project with reproducible synthetic data, a star schema, a DAX KPI library, a dashboard blueprint, and documentation designed for both technical review and executive storytelling.
+A ideia foi ir além de um dashboard simples e montar algo mais próximo de um case real de negócio. Estruturei o projeto com dados sintéticos reproduzíveis, star schema, biblioteca de KPIs em DAX, blueprint do dashboard e documentação pensada tanto para revisão técnica quanto para storytelling executivo.
 
-The dataset covers two years of transactional sales across regions, channels, categories, products, and customer segments, plus a separate target table for actual-versus-plan analysis. A few of the insights that emerged:
+O dataset cobre dois anos de vendas transacionais por regiões, canais, categorias, produtos e segmentos de clientes, além de uma tabela separada de metas para análise de realizado versus planejado. Alguns dos insights que apareceram:
 
-- Sales grew nearly 13% year over year, but profit grew more slowly, which compressed margin.
-- Direct Sales delivered better margin and profit per order than Online, despite lower total volume.
-- Some product lines generated strong revenue but weak margin, making them clear pricing-review candidates.
+- As vendas cresceram quase 13% ano contra ano, mas o lucro cresceu mais devagar, comprimindo a margem.
+- Direct Sales entregou margem e lucro por pedido melhores do que Online, mesmo com volume total menor.
+- Algumas linhas de produto geraram receita forte, mas margem fraca, virando candidatas claras para revisão de preço.
 
-What I liked most about this build was treating it as a complete analytics project rather than only a visualization exercise: data generation, modeling, DAX, design decisions, and portfolio packaging all had to work together.
+O que eu mais gostei nesse projeto foi tratar tudo como um trabalho analítico completo, e não apenas como exercício de visualização: geração de dados, modelagem, DAX, decisões de design e empacotamento para portfólio precisaram funcionar juntos.
 
-Tech used: Power BI, DAX, Power Query, Python, dimensional modeling, GitHub documentation.
-
+Tecnologias usadas: Power BI, DAX, Power Query, Python, modelagem dimensional e documentação no GitHub.

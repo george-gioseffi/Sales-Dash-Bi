@@ -1,31 +1,31 @@
-# Project Log
+# Log do Projeto
 
-## Workstream 1. Repository Foundation
+## Frente 1. Fundação do Repositório
 
-- Created the repository structure for data, docs, assets, Power BI notes, screenshots, and scripts
-- Added `.gitignore`, `LICENSE`, and Python requirements
+- Estruturação do repositório para dados, documentação, assets, notas de Power BI, screenshots e scripts
+- Inclusão de `.gitignore`, `LICENSE` e dependências Python
 
-## Workstream 2. Reproducible Data Pipeline
+## Frente 2. Pipeline Reproduzível de Dados
 
-- Built a synthetic sales generator with fixed seed logic
-- Generated transactional sales, customer, product, channel, and sales rep tables
-- Created a separate monthly target-generation step
-- Exported processed star-schema tables for Power BI consumption
+- Construção do gerador sintético de vendas com seed fixa
+- Geração das tabelas transacionais de vendas, clientes, produtos, canais e representantes
+- Criação da etapa separada de metas mensais
+- Exportação das tabelas processed em star schema para consumo no Power BI
 
-## Workstream 3. Analytical Modeling
+## Frente 3. Modelagem Analítica
 
-- Documented grain, keys, dimensions, and relationships
-- Added a dedicated region dimension to preserve target integrity
-- Designed a DAX library covering core metrics, profitability, time intelligence, and targets
+- Documentação de grão, chaves, dimensões e relacionamentos
+- Inclusão de uma dimensão específica de região para preservar a integridade das metas
+- Desenho de uma biblioteca DAX cobrindo métricas centrais, lucratividade, inteligência temporal e metas
 
-## Workstream 4. Dashboard Design
+## Frente 4. Design do Dashboard
 
-- Defined a six-page dashboard blueprint plus a methodology page
-- Added a Power BI theme and page-by-page KPI map
-- Documented design decisions and screenshot requirements
-- Generated static preview renders for the six core report pages
+- Definição do blueprint de seis páginas principais, mais uma opcional de metodologia
+- Inclusão do theme do Power BI e do mapa de KPIs por página
+- Documentação das decisões de design e do padrão de screenshots
+- Geração dos previews estáticos das seis páginas principais
 
-## Workstream 5. Portfolio Packaging
+## Frente 5. Empacotamento para Portfólio
 
-- Wrote the README and all supporting docs for GitHub presentation
-- Added executive insights, interview defense notes, a presentation script, and career-ready copy
+- Escrita do README e dos documentos de apoio para apresentação no GitHub
+- Inclusão de insights executivos, defesa para entrevista, roteiro de apresentação e materiais de carreira

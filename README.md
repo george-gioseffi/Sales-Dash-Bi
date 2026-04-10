@@ -1,82 +1,82 @@
-# Sales Performance Analytics | Power BI + DAX + Power Query
+# Análise de Performance Comercial | Power BI + DAX + Power Query
 
-An end-to-end Power BI portfolio project built as a realistic commercial analytics case. The project combines reproducible synthetic data generation, dimensional modeling, a structured DAX library, and a dashboard blueprint designed for executive decision-making.
+Um projeto completo de portfólio em Power BI construído como um case realista de analytics comercial. O projeto combina geração reproduzível de dados sintéticos, modelagem dimensional, uma biblioteca estruturada de DAX e um blueprint de dashboard pensado para tomada de decisão executiva.
 
-## Overview
+## Visão Geral
 
-This case simulates a national company operating across Brazil in B2B and B2C channels. The business needs a reliable way to monitor revenue, profitability, discounts, targets, regional execution, and product mix without relying on fragmented spreadsheets.
+Este case simula uma empresa nacional com operação no Brasil em canais B2B e B2C. O negócio precisa monitorar receita, lucratividade, descontos, metas, execução regional e mix de produtos sem depender de planilhas desconectadas.
 
-The repository is designed to be strong even outside Power BI Desktop: the data pipeline is reproducible, the semantic model is documented, and the dashboard logic is fully specified for GitHub review.
+O repositório foi estruturado para ser forte mesmo fora do Power BI Desktop: a pipeline de dados é reproduzível, o modelo semântico está documentado e a lógica do dashboard está completamente especificada para análise no GitHub.
 
-## Business Problem
+## Problema de Negócio
 
-Leadership needs to answer questions such as:
+A liderança precisa responder perguntas como:
 
-- Which regions and channels are driving profitable growth?
-- Are discounts accelerating healthy sales or eroding margin?
-- Which products create revenue volume but destroy profitability?
-- Are monthly targets being met consistently?
-- Where should commercial teams focus to improve efficiency?
+- Quais regiões e canais estão puxando crescimento com qualidade?
+- Os descontos estão acelerando vendas saudáveis ou corroendo margem?
+- Quais produtos geram volume de receita, mas destroem lucratividade?
+- As metas mensais estão sendo batidas com consistência?
+- Onde os times comerciais devem focar para melhorar eficiência?
 
-See the full question set in [docs/business-questions.md](docs/business-questions.md).
+O conjunto completo de perguntas está em [docs/business-questions.md](docs/business-questions.md).
 
-## Objectives
+## Objetivos
 
-- Build a business-realistic sales analytics dataset with reproducible logic
-- Model sales and targets in a clean star schema
-- Create a DAX layer that supports executive and diagnostic analysis
-- Define a professional multi-page dashboard blueprint
-- Package the project for GitHub, interview discussion, and portfolio review
+- Construir um dataset de analytics comercial com lógica reproduzível e realista
+- Modelar vendas e metas em um star schema limpo
+- Criar uma camada DAX útil para leitura executiva e análise diagnóstica
+- Definir um dashboard profissional com múltiplas páginas
+- Empacotar o projeto para GitHub, entrevistas e portfólio
 
-## Analytical Focus Areas
+## Frentes Analíticas
 
-- Revenue performance
-- Profitability and margin quality
-- Discount pressure
-- Target attainment
-- Regional and channel performance
-- Product and customer mix
-- Monthly, MoM, and YoY trend analysis
+- Performance de receita
+- Qualidade da margem e lucratividade
+- Pressão de desconto
+- Atingimento de metas
+- Performance regional e por canal
+- Mix de produtos e clientes
+- Tendências mensais, MoM e YoY
 
 ## Dataset
 
-The dataset is synthetic, but intentionally structured around realistic commercial behavior.
+O dataset é sintético, mas estruturado com comportamento comercial plausível.
 
-### Snapshot
+### Resumo
 
-| Metric | Value |
+| Métrica | Valor |
 | --- | --- |
-| Date range | 2024-01-01 to 2025-12-31 |
-| Sales rows | 9,586 |
-| Orders | 4,407 |
-| Customers | 257 |
-| Products | 28 |
-| Regions | 5 |
-| Channels | 4 |
-| Monthly target rows | 480 |
+| Período | 2024-01-01 a 2025-12-31 |
+| Linhas de vendas | 9.586 |
+| Pedidos | 4.407 |
+| Clientes | 257 |
+| Produtos | 28 |
+| Regiões | 5 |
+| Canais | 4 |
+| Linhas de metas mensais | 480 |
 
-### Business Scale Summary
+### Escala do Negócio
 
-| KPI | Value |
+| KPI | Valor |
 | --- | --- |
-| Total Sales | 7.92M |
-| Total Profit | 1.96M |
-| Profit Margin % | 24.74% |
-| Average Order Value | 1,796.12 |
-| Average Discount % | 4.00% |
-| Return Rate % | 1.74% |
-| Average Target Attainment % | 98.18% |
+| Receita Total | 7,92M |
+| Lucro Total | 1,96M |
+| Margem de Lucro % | 24,74% |
+| Ticket Médio | 1.796,12 |
+| Desconto Médio % | 4,00% |
+| Taxa de Devolução % | 1,74% |
+| Atingimento Médio da Meta % | 98,18% |
 
-Generation details are documented in [docs/data-generation-logic.md](docs/data-generation-logic.md).
+Os detalhes de geração estão documentados em [docs/data-generation-logic.md](docs/data-generation-logic.md).
 
-## Data Model
+## Modelo de Dados
 
-The model uses two fact tables:
+O modelo usa duas tabelas fato:
 
-- `fact_sales` at the order-line grain
-- `fact_targets` at the month x region x channel grain
+- `fact_sales` no grão de linha de pedido
+- `fact_targets` no grão mês x região x canal
 
-Supported by these dimensions:
+Suportadas pelas dimensões:
 
 - `dim_date`
 - `dim_product`
@@ -86,19 +86,19 @@ Supported by these dimensions:
 - `dim_channel`
 - `dim_sales_rep`
 
-Why this structure:
+Por que essa estrutura:
 
-- It keeps transactional and planning data separate
-- It supports clean variance analysis
-- It makes DAX easier to scale and explain
+- separa corretamente dados transacionais e dados de planejamento
+- suporta análise de variância sem duplicação
+- facilita a escalabilidade e a explicação das medidas DAX
 
-See [docs/data-model.md](docs/data-model.md) and [docs/modeling-rationale.md](docs/modeling-rationale.md).
+Veja [docs/data-model.md](docs/data-model.md) e [docs/modeling-rationale.md](docs/modeling-rationale.md).
 
 ## KPIs
 
-The DAX layer covers core metrics, profitability, time intelligence, targets, and ranking.
+A camada DAX cobre métricas centrais, lucratividade, inteligência temporal, metas e ranking.
 
-Representative measures:
+Medidas representativas:
 
 - Total Sales
 - Total Profit
@@ -117,42 +117,42 @@ Representative measures:
 - Rank Region by Sales
 - Rank Category by Profit
 
-The full measure library is available in [docs/dax-measures.md](docs/dax-measures.md).
+A biblioteca completa está em [docs/dax-measures.md](docs/dax-measures.md).
 
-## Dashboard Pages
+## Páginas do Dashboard
 
-| Page | Purpose |
+| Página | Propósito |
 | --- | --- |
-| Executive Overview | Executive snapshot of revenue, profit, margin, target status, and main growth drivers |
-| Sales Analysis | Revenue trends, product drivers, and channel contribution |
-| Profitability Analysis | Margin quality, discount impact, and weak economics by product mix |
-| Customer & Product Insights | Segment growth, concentration, and top products |
-| Geography & Channel Performance | Regional comparison and cross-channel efficiency |
-| Targets & Trends | Actual vs target, variance, MoM, and YoY momentum |
-| Methodology | Optional page for business context, model, and KPI definitions |
+| Visão Executiva | Resumo executivo com receita, lucro, margem, metas e principais drivers |
+| Análise de Vendas | Tendências de receita, drivers de produto e contribuição por canal |
+| Análise de Lucratividade | Qualidade da margem, impacto de desconto e áreas com economia fraca |
+| Insights de Clientes e Produtos | Crescimento por segmento, concentração e produtos principais |
+| Performance Geográfica e de Canais | Comparação regional e eficiência cruzada por canal |
+| Metas e Tendências | Realizado vs meta, variância, MoM e YoY |
+| Metodologia | Página opcional para contexto de negócio, modelo e definições de KPI |
 
-See [docs/dashboard-blueprint.md](docs/dashboard-blueprint.md), [docs/page-by-page-kpi-map.md](docs/page-by-page-kpi-map.md), and [docs/design-decisions.md](docs/design-decisions.md).
+Veja [docs/dashboard-blueprint.md](docs/dashboard-blueprint.md), [docs/page-by-page-kpi-map.md](docs/page-by-page-kpi-map.md) e [docs/design-decisions.md](docs/design-decisions.md).
 
-## Key Insights
+## Principais Insights
 
-- Sales grew 12.99% in 2025, but profit grew only 10.20%, softening margin from 25.07% to 24.45%.
-- Southeast is the largest market by revenue, yet it underperforms other regions on target attainment and carries the highest average discount rate.
-- Technology drives the business, but some high-volume products such as printers and tables show poor profit conversion.
-- Direct Sales contributes less volume than Online, but delivers better margin and stronger profit per order.
-- Enterprise is the fastest-growing segment, indicating upside in larger-value commercial accounts.
-- The top 10 products represent 72.48% of total sales, creating clear concentration risk and opportunity.
+- As vendas cresceram 12,99% em 2025, mas o lucro cresceu apenas 10,20%, reduzindo a margem de 25,07% para 24,45%.
+- O Sudeste é o maior mercado em receita, mas fica abaixo de outras regiões em atingimento de meta e apresenta maior desconto médio.
+- Tecnologia é o principal motor de vendas, mas algumas linhas de alto volume, como impressoras e mesas, convertem mal em lucro.
+- Direct Sales gera menos volume do que Online, mas entrega margem superior e lucro por pedido mais forte.
+- Enterprise é o segmento com crescimento mais acelerado, sugerindo oportunidade em contas de maior valor.
+- Os 10 principais produtos representam 72,48% da receita total, criando uma concentração relevante do portfólio.
 
-Full takeaways live in [docs/final-insights.md](docs/final-insights.md).
+Os insights completos estão em [docs/final-insights.md](docs/final-insights.md).
 
-## Recommendations
+## Recomendações
 
-- Review discounting policy in printers, tables, and selected laptop lines
-- Protect and scale the economics of Direct Sales
-- Recalibrate commercial focus in Southeast to improve plan attainment
-- Double down on Enterprise growth where order value and mix are healthier
-- Monitor online returns during high-promotion periods
+- Revisar a política de descontos em impressoras, mesas e algumas linhas de laptops
+- Proteger e escalar a economia do canal Direct Sales
+- Recalibrar a execução comercial no Sudeste para melhorar o atingimento de metas
+- Acelerar o crescimento em Enterprise onde ticket e mix são mais saudáveis
+- Monitorar devoluções no canal Online em períodos promocionais
 
-## Project Structure
+## Estrutura do Projeto
 
 ```text
 powerbi-sales-performance-analytics/
@@ -171,68 +171,68 @@ powerbi-sales-performance-analytics/
 |- requirements.txt
 ```
 
-## How To Open / Reproduce
+## Como Reproduzir
 
-### Rebuild The Data
+### Regerar os Dados
 
 ```bash
 pip install -r requirements.txt
 python scripts/run_full_build.py
 ```
 
-### Build The Report
+### Montar o Relatório
 
-1. Import the CSV files from `data/processed/` into Power BI Desktop.
-2. Create relationships from [docs/data-model.md](docs/data-model.md).
-3. Mark `dim_date[Date]` as the official date table.
-4. Create the DAX measures from [docs/dax-measures.md](docs/dax-measures.md).
-5. Import the theme from `assets/theme/sales-performance-theme.json`.
-6. Build report pages from [docs/dashboard-blueprint.md](docs/dashboard-blueprint.md).
+1. Importe os CSVs de `data/processed/` no Power BI Desktop.
+2. Crie os relacionamentos descritos em [docs/data-model.md](docs/data-model.md).
+3. Marque `dim_date[Date]` como tabela oficial de datas.
+4. Crie as medidas de [docs/dax-measures.md](docs/dax-measures.md).
+5. Importe o tema de `assets/theme/sales-performance-theme.json`.
+6. Monte as páginas seguindo [docs/dashboard-blueprint.md](docs/dashboard-blueprint.md).
 
-The full step-by-step guide is in [docs/reproduction-guide.md](docs/reproduction-guide.md).
+O passo a passo completo está em [docs/reproduction-guide.md](docs/reproduction-guide.md).
 
-### Generate Portfolio Preview Images
+### Gerar os Previews do Portfólio
 
 ```bash
 python scripts/generate_dashboard_previews.py
 ```
 
-For the final Power BI Desktop handoff, use [powerbi/final-dashboard-handoff.md](powerbi/final-dashboard-handoff.md).
+Para o handoff final de Power BI Desktop, use [powerbi/final-dashboard-handoff.md](powerbi/final-dashboard-handoff.md).
 
-## Dashboard Preview
+## Prévia do Dashboard
 
-The repository now includes six portfolio-ready preview renders generated from the actual dataset and aligned to the final page blueprint. These can be replaced one-for-one with native Power BI Desktop exports later.
+O repositório já inclui seis renders de preview alinhados ao blueprint final das páginas. Eles podem ser substituídos depois, um a um, por exports nativos do Power BI Desktop com os mesmos nomes.
 
-| Executive Overview | Sales Analysis |
+| Visão Executiva | Análise de Vendas |
 | --- | --- |
-| ![Executive Overview](screenshots/01-executive-overview.png) | ![Sales Analysis](screenshots/02-sales-analysis.png) |
+| ![Visão Executiva](screenshots/01-executive-overview.png) | ![Análise de Vendas](screenshots/02-sales-analysis.png) |
 
-| Profitability Analysis | Customer & Product Insights |
+| Análise de Lucratividade | Insights de Clientes e Produtos |
 | --- | --- |
-| ![Profitability Analysis](screenshots/03-profitability-analysis.png) | ![Customer & Product Insights](screenshots/04-customer-product-insights.png) |
+| ![Análise de Lucratividade](screenshots/03-profitability-analysis.png) | ![Insights de Clientes e Produtos](screenshots/04-customer-product-insights.png) |
 
-| Geography & Channel Performance | Targets & Trends |
+| Performance Geográfica e de Canais | Metas e Tendências |
 | --- | --- |
-| ![Geography & Channel Performance](screenshots/05-geography-channel-performance.png) | ![Targets & Trends](screenshots/06-targets-trends.png) |
+| ![Performance Geográfica e de Canais](screenshots/05-geography-channel-performance.png) | ![Metas e Tendências](screenshots/06-targets-trends.png) |
 
-See [screenshots/README.md](screenshots/README.md) for the export and replacement workflow.
+Veja [screenshots/README.md](screenshots/README.md) para o fluxo de exportação e substituição.
 
-## Skills Demonstrated
+## Competências Demonstradas
 
-- Power BI project framing
-- Synthetic business data generation
-- Dimensional modeling
-- DAX design
-- Power Query planning
-- Executive dashboard architecture
-- Documentation for GitHub and interviews
-- Business storytelling and recommendation writing
+- Estruturação de projeto em Power BI
+- Geração de dados sintéticos com lógica de negócio
+- Modelagem dimensional
+- Design de medidas DAX
+- Planejamento de Power Query
+- Arquitetura de dashboard executivo
+- Documentação para GitHub e entrevistas
+- Storytelling de negócio e recomendações analíticas
 
-## Future Improvements
+## Próximas Evoluções
 
-- Add a fully assembled PBIP artifact
-- Replace preview renders with native Power BI Desktop exports
-- Include forecast and budget scenarios
-- Add drillthrough pages and tooltip design
-- Track customer retention and repeat purchase behavior
-- Introduce rep-level quota analysis and incentive views
+- Adicionar um artefato PBIP completo
+- Substituir os previews por exports nativos do Power BI Desktop
+- Incluir cenários de forecast e budget
+- Adicionar drillthrough e tooltips
+- Incluir retenção de clientes e recompra
+- Expandir análise de metas por representante comercial

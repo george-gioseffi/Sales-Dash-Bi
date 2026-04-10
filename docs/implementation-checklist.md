@@ -1,22 +1,21 @@
-# Implementation Checklist
+# Checklist de Implementação
 
-- [x] Create repository structure
-- [x] Add license and gitignore
-- [x] Build reproducible data generation scripts
-- [x] Generate raw datasets
-- [x] Generate processed star-schema tables
-- [x] Document business context and business questions
-- [x] Document data dictionary
-- [x] Document model grain, dimensions, and relationships
-- [x] Document Power Query expectations and quality checks
-- [x] Create DAX measure library
-- [x] Define dashboard blueprint and KPI map
-- [x] Add Power BI theme
-- [x] Write README and reproduction instructions
-- [x] Add final insights and executive recommendations
-- [x] Add interview defense and presentation script
-- [x] Add CV and LinkedIn copy
-- [ ] Assemble final report in Power BI Desktop
-- [ ] Export final dashboard screenshots
-- [ ] Save and commit optional PBIP artifact
-
+- [x] Criar a estrutura do repositório
+- [x] Adicionar licença e `.gitignore`
+- [x] Construir scripts reproduzíveis de geração de dados
+- [x] Gerar datasets raw
+- [x] Gerar tabelas processed em star schema
+- [x] Documentar contexto de negócio e perguntas de negócio
+- [x] Documentar dicionário de dados
+- [x] Documentar grão, dimensões e relacionamentos do modelo
+- [x] Documentar expectativas de Power Query e checagens de qualidade
+- [x] Criar biblioteca de medidas DAX
+- [x] Definir blueprint do dashboard e mapa de KPIs
+- [x] Adicionar theme do Power BI
+- [x] Escrever README e instruções de reprodução
+- [x] Adicionar insights finais e recomendações executivas
+- [x] Adicionar defesa para entrevista e roteiro de apresentação
+- [x] Adicionar texto para currículo e LinkedIn
+- [ ] Montar o relatório final no Power BI Desktop
+- [ ] Exportar screenshots finais do dashboard
+- [ ] Salvar e versionar o artefato opcional em PBIP

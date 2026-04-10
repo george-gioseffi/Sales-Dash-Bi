@@ -1,15 +1,14 @@
-# Business Questions
+# Perguntas de Negócio
 
-The dashboard is built to answer the following decision-oriented questions:
+O dashboard foi construído para responder perguntas orientadas à decisão:
 
-1. Which regions are driving the highest revenue, and are they converting revenue into healthy profit?
-2. Which product categories and sub-categories generate the strongest profit margin?
-3. Are discounts helping accelerate demand, or hurting profitability in key product lines?
-4. Which customer segments are growing faster year over year?
-5. How do sales, profit, and margin evolve over time at monthly and yearly levels?
-6. Which channels are the most efficient when comparing volume, margin, and profit per order?
-7. Are monthly sales targets being met consistently across regions and channels?
-8. Which products generate meaningful revenue volume but underperform on margin?
-9. Where should leadership focus commercial attention to improve sales efficiency?
-10. Which regional and channel combinations deserve expansion, review, or tighter pricing control?
-
+1. Quais regiões estão gerando mais receita e convertendo essa receita em lucro saudável?
+2. Quais categorias e subcategorias de produto entregam as melhores margens?
+3. Os descontos estão acelerando demanda ou prejudicando a lucratividade nas principais linhas?
+4. Quais segmentos de clientes estão crescendo mais rápido ano contra ano?
+5. Como vendas, lucro e margem evoluem ao longo do tempo em visão mensal e anual?
+6. Quais canais são mais eficientes quando comparamos volume, margem e lucro por pedido?
+7. As metas mensais de vendas estão sendo batidas com consistência por região e canal?
+8. Quais produtos geram volume relevante de receita, mas performam mal em margem?
+9. Onde a liderança deve concentrar atenção comercial para melhorar eficiência de vendas?
+10. Quais combinações de região e canal merecem expansão, revisão ou controle de preço mais rígido?

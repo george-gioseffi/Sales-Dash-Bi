@@ -1,10 +1,10 @@
-# Screenshot Guide
+# Guia das Screenshots
 
-This folder now includes six static dashboard preview renders generated from the project dataset by `scripts/generate_dashboard_previews.py`.
+Esta pasta já contém seis renders de preview gerados a partir do dataset do projeto por `scripts/generate_dashboard_previews.py`.
 
-They are designed to improve the GitHub presentation layer immediately, but should still be replaced later by native Power BI Desktop screenshot exports under the same filenames.
+Eles melhoram imediatamente a apresentação no GitHub, mas devem ser substituídos depois por screenshots nativas exportadas do Power BI Desktop usando exatamente os mesmos nomes de arquivo.
 
-Final screenshot filenames:
+Arquivos esperados:
 
 1. `01-executive-overview.png`
 2. `02-sales-analysis.png`
@@ -13,10 +13,10 @@ Final screenshot filenames:
 5. `05-geography-channel-performance.png`
 6. `06-targets-trends.png`
 
-Recommended export notes:
+Recomendações para exportação:
 
-- Use consistent page size and zoom
-- Hide editing panes before capture
-- Export at high enough resolution for GitHub readability
-- Keep one screenshot per core report page
-- Replace the existing preview file with the native Power BI export using the same filename
+- usar tamanho de página consistente
+- esconder painéis de edição antes da captura
+- exportar em resolução alta o suficiente para leitura no GitHub
+- manter uma screenshot por página principal
+- substituir o preview existente pelo export nativo com o mesmo nome

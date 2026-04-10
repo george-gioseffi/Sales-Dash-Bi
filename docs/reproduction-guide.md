@@ -1,53 +1,53 @@
-# Reproduction Guide
+# Guia de Reprodução
 
-## 1. Install Requirements
+## 1. Instalar Dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 2. Rebuild The Data Assets
+## 2. Regerar os Dados
 
 ```bash
 python scripts/run_full_build.py
 ```
 
-Expected outputs:
+Saídas esperadas:
 
-- Raw tables in `data/raw/`
-- Star-schema tables in `data/processed/`
+- Tabelas raw em `data/raw/`
+- Tabelas em star schema em `data/processed/`
 
-## 3. Build The Report In Power BI Desktop
+## 3. Montar o Relatório no Power BI Desktop
 
-1. Open Power BI Desktop.
-2. Load all CSVs from `data/processed/`.
-3. Rename tables to the model names documented in `docs/dax-measures.md`.
-4. Create the relationships listed in `docs/data-model.md`.
-5. Mark `dim_date[Date]` as the model date table.
-6. Sort `dim_date[Month Name]` by `dim_date[Month Number]`.
-7. Create the DAX measures from `docs/dax-measures.md`.
-8. Import the theme from `assets/theme/sales-performance-theme.json`.
-9. Build the pages from `docs/dashboard-blueprint.md`.
-10. Export screenshots into `screenshots/`.
+1. Abra o Power BI Desktop.
+2. Importe todos os CSVs de `data/processed/`.
+3. Renomeie as tabelas para os nomes documentados em `docs/data-model.md`.
+4. Crie os relacionamentos listados em `docs/data-model.md`.
+5. Marque `dim_date[Date]` como a tabela de datas do modelo.
+6. Ordene `dim_date[Month Name]` por `dim_date[Month Number]`.
+7. Crie as medidas DAX de `docs/dax-measures.md`.
+8. Importe o tema de `assets/theme/sales-performance-theme.json`.
+9. Monte as páginas seguindo `docs/dashboard-blueprint.md`.
+10. Exporte as screenshots para `screenshots/`.
 
-## 4. Generate Portfolio Preview Images
+## 4. Gerar Imagens de Preview para Portfólio
 
-If you want immediate GitHub-ready visuals before exporting native Power BI screenshots:
+Se você quiser uma camada visual imediata para GitHub antes de exportar screenshots nativas do Power BI:
 
 ```bash
 python scripts/generate_dashboard_previews.py
 ```
 
-## 5. Recommended Slicer Design
+## 5. Desenho Recomendado para Slicers
 
-- Global slicers: Date, Region, Sales Channel, Category
-- Diagnostic slicers where relevant: Segment, SubCategory
+- Slicers globais: Data, Região, Canal de Vendas, Categoria
+- Slicers diagnósticos quando fizer sentido: Segmento, SubCategory
 
-## 6. Final Manual Steps
+## 6. Etapas Finais Manuais
 
-These steps still require Power BI Desktop:
+Estas etapas ainda dependem do Power BI Desktop:
 
-- Final page composition
-- Bookmark and tooltip configuration
-- Screenshot export
-- Optional PBIP save and commit
+- composição final das páginas
+- configuração de bookmarks e tooltips
+- exportação das screenshots
+- save opcional em PBIP e commit final
