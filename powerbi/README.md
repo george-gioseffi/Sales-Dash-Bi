@@ -47,3 +47,4 @@ These images are intended to support the GitHub presentation layer until native 
 
 Because the report file is not generated here, the final PBIP or PBIX artifact, interactive page wiring, and native Power BI screenshot exports still depend on opening Power BI Desktop once on the local machine.
 
+This limitation is intentional and honest. Microsoft documents that PBIX-to-PBIP conversion and PBIR creation are performed through Power BI Desktop's Save As workflow, not through a supported terminal-only conversion path.

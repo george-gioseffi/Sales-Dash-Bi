@@ -264,3 +264,4 @@ Power BI Desktop is installed on this machine, but the report canvas could not b
 
 These previews can be replaced one-for-one with native Power BI screenshot exports after the final Desktop assembly.
 
+This is also aligned with Microsoft's current product behavior: PBIX to PBIP conversion and PBIR creation are performed through Power BI Desktop, and aren't exposed as a supported terminal-only conversion workflow.
