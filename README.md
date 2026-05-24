@@ -1,12 +1,14 @@
-# Análise de Performance Comercial | Power BI + DAX + Power Query
+# Análise de Performance Comercial (Power BI / DAX)
 
-Um projeto completo de portfólio em Power BI construído como um case realista de analytics comercial. O projeto combina geração reproduzível de dados sintéticos, modelagem dimensional, uma biblioteca estruturada de DAX e um blueprint de dashboard pensado para tomada de decisão executiva.
+Case de analytics comercial que montei para praticar modelagem dimensional e DAX. O projeto cobre a geração de um dataset sintético reproduzível, a modelagem em star schema, uma biblioteca de medidas DAX e um blueprint de dashboard de várias páginas.
+
+> **Status atual:** o pipeline de dados, o modelo e as medidas estão prontos e documentados. O arquivo do Power BI (`.pbix`/`.pbip`) ainda **não** está no repositório. As imagens em "Prévia do Dashboard" são renders feitos em Python (matplotlib/seaborn) a partir dos dados reais, seguindo o blueprint das páginas — servem como mockup até o relatório nativo ser montado.
 
 ## Visão Geral
 
 Este case simula uma empresa nacional com operação no Brasil em canais B2B e B2C. O negócio precisa monitorar receita, lucratividade, descontos, metas, execução regional e mix de produtos sem depender de planilhas desconectadas.
 
-O repositório foi estruturado para ser forte mesmo fora do Power BI Desktop: a pipeline de dados é reproduzível, o modelo semântico está documentado e a lógica do dashboard está completamente especificada para análise no GitHub.
+O repositório foi pensado para ser legível direto no GitHub, mesmo sem abrir o Power BI Desktop: o pipeline de dados é reproduzível, o modelo está documentado e a lógica de cada página do dashboard está especificada.
 
 ## Problema de Negócio
 
@@ -25,7 +27,7 @@ O conjunto completo de perguntas está em [docs/business-questions.md](docs/busi
 - Construir um dataset de analytics comercial com lógica reproduzível e realista
 - Modelar vendas e metas em um star schema limpo
 - Criar uma camada DAX útil para leitura executiva e análise diagnóstica
-- Definir um dashboard profissional com múltiplas páginas
+- Definir um dashboard de múltiplas páginas
 - Empacotar o projeto para GitHub, entrevistas e portfólio
 
 ## Frentes Analíticas
@@ -201,7 +203,7 @@ Para o handoff final de Power BI Desktop, use [powerbi/final-dashboard-handoff.m
 
 ## Prévia do Dashboard
 
-O repositório já inclui seis renders de preview alinhados ao blueprint final das páginas. Eles podem ser substituídos depois, um a um, por exports nativos do Power BI Desktop com os mesmos nomes.
+As imagens abaixo são seis renders feitos em Python (matplotlib/seaborn) a partir dos dados processados, seguindo o blueprint de cada página. **Não são capturas do Power BI** — a ideia é trocá-las, uma a uma, por exports nativos do Power BI Desktop com os mesmos nomes quando o relatório for montado.
 
 | Visão Executiva | Análise de Vendas |
 | --- | --- |
@@ -223,7 +225,7 @@ Veja [screenshots/README.md](screenshots/README.md) para o fluxo de exportação
 - Geração de dados sintéticos com lógica de negócio
 - Modelagem dimensional
 - Design de medidas DAX
-- Planejamento de Power Query
+- Transformação e preparação de dados em Python (pandas)
 - Arquitetura de dashboard executivo
 - Documentação para GitHub e entrevistas
 - Storytelling de negócio e recomendações analíticas
